@@ -24,7 +24,7 @@ export class FooterResolver implements Resolve<any> {
         let req = {
             "pagename": "header"
         }
-        return this.http.post<any>(this.apiurl+'header/v1', JSON.stringify(req), httpOptions).pipe(
+        return this.http.post<any>(this.apiurl+'footer/v1', JSON.stringify(req), httpOptions).pipe(
         map( (dataFromApi) => dataFromApi ),
         catchError(this.handleError)
         )

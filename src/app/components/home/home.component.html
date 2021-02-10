@@ -1,20 +1,21 @@
-<div class="topSlider_sec">
+<!-- topsection -->
+<div class="topSlider_sec" *ngIf="homepage.topsection">
     <div class="main-container">
        <div class="row no-gutters">
           <div class="col-md-6 align-self-center">
              <div class="topBanner_sec">
                 <div class="bannerTxtWrap">
                    <div class="titleWrap mrg-b-30 ">
-                      <h1 class="f-w-B headingSec line_H_1"> We Love Animals And Those Who Love Animals </h1>
+                      <h1 class="f-w-B headingSec line_H_1"> {{homepage.topsection.heading}} </h1>
                    </div>
                    <div class="hrLine mrg-b-30"></div>
-                   <div class="bannerTxt">
-                      <p> We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four legged animal to visit us once and we will become friends. </p>
-                      <p> We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four legged animal to visit us once and we will become friends. </p>
+                   <div class="bannerTxt" [innerHTML]="topsectionContent">
+                      <!-- <p> We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four legged animal to visit us once and we will become friends. </p>
+                      <p> We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four legged animal to visit us once and we will become friends. </p> -->
                    </div>
                    <div class="btnSec">
-                      <a href="#" class="pagebtn f-w-B">
-                      Book an appointment
+                      <a [href]="homepage.topsection.button_link" class="pagebtn f-w-B">
+                        {{homepage.topsection.button_text}}
                       </a>
                    </div>
                 </div>
@@ -22,30 +23,33 @@
           </div>
           <div class="col-md-6">
              <div class="bannerImg_sec">
-                <img src="./assets/images/banner-img.png" class="w-100" alt="banner Img" />
+                <img [src]="homepage.topsection.image.link" class="w-100" [alt]="homepage.topsection.image.alt" />
              </div>
           </div>
        </div>
     </div>
- </div>
+</div>
+<!-- topsection End-->
+
+<!-- aboutsection -->
  <div class="spacer_t_30 spacer_b_30 bg-white">
     <div class="main-container">
        <div class="row rowSpace">
           <div class="col-md-6 align-self-center">
              <div class="aboutDCC_wrap">
                 <div class="dccSubTitle f-w-B opacity-5 mrg-b-60 text-uppercase">
-                   ABOUT DCC
+                   {{homepage.aboutsection.smallheading}}
                 </div>
                 <div class="mrg-b-30 ">
-                   <h2 class="f-w-B headingSec line_H_1"> Our Mission Is To See More Animal Lovers  </h2>
+                   <h2 class="f-w-B headingSec line_H_1"> {{homepage.aboutsection.heading}}  </h2>
                 </div>
                 <div class="hrLine mrg-b-30"></div>
-                <div class="bannerTxt">
-                   <p> For all your beloved pets– dogs, cats, and more; we are here to serve as a safe, stress-free, and clean environment. Spread over 45000 sq. ft, your pet can enjoy the amenities at our one-stop full-service facility which is fully supervised to give them complete physical and emotional care </p>
+                <div class="bannerTxt" [innerHTML]="aboutsectionContent">
+                   <!-- <p> For all your beloved pets– dogs, cats, and more; we are here to serve as a safe, stress-free, and clean environment. Spread over 45000 sq. ft, your pet can enjoy the amenities at our one-stop full-service facility which is fully supervised to give them complete physical and emotional care </p> -->
                 </div>
                 <div class="btnSec">
-                   <a href="#" class="pagebtn f-w-B">
-                   About DCC
+                   <a [href]="homepage.aboutsection.button_link" class="pagebtn f-w-B">
+                   {{homepage.aboutsection.button_text}}
                    </a>
                 </div>
              </div>
@@ -53,23 +57,26 @@
           <div class="col-md-6">
              <div class="aboutDCC_img">
                 <div class="abtdcc_imgSec_1">
-                   <img src="./assets/images/about-dcc-1.png" class="w-100" alt="About DCC">
+                   <img [src]="homepage.aboutsection.image1.link" class="w-100" [alt]="homepage.aboutsection.image1.alt">
                 </div>
                 <div class="abtdcc_imgSec_2">
-                   <img src="./assets/images/about-dcc-2.png" class="w-100" alt="About DCC">
+                   <img [src]="homepage.aboutsection.image1.link" class="w-100" [alt]="homepage.aboutsection.image1.alt">
                 </div>
              </div>
           </div>
        </div>
     </div>
  </div>
+ <!--aboutsection End -->
+
+ <!-- servicesection -->
  <div class="spacer_t_30 spacer_b_30">
     <div class="main-container">
        <div class="row rowSpace">
           <div class="col-md-6 align-self-center">
              <div class="aboutDCC_wrap">
                 <div class="dccSubTitle f-w-B opacity-5 mrg-b-60 text-uppercase">
-                   SERVICES
+                  {{homepage.servicesection.smallheading}}
                 </div>
                 <div class="mrg-b-30 ">
                    <h2 class="f-w-B headingSec line_H_1"> Our Service Is To <br> Make Every Animal <br> Lover Happy    </h2>
@@ -201,24 +208,27 @@
        </div>
     </div>
  </div>
+<!-- servicesection End -->
+
+<!-- teamsection -->
  <div class="spacer_t_30 spacer_b_30 bg-white">
     <div class="main-container">
        <div class="row rowSpace">
           <div class="col-md-6">
              <div class="aboutDCC_wrap">
                 <div class="dccSubTitle f-w-B opacity-5 mrg-b-60 text-uppercase">
-                   Team
+                  {{homepage.teamsection.smallheading}}
                 </div>
                 <div class="mrg-b-30 ">
-                   <h2 class="f-w-B headingSec line_H_1"> Our Docs Are Here To Keep Your Animal Healthy </h2>
+                   <h2 class="f-w-B headingSec line_H_1"> {{homepage.teamsection.heading}} </h2>
                 </div>
                 <div class="hrLine mrg-b-30"></div>
-                <div class="bannerTxt">
-                   <p> We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four legged animal to visit us once and we will become friends. </p>
+                <div class="bannerTxt" [innerHTML]="teamsectionContent">
+                   <!-- <p> {{homepage.teamsection.content}} </p> -->
                 </div>
                 <div class="btnSec">
-                   <a href="#" class="pagebtn f-w-B">
-                   Meet Our Doctors
+                   <a [href]="homepage.teamsection.button_link" class="pagebtn f-w-B">
+                  {{homepage.teamsection.button_text}}
                    </a>
                 </div>
              </div>
@@ -226,7 +236,7 @@
           <div class="col-md-6">
              <div class="team-wrap">
                 <div class="img-1">
-                   <img src="./assets/images/team.jpg" class="w-100" alt="Team DCC" />
+                   <img [src]="./assets/images/team.jpg" class="w-100" alt="Team DCC" />
                    <div class="content-wrap">
                       <div class="row no-gutters">
                          <div class="col-auto">
@@ -258,6 +268,9 @@
        </div>
     </div>
  </div>
+<!-- teamsection End -->
+
+<!-- pethealthsection -->
  <div class="spacer_t_30 spacer_b_30">
     <div class="main-container">
        <div class="row rowSpace">
@@ -327,6 +340,9 @@
        </div>
     </div>
  </div>
+<!-- pethealthsection End -->
+
+<!-- footersection -->
  <div class="spacer_t_30 spacer_b_30 bg-white">
     <div class="main-container">
        <div class="row rowSpace align-items-center">
@@ -356,3 +372,4 @@
        </div>
     </div>
  </div>
+<!-- footersection End -->
