@@ -11,11 +11,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class OurteamComponent implements OnInit {
 
   public teamsdata:any;
+  heading: any;
+  content: any;
   constructor(private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.teamsdata = this.route.snapshot.data['teamsdata'];
     console.log(this.teamsdata, "teamsdata");    
+    this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['heading']);
+    this.content = this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['content']);
   }
 
 }

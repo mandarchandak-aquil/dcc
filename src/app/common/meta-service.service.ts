@@ -41,6 +41,8 @@ export class MetaServiceService {
        // { property: 'og:image', content: metaTags.metaTags },
         { property: 'og:robots', content: metaTags.meta_robots },
          { property: 'og:keywords', content: metaTags.meta_keywords },
+         { property: 'og:keywords', content: metaTags.meta_keywords },
+         { property: 'og:keywords', content: metaTags.meta_keywords },
        // { property: 'og:url', content: metaTags.metaTags },
       ]
     }

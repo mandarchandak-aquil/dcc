@@ -30,9 +30,16 @@ const routes: Routes = [
       { 
         path: 'vacationboarding', 
         loadChildren: () => import('./components/vacationboarding/vacationboarding.module').then(m => m.VacationboardingModule) 
-      },
-  
-      
+      },    
+  { path: 'media', loadChildren: () => import('./components/media/media.module').then(m => m.MediaModule) },
+  { path: 'careers', loadChildren: () => import('./components/careers/careers.module').then(m => m.CareersModule) },
+  { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
+  { path: 'Contact-delhi', loadChildren: () => import('./components/contact-delhi/contact-delhi.module').then(m => m.ContactDelhiModule) },
+  { path: 'Contact-Gurgaon', loadChildren: () => import('./components/contact-gurgaon/contact-gurgaon.module').then(m => m.ContactGurgaonModule) },
+  { path: 'Pet-Health', loadChildren: () => import('./components/pet-health/pet-health.module').then(m => m.PetHealthModule) },
+  { path: 'Team-Details', loadChildren: () => import('./components/team-details/team-details.module').then(m => m.TeamDetailsModule) },
+  { path: 'Team-List', loadChildren: () => import('./components/team-list/team-list.module').then(m => m.TeamListModule) },
+  { path: 'vacation-boarding', loadChildren: () => import('./components/vacation-boarding/vacation-boarding.module').then(m => m.VacationBoardingModule) },
     ],
     resolve: {
       headerData: HeaderResolver, 
@@ -43,6 +50,7 @@ const routes: Routes = [
     path: '404-error', 
     loadChildren: () => import('./components/page404/page404.module').then(m => m.Page404Module) 
   },
+  
   { path: '**', redirectTo: '404-error', pathMatch: 'full' },
   
   
