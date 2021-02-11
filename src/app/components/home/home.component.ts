@@ -19,7 +19,11 @@ export class HomeComponent implements OnInit {
   teamsectionContent:any;
   pethealthsectionContent:any;
   footersectionContent:any;
-
+  serviceheading: any;
+  services: any = [];
+  serviceList: any;
+  pethealthheading: any;
+  ourintentheading: any;
 
   constructor(public api_page: HomeService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
@@ -33,7 +37,17 @@ export class HomeComponent implements OnInit {
     this.teamsectionContent = this.sanitizer.bypassSecurityTrustHtml(this.homepage['teamsection']['content']);
     this.pethealthsectionContent = this.sanitizer.bypassSecurityTrustHtml(this.homepage['pethealthsection']['content']);
     this.footersectionContent = this.sanitizer.bypassSecurityTrustHtml(this.homepage['footersection']['content']);
-
+    this.serviceheading = this.sanitizer.bypassSecurityTrustHtml(this.homepage['servicesection']['heading']);
+    this.pethealthheading = this.sanitizer.bypassSecurityTrustHtml(this.homepage['pethealthsection']['heading']);
+    this.ourintentheading = this.sanitizer.bypassSecurityTrustHtml(this.homepage['footersection']['heading']);
+    console.log("this.pethealthheading",this.pethealthheading);
+    this.services = this.homepage['servicesection']['services'];
+    this.serviceList = [];
+    this.services.forEach((element:any) => {    
+      if(element['display_on_home'] === 'Yes'){
+        this.serviceList.push(element)
+      }
+    });
     // this.address = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['address']);
     // <div class="content" [innerHTML]="address">
   }
