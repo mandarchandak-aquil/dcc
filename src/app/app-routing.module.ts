@@ -22,7 +22,16 @@ const routes: Routes = [
       { 
         path: 'ourservices', 
         loadChildren: () => import('./components/ourservices/ourservices.module').then(m => m.OurservicesModule) 
-      }
+      },
+      { 
+        path: 'ourteam', 
+        loadChildren: () => import('./components/ourteam/ourteam.module').then(m => m.OurteamModule) 
+      },
+      { 
+        path: 'vacationboarding', 
+        loadChildren: () => import('./components/vacationboarding/vacationboarding.module').then(m => m.VacationboardingModule) 
+      },
+  
       
     ],
     resolve: {
@@ -35,6 +44,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/page404/page404.module').then(m => m.Page404Module) 
   },
   { path: '**', redirectTo: '404-error', pathMatch: 'full' },
+  
   
 ];
 

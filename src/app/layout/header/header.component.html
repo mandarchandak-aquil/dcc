@@ -10,9 +10,24 @@
              </button>
              <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto" *ngIf="headerData">
-                   <li class="nav-item" *ngFor="let data of headerData.mainmenu;let i = index">
+                    <li class="nav-item" *ngFor="let data of headerData.mainmenu;let i = index">
                       <a class="nav-link" [href]="data.link">{{data.name}}</a>
+                   </li> 
+                   <!-- <li class="nav-item">
+                      <a class="nav-link" href="https://ardemos.in/dcc/about-dcc">About DCC</a>
                    </li>
+                   <li class="nav-item">
+                      <a class="nav-link" href="https://ardemos.in/dcc/ourservices">Services</a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" href="https://ardemos.in/dcc/ourteam">Team</a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" href="#">Pet Health</a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                   </li> -->
                 </ul>
              </div>
              <div class="emergencyBtn_sec">
