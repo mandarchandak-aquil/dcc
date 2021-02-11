@@ -15,6 +15,14 @@ const routes: Routes = [
         path: '', 
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule) 
       },
+      { 
+        path: 'aboutus', 
+        loadChildren: () => import('./components/aboutus/aboutus.module').then(m => m.AboutusModule) 
+      },
+      { 
+        path: 'ourservices', 
+        loadChildren: () => import('./components/ourservices/ourservices.module').then(m => m.OurservicesModule) 
+      }
       
     ],
     resolve: {
@@ -26,7 +34,8 @@ const routes: Routes = [
     path: '404-error', 
     loadChildren: () => import('./components/page404/page404.module').then(m => m.Page404Module) 
   },
-  { path: '**', redirectTo: '404-error', pathMatch: 'full' }
+  { path: '**', redirectTo: '404-error', pathMatch: 'full' },
+  
 ];
 
 @NgModule({

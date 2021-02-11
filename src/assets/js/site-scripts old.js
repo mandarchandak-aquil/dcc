@@ -1,6 +1,6 @@
 // Fixed Header
 $(window).scroll(function(){
-if ($(window).scrollTop() >= 1) {
+if ($(window).scrollTop() >= 200) {
 $('.headerSec').addClass('fixed-header');    
 }
 else {
