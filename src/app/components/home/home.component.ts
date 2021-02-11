@@ -13,12 +13,12 @@ import { HomeService } from '../../common/services/home/home.service';
 export class HomeComponent implements OnInit {
   public homepage: any;
 
-  topsectionContent;
-  aboutsectionContent;
-  servicesectionContent;
-  teamsectionContent;
-  pethealthsectionContent
-  footersectionContent;
+  topsectionContent:any;
+  aboutsectionContent:any;
+  servicesectionContent:any;
+  teamsectionContent:any;
+  pethealthsectionContent:any;
+  footersectionContent:any;
 
 
   constructor(public api_page: HomeService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }

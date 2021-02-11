@@ -9,10 +9,10 @@ import { DomSanitizer} from '@angular/platform-browser';
 })
 export class FooterComponent implements OnInit {
   public footerData: any;
-  address
-  phone
-  timing
-  footerlogocontent
+  address:any;
+  phone:any;
+  timing:any;
+  footerlogocontent:any;
 
   constructor(private route: ActivatedRoute,private sanitizer: DomSanitizer,) { }
 
