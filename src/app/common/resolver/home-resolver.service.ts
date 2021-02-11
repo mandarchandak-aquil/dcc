@@ -31,7 +31,7 @@ export class HomeResolver implements Resolve<any> {
     }
 
       // Error handling 
-   handleError(error) {
+   handleError(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
       // Get client-side error
