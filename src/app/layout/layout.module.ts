@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { FooterTopComponent } from './footer-top/footer-top.component';
 
 @NgModule({
 imports: [
@@ -20,10 +21,12 @@ imports: [
 exports: [
     HeaderComponent,
     FooterComponent,
+    FooterTopComponent,
 ],
 declarations: [
     HeaderComponent,
     FooterComponent,
+    FooterTopComponent,
 ]
 })
 export class LayoutModule { 
