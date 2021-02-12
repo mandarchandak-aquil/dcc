@@ -5,7 +5,7 @@ import { retry, catchError } from 'rxjs/operators';
 
 import { Meta } from '@angular/platform-browser';
 import { environment } from "../../environments/environment";
-
+import { DOCUMENT } from '@angular/common';
 const httpOptions = {
   headers: new HttpHeaders({ 
   'Access-Control-Allow-Credentials' : 'true',
@@ -37,20 +37,22 @@ export class MetaServiceService {
       "metaTags" :[
         { name: 'description', content:metaTags.meta_desc},
         { property: 'og:title', content:metaTags.meta_title },
-        { proprety: 'og:description', content:metaTags.meta_desc},
-       // { property: 'og:image', content: metaTags.metaTags },
+        { proprety: 'og:description', content:metaTags.meta_desc},   
         { property: 'og:robots', content: metaTags.meta_robots },
-         { property: 'og:keywords', content: metaTags.meta_keywords },
-         { property: 'og:keywords', content: metaTags.meta_keywords },
-         { property: 'og:keywords', content: metaTags.meta_keywords },
-       // { property: 'og:url', content: metaTags.metaTags },
+        { property: 'og:keywords', content: metaTags.meta_keywords },           
       ]
     }
-    console.log(metaTags,"metaTagsmetaTags",metaData)
-    metaData['metaTags'].forEach((m:any) =>
-     // console.log(m,"updateMetaTags")
-       this.meta.updateTag(m)
-      );
+     var element: any = document.querySelector(`link[rel='canonical']`) || null
+     if (element == null) {
+         element = document.createElement('link') as HTMLLinkElement;
+         document.head.appendChild(element);
+     }
+     element.setAttribute('rel', 'canonical')
+     element.setAttribute('href', metaTags.canonical_tag)
+    //  console.log(element,"metaTagsmetaTags",metaTags);
+     metaData['metaTags'].forEach((m:any) =>    
+        this.meta.updateTag(m)
+     );
   }
     getProduct(req:any ) : Observable<any > {
       return this.http.post<any>(this.apiurl+'cmspages/healthinsurance', JSON.stringify(req), httpOptions)

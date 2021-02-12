@@ -32,8 +32,7 @@ const routes: Routes = [
         loadChildren: () => import('./components/vacationboarding/vacationboarding.module').then(m => m.VacationboardingModule) 
       },    
   { path: 'media', loadChildren: () => import('./components/media/media.module').then(m => m.MediaModule) },
-  { path: 'careers', loadChildren: () => import('./components/careers/careers.module').then(m => m.CareersModule) },
-  { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
+  { path: 'careers', loadChildren: () => import('./components/careers/careers.module').then(m => m.CareersModule) },  
   { path: 'Contact-delhi', loadChildren: () => import('./components/contact-delhi/contact-delhi.module').then(m => m.ContactDelhiModule) },
   { path: 'Contact-Gurgaon', loadChildren: () => import('./components/contact-gurgaon/contact-gurgaon.module').then(m => m.ContactGurgaonModule) },
   { path: 'Pet-Health', loadChildren: () => import('./components/pet-health/pet-health.module').then(m => m.PetHealthModule) },
@@ -46,12 +45,13 @@ const routes: Routes = [
       footerData: FooterResolver
     }
   },
-  { 
-    path: '404-error', 
-    loadChildren: () => import('./components/page404/page404.module').then(m => m.Page404Module) 
-  },
+  // { 
+  //   path: '404-error', 
+  //   loadChildren: () => import('./components/page404/page404.module').then(m => m.Page404Module) 
+  // },
+  { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
   
-  { path: '**', redirectTo: '404-error', pathMatch: 'full' },
+  { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },
   
   
 ];
