@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer} from '@angular/platform-browser';
 @Component({
   selector: 'app-footer-top',
   templateUrl: './footer-top.component.html',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterTopComponent implements OnInit {
 
-  constructor() { }
+  @Input() dataString: any;
+  footersection : any
+  heading: any;
+  content: any;
+
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    
+    this.footersection = JSON.parse(this.dataString)
+    console.log(this.footersection, "footersection footersection");
+    this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.footersection['heading']);
+    this.content = this.sanitizer.bypassSecurityTrustHtml(this.footersection['content']);
   }
 
 }

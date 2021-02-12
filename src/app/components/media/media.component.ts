@@ -9,11 +9,22 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MediaComponent implements OnInit {
   public mediadata: any;
-
+  heading: any;
+  left_content: any;
+  right_content: any;
+  medianews: any = [];
+  footersection : any;
+  
   constructor(private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
   ngOnInit() {
-    this.mediadata = this.route.snapshot.data['medianewspage'];
+    this.mediadata = this.route.snapshot.data['medianewspage'];    
+    this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.mediadata['details']['heading']);
+    this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.mediadata['details']['left_content']);
+    this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.mediadata['details']['right_content']);
+    this.medianews = this.mediadata['mediaandnews'];
     console.log(this.mediadata, "mediadata"); 
+
+    this.footersection = JSON.stringify(this.mediadata['footersection'])
   }
 
 }

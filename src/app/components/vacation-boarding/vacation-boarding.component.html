@@ -1,11 +1,11 @@
 <div class="dc_pg_spcHead">
     <div class="main-container">
        <div class="dc_pgHead_wrap text-center" style="background-image:url(/assets/images/head-bg.jpg);">
-          <h1 class="dc_pg_title">Vacation Boarding</h1>
+          <h1 class="dc_pg_title">{{vacationdata.pagetitle}}</h1>
           <ol class="breadcrumb dc_cstBread f-w-B justify-content-center">
              <li class="breadcrumb-item"><a href="#">Home</a></li>
              <li class="breadcrumb-item">Our Services</li>
-             <li class="breadcrumb-item active">Vacation Boarding</li>
+             <li class="breadcrumb-item active">{{vacationdata.pagetitle}}</li>
           </ol>
        </div>
     </div>
@@ -15,35 +15,21 @@
              <div class="col-md-12">
                 <div class="row no-gutters">
                    <div class="col-md-6">
-                      <h2 class="headingSec line_H_1 mrg-b-30">Home Away From Home For Your Pet</h2>
+                      <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="heading"></h2>
                    </div>
                 </div>
              </div>
              <div class="col-md-6">
                 <div class="dc_txtSummary">
                    <div class="dc_txt_summary dc_last_p text-justify">
-                      <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get
-                         your four legged animal to visit us onceand we will become friends.
-                      </p>
-                      <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get
-                         your four legged animal to visit us. We understand how you feel when you pooch is not
-                         feeling good. That’s why we exist. Get your four legged animal to visit us onceand we
-                         will become friends.
-                      </p>
+                     <p [innerHTML]="left_content"></p>
                    </div>
                 </div>
              </div>
              <div class="col-md-6">
                 <div class="dc_txtSummary">
                    <div class="dc_txt_summary dc_last_p text-justify">
-                      <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get
-                         your four legged animal to visit us onceand we will become friends.
-                      </p>
-                      <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get
-                         your four legged animal to visit us. We understand how you feel when you pooch is not
-                         feeling good. That’s why we exist. Get your four legged animal to visit us onceand we
-                         will become friends.
-                      </p>
+                    <p [innerHTML]="right_content"></p>
                    </div>
                 </div>
              </div>
@@ -66,22 +52,7 @@
                       </div>
                       <div class="dc_txtSummary">
                          <div class="dc_txt_summary dc_last_p text-justify">
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we
-                               exist. Get your four legged animal to visit us onceand we will become friends.
-                            </p>
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we
-                               exist. Get your four legged animal to visit us. We understand how you feel when
-                               you pooch is not feeling good. That’s why we exist. Get your four legged animal
-                               to visit us onceand we will become friends
-                            </p>
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we
-                               exist. Get your four legged animal to visit us onceand we will become friends.
-                            </p>
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we
-                               exist. Get your four legged animal to visit us. We understand how you feel when
-                               you pooch is not feeling good. That’s why we exist. Get your four legged animal
-                               to visit us onceand we will become friends
-                            </p>
+                           <p [innerHTML]="left_content_bottom"></p>
                          </div>
                       </div>
                    </div>
@@ -98,22 +69,7 @@
                       </div>
                       <div class="dc_txtSummary">
                          <div class="dc_txt_summary dc_last_p text-justify">
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we
-                               exist. Get your four legged animal to visit us onceand we will become friends.
-                            </p>
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we
-                               exist. Get your four legged animal to visit us. We understand how you feel when
-                               you pooch is not feeling good. That’s why we exist. Get your four legged animal
-                               to visit us onceand we will become friends
-                            </p>
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we
-                               exist. Get your four legged animal to visit us onceand we will become friends.
-                            </p>
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we
-                               exist. Get your four legged animal to visit us. We understand how you feel when
-                               you pooch is not feeling good. That’s why we exist. Get your four legged animal
-                               to visit us onceand we will become friends
-                            </p>
+                         <p [innerHTML]="right_content_bottom"></p>
                          </div>
                       </div>
                    </div>
@@ -121,8 +77,8 @@
              </div>
           </div>
           <ul class="list-unstyled d-flex flex-wrap justify-content-center mt__60 dc_btnList-spc_60">
-             <li><a href="#" class="pagebtn dc_btn_min f-w-B">Make an appointment</a></li>
-             <li><a href="#" class="pagebtn pagebtnblue dc_btn_min f-w-B">Get Direction</a></li>
+             <li><a [href]="vacationdata.details.button_1_link" class="pagebtn dc_btn_min f-w-B">{{vacationdata.details.button_1_text}}</a></li>
+             <li><a href="#" class="pagebtn pagebtnblue dc_btn_min f-w-B">{{vacationdata.details.button_2_text}}</a></li>
           </ul>
        </div>
     </div>
@@ -134,10 +90,10 @@
                    <div class="col-md-6">
                       <div class="aboutDCC_wrap mrg-b-60">
                          <div class="dccSubTitle f-w-B opacity-5 mrg-b-60 text-uppercase">
-                            FAQS
+                          {{vacationdata.faqsection.smallheading}}
                          </div>
                          <div class="mrg-b-30 ">
-                            <h2 class="f-w-B headingSec line_H_1"> Some Of The <br> Common Questions </h2>
+                            <h2 class="f-w-B headingSec line_H_1" [innerHTML]="faqheading"> </h2>
                          </div>
                       </div>
                    </div>
@@ -264,4 +220,4 @@
        </div>
     </div>
  </div>
-<app-footer-top></app-footer-top>
+ <app-footer-top [dataString]="footersection"></app-footer-top>

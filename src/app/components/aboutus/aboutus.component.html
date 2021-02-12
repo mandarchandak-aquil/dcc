@@ -1,95 +1,600 @@
 <div class="dc_pg_spcHead">
-<div class="main-container">
+
+
+
+  <div class="main-container">
     <div class="dc_pgHead_wrap text-center" style="background-image:url(./assets/images/head-bg.jpg);">
-        <h1 class="dc_pg_title">About DCC</h1>
-        <ol class="breadcrumb dc_cstBread f-w-B justify-content-center">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Library</li>
-        </ol>
+      <h1 class="dc_pg_title">About DCC</h1>
+      <ol class="breadcrumb dc_cstBread f-w-B justify-content-center">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">About DCC</li>
+      </ol>
     </div>
+  </div>
 
-
-
-</div>
-
-<div class="dc_spacer_t_90 dc_spacer_b_60">
+  <div class="dc_spacer_t_90 dc_spacer_b_60">
     <div class="main-container">
-        <div class="row row_gutter_30">
-            <div class="col-md-6">
-                <div class="dc_About_media_wrap">
-                    <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
-                        <li class="col-6">
-                            <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg"
-                                    alt="" /></div>
-                        </li>
-                        <li class="col-6">
-                            <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg"
-                                    alt="" /></div>
-                        </li>
+      <div class="row row_gutter_30">
+        <div class="col-md-6">
+          <div class="dc_About_media_wrap">
+            <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 align-self-center">
+          <div class="dc_txtSummary">
+            <h2 class="headingSec line_H_1 mrg-b-30">With Over 30 Years Of Global Experience</h2>
+            <div class="dc_txt_summary dc_last_p text-justify">
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends.</p>
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us. We understand how you feel when you pooch is not feeling good. That’s why
+                we exist. Get your four legged animal to visit us onceand we will become friends.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="list-unstyled d-flex flex-wrap justify-content-center mt__60 dc_btnList-spc_60">
+        <li><a href="#" class="pagebtn dc_btn_min f-w-B">Make an appointment</a></li>
+        <li>
+          <!-- <div class="dropSec position-relative">
+              <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection">Get Direction</a>
+              <div class="directionList transtn-1">
+                <ul class="dire_listSec mb-0 list-unstyled">
+                  <li class="list-item"> <a href="#" class="direLink"> Sec 23, Gurgaon </a> </li>
+                  <li class="list-item"> <a href="#" class="direLink"> GK-2, New Delhi </a> </li>
+                </ul>
+              </div>
+            </div> -->
+
+          <div ngbDropdown class="dropSec position-relative directList">
+            <!-- <button class="btn btn-outline-primary" id="dropdownMenuButton" ngbDropdownToggle>Get Direction</button> -->
+            <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle
+              id="dropdownMenuButton">Get Direction</a>
+            <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
+              <ul class="dire_listSec mb-0 list-unstyled">
+                <li class="list-item"> <a href="#" class="direLink"> Sec 23, Gurgaon </a> </li>
+                <li class="list-item"> <a href="#" class="direLink"> GK-2, New Delhi </a> </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <!-- <div ngbDropdown  class="dropSec position-relative">
+                <button class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" id="dropdownMenuButton" ngbDropdownToggle>Get Direction</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="directionList transtn-1">
+                    <ul class="dire_listSec mb-0 list-unstyled">
+                        <li class="list-item"> <a href="#" class="direLink"> Sec 23, Gurgaon </a> </li>
+                        <li class="list-item"> <a href="#" class="direLink"> GK-2, New Delhi </a> </li>
                     </ul>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="dc_txtSummary">
-                    <h2 class="headingSec line_H_1 mrg-b-30">With Over 30 Years Of Global Experience</h2>
-                    <div class="dc_txt_summary dc_last_p">
-                        <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your
-                            four
-                            legged animal to visit us onceand we will become friends.</p>
-                        <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your
-                            four
-                            legged animal to visit us. We understand how you feel when you pooch is not feeling good.
-                            That’s why
-                            we exist. Get your four legged animal to visit us onceand we will become friends.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <ul class="list-unstyled d-flex flex-wrap justify-content-center mt__60 dc_btnList-spc_60">
-            <li><a href="#" class="pagebtn dc_btn_min f-w-B">Make an appointment</a></li>
-            <li><a href="#" class="pagebtn pagebtnblue dc_btn_min f-w-B">Get Direction</a></li>
-        </ul>
-    </div>
-</div>
+            </div> -->
 
-<div class="dc_spacer_t_30 dc_spacer_b_30 bg-white">
-    <div class="main-container">
-        <div class="row row_gutter_30">
-            <div class="col-md-6">
-                <div class="dc_txtSummary">
-                    <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">OUR ADVISORS</div>
-                    <h2 class="headingSec line_H_1 mrg-b-30">Our Advisors Are Also Happen To Be Animal Lovers</h2>
-                    <div class="dc_txt_summary dc_last_p">
-                        <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your
-                            four
-                            legged animal to visit us onceand we will become friends.</p>
-                        <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your
-                            four
-                            legged animal to visit us. We understand how you feel when you pooch is not feeling good.
-                            That’s why
-                            we exist. Get your four legged animal to visit us onceand we will become friends.</p>
-                        <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your
-                            four
-                            legged animal to visit us onceand we will become friends.</p>
-                        <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. .</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="dc_About_media_wrap">
-                    <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
-                        <li class="col-6">
-                            <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg"
-                                    alt="" /></div>
-                        </li>
-                        <li class="col-6">
-                            <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg"
-                                    alt="" /></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </li>
+      </ul>
     </div>
-</div>
+  </div>
+
+  <div class="dc_spacer_t_30 dc_spacer_b_30 bg-white">
+    <div class="main-container">
+      <div class="row row_gutter_30">
+        <div class="col-md-6 align-self-center">
+          <div class="dc_txtSummary">
+            <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">OUR ADVISORS</div>
+            <h2 class="headingSec line_H_1 mrg-b-30">Our Advisors Are Also Happen To Be Animal Lovers</h2>
+            <div class="dc_txt_summary dc_last_p text-justify">
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends.</p>
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us. We understand how you feel when you pooch is not feeling good. That’s why
+                we exist. Get your four legged animal to visit us onceand we will become friends.</p>
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends.</p>
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. .</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dc_About_media_wrap">
+            <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
+              <li class="col-6">
+
+                <div class="dc_rds_8 mrg-b-20">
+                  <img class="w-100" src="./assets/images/advisor-team-1.png" alt="" />
+                </div>
+
+                <div class="advisorName text-center">
+                  Dr. Vinod Sharma
+                </div>
+
+              </li>
+
+              <li class="col-6">
+
+                <div class="dc_rds_8 mrg-b-20">
+                  <img class="w-100" src="./assets/images/advisor-team-2.png" alt="" />
+                </div>
+
+                <div class="advisorName text-center">
+                  Dr. Vinod Sharma
+                </div>
+
+              </li>
+
+              <li class="col-6">
+
+                <div class="dc_rds_8 mrg-b-20">
+                  <img class="w-100" src="./assets/images/advisor-team-1.png" alt="" />
+                </div>
+
+                <div class="advisorName text-center">
+                  Dr. Vinod Sharma
+                </div>
+
+              </li>
+
+              <li class="col-6">
+
+                <div class="dc_rds_8 mrg-b-20">
+                  <img class="w-100" src="./assets/images/advisor-team-2.png" alt="" />
+                </div>
+
+                <div class="advisorName text-center">
+                  Dr. Vinod Sharma
+                </div>
+
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dc_spacer_t_30 dc_spacer_b_30">
+    <div class="main-container">
+      <div class="row row_gutter_30">
+        <div class="col-md-6">
+          <div class="dc_About_media_wrap">
+            <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 align-self-center">
+          <div class="dc_txtSummary">
+            <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">OUR MISSION</div>
+            <h2 class="headingSec line_H_1 mrg-b-30">Our Mission is to conquer the world of animals</h2>
+            <div class="dc_txt_summary dc_last_p text-justify">
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends.</p>
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us. We understand how you feel when you pooch is not feeling good. That’s why
+                we exist. Get your four legged animal to visit us onceand we will become friends.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dc_spacer_t_30 dc_spacer_b_30 bg-white">
+    <div class="main-container">
+      <div class="row row_gutter_30">
+        <div class="col-md-6 align-self-center">
+          <div class="dc_txtSummary">
+            <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">OUR VISION</div>
+            <h2 class="headingSec line_H_1 mrg-b-30">Our Mission is to conquer the world of animals</h2>
+            <div class="dc_txt_summary dc_last_p text-justify">
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends.</p>
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us. We understand how you feel when you pooch is not feeling good. That’s why
+                we exist. Get your four legged animal to visit us onceand we will become friends.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dc_About_media_wrap">
+            <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dc_spacer_t_30 dc_spacer_b_30">
+    <div class="main-container">
+      <div class="row row_gutter_30">
+        <div class="col-md-6">
+          <div class="dc_About_media_wrap">
+            <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 align-self-center">
+          <div class="dc_txtSummary">
+            <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">OUR VALUES</div>
+            <h2 class="headingSec line_H_1 mrg-b-30">Our Mission is to conquer the world of animals</h2>
+            <div class="dc_txt_summary dc_last_p text-justify">
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends. We understand how you feel when you pooch is
+                not feeling good. That’s why we exist. Get your four legged animal to </p>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="mar-80 ">
+                <div class="selfless ">
+                  <img class="w-100" src="./assets/images/selfless-icon.png" alt="selfless-icon">
+                </div>
+                <div class="f-s-18">Selfless</div>
+              </div>
+              <div class="mar-80">
+                <div class="selfless">
+                  <img class="w-100" src="./assets/images/selfless-icon.png" alt="selfless-icon">
+                </div>
+                <div class="f-s-18">Selfless</div>
+              </div>
+              <div class="mar-80">
+                <div class="selfless">
+                  <img class="w-100" src="./assets/images/selfless-icon.png" alt="selfless-icon">
+                </div>
+                <div class="f-s-18">Selfless</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dc_spacer_t_30 dc_spacer_b_30 bg-white">
+    <div class="main-container">
+      <div class="row row_gutter_30">
+        <div class="col-md-6">
+          <div class="dc_txtSummary">
+            <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">TESTIMONIALS</div>
+            <h2 class="headingSec line_H_1 mrg-b-30">Some Of Our Customers Showing love</h2>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+
+          <div class="slider">
+            <div class="testimonials dc_testiArrow">
+              <!-- You can now use your library component in app.component.html -->
+              <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+              <div ngxSlickItem *ngFor="let slide of slides; let i = index" class="slide-item">
+                
+                <div class="transtn">
+                  <div class="bx-shadow testiRect">
+                    <div class="d-flex mar-b-38">
+                      <div class="clientimg">
+                        <img class="w-100" src="./assets/images/dij.svg" alt="">
+                      </div>
+                      <div class="f-s-16 f-w-b align-self-center clientName f-w-B">Dij Phukan
+                        <div class="clientName-pos">Patient</div>
+                      </div>
+                    </div>
+                    <div class="testiTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua.</div>
+                  </div>
+                </div>
+                
+              </div>
+              </ngx-slick-carousel>
+
+            </div>
+          </div>
+
+          <!-- <ngx-slick-carousel class="cstSlider sliderDotResp" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide">
+              <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                <img src="https://i.picsum.photos/id/{{slide}}/300/200.jpg" alt="" width="100%">
+              </div>
+            </div>
+          </ngx-slick-carousel> -->
+
+          <!-- <div class="slider">
+              <div class="testimonials dc_testiArrow">
+
+                <div class="slide-item">
+                  <div class="transtn">
+                    <div class="bx-shadow testiRect">
+                      <div class="d-flex mar-b-38">
+                        <div class="clientimg">
+                          <img class="w-100" src="./assets/images/dij.svg" alt="">
+                        </div>
+                        <div class="f-s-16 f-w-b align-self-center clientName f-w-B">Dij Phukan
+                          <div class="clientName-pos">Patient</div>
+                        </div>
+                      </div>
+                      <div class="testiTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide-item">
+                  <div class="transtn">
+                    <div class="bx-shadow testiRect">
+                      <div class="d-flex mar-b-38">
+                        <div class="clientimg">
+                          <img class="w-100" src="./assets/images/alisha.svg" alt="">
+                        </div>
+                        <div class="f-s-16 f-w-b align-self-center clientName f-w-B">Alisha Dash
+                          <div class="clientName-pos">Patient</div>
+                        </div>
+                      </div>
+                      <div class="testiTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide-item">
+                  <div class="transtn">
+                    <div class="bx-shadow testiRect">
+                      <div class="d-flex mar-b-38">
+                        <div class="clientimg">
+                          <img class="w-100" src="./assets/images/frank.svg" alt="">
+                        </div>
+                        <div class="f-s-16 f-w-b align-self-center clientName f-w-B">Frank Gallaghers
+                          <div class="clientName-pos">Patient</div>
+                        </div>
+                      </div>
+                      <div class="testiTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide-item">
+                  <div class="transtn">
+                    <div class="bx-shadow testiRect">
+                      <div class="d-flex mar-b-38">
+                        <div class="clientimg">
+                          <img class="w-100" src="./assets/images/dij.svg" alt="">
+                        </div>
+                        <div class="f-s-16 f-w-b align-self-center clientName f-w-B">Dij Phukan
+                          <div class="clientName-pos">Patient</div>
+                        </div>
+                      </div>
+                      <div class="testiTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide-item">
+                  <div class="transtn">
+                    <div class="bx-shadow testiRect">
+                      <div class="d-flex mar-b-38">
+                        <div class="clientimg">
+                          <img class="w-100" src="./assets/images/alisha.svg" alt="">
+                        </div>
+                        <div class="f-s-16 f-w-b align-self-center clientName f-w-B">Alisha Dash
+                          <div class="clientName-pos">Patient</div>
+                        </div>
+                      </div>
+                      <div class="testiTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="dc_spacer_t_30 dc_spacer_b_30">
+    <div class="main-container">
+      <div class="row row_gutter_30">
+        <div class="col-md-6">
+          <div class="dc_About_media_wrap">
+            <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 align-self-center">
+          <div class="dc_txtSummary">
+            <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">OUR TECHNOLOGIES</div>
+            <h2 class="headingSec line_H_1 mrg-b-30">Our Mission is to conquer the world of animals</h2>
+            <div class="dc_txt_summary dc_last_p text-justify">
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends.</p>
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us. We understand how you feel when you pooch is not feeling good. That’s why
+                we exist. Get your four legged animal to visit us onceand we will become friends.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dc_spacer_t_30 dc_spacer_b_30 bg-white">
+    <div class="main-container">
+      <div class="row row_gutter_30">
+        <div class="col-md-6 align-self-center">
+          <div class="dc_txtSummary">
+            <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">OUR SOFTWARE</div>
+            <h2 class="headingSec line_H_1 mrg-b-30">Our Mission is to conquer the world of animals</h2>
+            <div class="dc_txt_summary dc_last_p text-justify">
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends.</p>
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us. We understand how you feel when you pooch is not feeling good. That’s why
+                we exist. Get your four legged animal to visit us onceand we will become friends.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dc_About_media_wrap">
+            <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dc_spacer_t_30 dc_spacer_b_30">
+    <div class="main-container">
+      <div class="row row_gutter_30">
+        <div class="col-md-6">
+          <div class="dc_About_media_wrap">
+            <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-1.jpg" alt="" />
+                </div>
+              </li>
+              <li class="col-6">
+                <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="./assets/images/about-img-2.jpg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 align-self-center">
+          <div class="dc_txtSummary">
+            <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">OUR SUPPORT</div>
+            <h2 class="headingSec line_H_1 mrg-b-30">Our Mission is to conquer the world of animals</h2>
+            <div class="dc_txt_summary dc_last_p text-justify">
+              <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get your four
+                legged animal to visit us onceand we will become friends. We understand how you feel when you pooch is
+                not feeling good. That’s why we exist. Get your four legged animal to </p>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="mar-80 ">
+                <div class="selfless ">
+                  <img class="w-100" src="./assets/images/selfless-icon.png" alt="selfless-icon">
+                </div>
+                <div class="f-s-18">Selfless</div>
+              </div>
+              <div class="mar-80">
+                <div class="selfless">
+                  <img class="w-100" src="./assets/images/selfless-icon.png" alt="selfless-icon">
+                </div>
+                <div class="f-s-18">Selfless</div>
+              </div>
+              <div class="mar-80">
+                <div class="selfless">
+                  <img class="w-100" src="./assets/images/selfless-icon.png" alt="selfless-icon">
+                </div>
+                <div class="f-s-18">Selfless</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>

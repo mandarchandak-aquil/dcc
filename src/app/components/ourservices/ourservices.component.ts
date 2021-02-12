@@ -14,6 +14,7 @@ export class OurservicesComponent implements OnInit {
   left_content: any;
   right_content: any;
   services: any = [];
+  footersection: any;
 
   constructor(private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
   ngOnInit() {
@@ -23,6 +24,7 @@ export class OurservicesComponent implements OnInit {
     this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.servicedata['details']['left_content']);
     this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.servicedata['details']['right_content']);
     this.services = this.servicedata['details']['services'];
+    this.footersection = JSON.stringify(this.servicedata['footersection'])
     console.log("this.services",this.services);
   }
 

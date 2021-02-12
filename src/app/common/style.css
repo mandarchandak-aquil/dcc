@@ -1,0 +1,19 @@
+.directList .dropdown-menu.show {
+    background: transparent;
+    border: none;
+}
+
+.directList li.list-item {
+    margin: 0.214vw 0;
+}
+
+.directList .dirList.dropdown-menu.show {
+    transform: translate(22px, 36px) !important;
+    max-width: 14.583vw;
+    width: 100%;
+}
+
+.directList .dropdown-toggle::after{
+    display: none;
+}
+

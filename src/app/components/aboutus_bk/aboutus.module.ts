@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AboutusRoutingModule } from './aboutus-routing.module';
 import { AboutusComponent } from './aboutus.component';
@@ -12,9 +9,7 @@ import { AboutusComponent } from './aboutus.component';
   declarations: [AboutusComponent],
   imports: [
     CommonModule,
-    AboutusRoutingModule,
-    NgbModule,
-    SlickCarouselModule
+    AboutusRoutingModule
   ]
 })
 export class AboutusModule { }

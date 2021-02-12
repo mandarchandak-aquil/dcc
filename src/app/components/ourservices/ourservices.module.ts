@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {LayoutModule} from "../../layout/layout.module";
 import { OurservicesRoutingModule } from './ourservices-routing.module';
 import { OurservicesComponent } from './ourservices.component';
 
@@ -9,7 +9,8 @@ import { OurservicesComponent } from './ourservices.component';
   declarations: [OurservicesComponent],
   imports: [
     CommonModule,
-    OurservicesRoutingModule
+    OurservicesRoutingModule,
+    LayoutModule
   ]
 })
 export class OurservicesModule { }

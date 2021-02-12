@@ -622,6 +622,51 @@ font-size: 2.143vw;color: transparent;
 .specer-b-90{padding-bottom: 60px;}
 /*end careers page CSS*/
 
+/* Team List Page CSS*/
+.teamDesignation {
+    font-size: 1vw;
+}
+.letterNormal{letter-spacing: normal;}
+
+.pageTeam_sec [class*=col]:nth-child(2n) {
+    margin-top: 4.286vw;
+}
+
+/*404 Page CSS*/
+.errorTitle {
+    max-width: 42.857vw;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2.143vw;
+}
+.errorTxt {
+    color: #878DA4;
+    font-size: 1.143vw;
+    max-width: 70%;
+    width: 100%;
+    margin: auto;
+}
+
+/* Contact Us Page CSS*/
+.pagebtn.pagebtngreen{
+    border: 1px solid #06A33E;
+    background-color: transparent;
+    margin-left: 2.083vw;
+    color: #0E1F3B;
+}
+.pagebtn.pagebtngreen:hover{
+    border: 1px solid #06A33E;
+    background-color: #06A33E;
+    margin-left: 2.083vw;
+    color: #fff;
+}
+.contnt {
+  color: #0E1F3B;
+  font-size: 1.286vw;
+  letter-spacing: 0;
+}
+.qCont a{color: #0E1F3B;}
+.mar-l-30{margin-left: 2.083vw;}
 
 
 @keyframes smoothScroll{0%{transform:translateY(-40px);-ms-transform:translateY(-40px);-o-transform:translateY(-40px)}
