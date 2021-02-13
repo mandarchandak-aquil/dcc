@@ -11,13 +11,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ContactGurgaonComponent implements OnInit {
   contact :any =[];
   contacts :any;
+  footersection: any = [];
   constructor( private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
     this.contact = this.route.snapshot.data['contact'];
    this.contacts =  this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
-    console.log(this.contacts, "contact");    
+    console.log(this.contacts, "contact");   
+    this.footersection = JSON.stringify(this.contact['footersection']) 
   }
 
 }

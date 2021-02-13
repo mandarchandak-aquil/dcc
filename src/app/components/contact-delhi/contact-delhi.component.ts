@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ContactDelhiComponent implements OnInit {
   contact : any = [];
   contacts :any;
+  footersection: any;
   constructor( private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
 
@@ -17,6 +18,7 @@ export class ContactDelhiComponent implements OnInit {
     this.contact = this.route.snapshot.data['contact'];
     this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
      console.log(this.contact, "contact");    
+     this.footersection = JSON.stringify(this.contact['footersection']);   
   }
 
 }

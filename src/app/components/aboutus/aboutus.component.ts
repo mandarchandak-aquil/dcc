@@ -88,6 +88,7 @@ export class AboutusComponent implements OnInit {
   supportcontent: any;
   support: any =[];
   supporticon: any = [];
+  footersection: any;
   constructor(private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -120,7 +121,8 @@ export class AboutusComponent implements OnInit {
     this.supportcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['content']);
     this.support = this.aboutData['oursupportsections'];
     this.supporticon = this.aboutData['oursupportsections']['icons'];
-    console.log("advisors",this.technology);
+    this.footersection = JSON.stringify(this.aboutData['footersection']);
+   
   }
 
   getContent(param:any){
