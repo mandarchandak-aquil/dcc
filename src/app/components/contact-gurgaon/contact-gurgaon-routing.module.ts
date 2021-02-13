@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ContactGurgaonComponent } from './contact-gurgaon.component';
-
-const routes: Routes = [{ path: '', component: ContactGurgaonComponent }];
+import { ContactgurgaonResolver } from '../../common/resolver/contactgurgaon-resolver.service';
+const routes: Routes = [{ path: '', component: ContactGurgaonComponent,
+resolve: {
+  contact: ContactgurgaonResolver
+}
+ }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ContactgurgaonResolver] 
 })
 export class ContactGurgaonRoutingModule { }

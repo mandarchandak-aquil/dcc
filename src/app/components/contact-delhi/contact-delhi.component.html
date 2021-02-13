@@ -6,7 +6,7 @@
             <ol class="breadcrumb dc_cstBread f-w-B justify-content-center">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item">Contact us</li>
-                <li class="breadcrumb-item active">New Delhi</li>
+                <li class="breadcrumb-item active">{{contact.pagetitle}}</li>
             </ol>
         </div>
     </div>
@@ -16,7 +16,7 @@
             <div class="row row_gutter_30">
                 <div class="col-md-6">
                     <div class="dc_txtSummary">
-                        <h2 class="headingSec line_H_1 mrg-b-30">We Are Just A Phone Call Away</h2>
+                        <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="contact.details.heading"></h2>
                     </div>
                     <div class="hrLine mrg-b-30"></div>
                 </div>
@@ -25,18 +25,16 @@
             <div class="row row_gutter_30">
                 <div class="col-md-6">
                     <div class="dc_txtSummary">
-                        <div class="dc_txt_summary dc_last_p text-justify">
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get
-                                your four legged animal to visit us once and we will become friends.</p>
+                        <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="contact.details.left_content">
+                            
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="dc_txtSummary">
-                        <div class="dc_txt_summary dc_last_p text-justify">
-                            <p>We understand how you feel when you pooch is not feeling good. That’s why we exist. Get
-                                your four legged animal to visit us once and we will become friends.</p>
+                        <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="contact.details.right_content">
+                            
                         </div>
                     </div>
                 </div>
@@ -47,16 +45,12 @@
     <div class="dc_spacer_t_30 dc_spacer_b_30">
         <div class="main-container">
             <div class="btnSec text-center">
-                <div class="btnSec_wra d-inline">
-                    <a href="#" class="ml-0 pagebtn pagebtngreen f-w-B">
-                        Gurgaon
+                <div class="btnSec_wra d-inline" *ngFor="let cn of contact.details.contactlist">
+                    <a href="{{cn.slug}}" class="ml-0 pagebtn pagebtngreen f-w-B">
+                        {{cn.name}}
                     </a>
                 </div>
-                <div class="btnSec_wra d-inline">
-                    <a href="#" class="mar-l-30 pagebtn f-w-B">
-                        New Delhi
-                    </a>
-                </div>
+                
 
             </div>
         </div>
@@ -78,38 +72,18 @@
                     <div class="contnt opacity-5 mrg-b-30">
                         E-556, Greater Kailash Part-II, New Delhi – 110048
                     </div>
-                    <div class="mrg-b-30">
-                        <h2 class="f-w-B f-s-24 line_H_1"> Quick Contacts </h2>
-                        <div class="f-s-18 qCont">
-                            <a href="tel:(+91) 7428535050"><strong>GK Mobile:</strong> (+91) 7428535050</a>
-                        </div>
-                        <div class="f-s-18 qCont">
-                            <a href="tel:(+91) 9311560101"><strong>GK Landline:</strong> (+91) 11 35509524</a>
-                        </div>
-                        <div class="f-s-18 qCont">
-                            <a href="mailto:info@dccpets.in"><strong>Email:</strong> info@dccpets.in</a>
-                        </div>
-                    </div>
-                    <div class="dc_txtSummary mrg-b-30">
-                        <h2 class="f-w-B f-s-24 line_H_1 mrg-b-30">Opening Hours</h2>
-                        <div class="f-s-18 qCont">
-                            <div><strong>Gurgaon:</strong> 10AM - 5PM daily.</div>
-                        </div>
-                    </div>
-                    <div class="dc_txtSummary mrg-b-30">
-                        <div class="f-s-18 qCont">* Grooming closed on Tuesdays.</div>
-                        <div class="f-s-18 qCont">* Clinic closed on Sundays.</div>
-                    </div>
+                    <div [innerHTML]="contacts"></div>
+                  
                     <div class="btnSec">
 
                         <div class="btnSec_wra d-inline">
                             <a href="#" class="ml-0 pagebtn pagebtnblue f-w-B">
-                                Get Direction
+                                {{contact.details.button_1_text}}
                             </a>
                         </div>
                         <div class="btnSec_wra d-inline">
                             <a href="#" class="mar-l-30 pagebtn f-w-B">
-                                Make An Appointment
+                                {{contact.details.button_2_text}}
                             </a>
                         </div>
                     </div>
@@ -119,12 +93,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="teamPage_wrap mar-b-30">
-                                <img src="/assets/images/vacation-boarding.png" class="w-100">
+                                <img src="{{contact.details.image_1.link}}" class="w-100">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="teamPage_wrap mar-b-30">
-                                <img src="/assets/images/vacation-boarding.png" class="w-100">
+                                <img src="{{contact.details.image_2.link}}" class="w-100">
                             </div>
                         </div>
                     </div>
