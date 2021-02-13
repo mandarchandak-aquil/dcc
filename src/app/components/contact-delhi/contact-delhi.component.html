@@ -39,7 +39,7 @@
        <div class="main-container">
           <div class="btnSec text-center">
              <div class="btnSec_wra d-inline" *ngFor="let cn of contact.details.contactlist">
-                <a href="{{cn.slug}}" class="ml-0 pagebtn pagebtngreen f-w-B">
+                <a [href]="cn.slug" class="ml-0 pagebtn pagebtngreen f-w-B">
                 {{cn.name}}
                 </a>
              </div>
