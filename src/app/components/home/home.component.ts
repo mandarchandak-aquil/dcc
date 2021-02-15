@@ -4,7 +4,7 @@ import { DomSanitizer} from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { HomeService } from '../../common/services/home/home.service';
-
+import { MetaServiceService } from '../../common/meta-service.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +12,7 @@ import { HomeService } from '../../common/services/home/home.service';
 })
 export class HomeComponent implements OnInit {
   public homepage: any;
-
+  loading :boolean = true;  
   topsectionContent:any;
   aboutsectionContent:any;
   servicesectionContent:any;
@@ -25,9 +25,10 @@ export class HomeComponent implements OnInit {
   pethealthheading: any;
   ourintentheading: any;
 
-  constructor(public api_page: HomeService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
+  constructor(public api_page: HomeService,private meta : MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.MetaTags();
     this.homepage = this.route.snapshot.data['homepage'];
     console.log(this.homepage, "homepage");    
 
@@ -48,8 +49,17 @@ export class HomeComponent implements OnInit {
         this.serviceList.push(element)
       }
     });
-    // this.address = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['address']);
-    // <div class="content" [innerHTML]="address">
+   
+  }
+  MetaTags(){
+    let dataReq = {
+      "page": "home",
+      "id": ""
+    }
+    this.meta.getProduct(dataReq).subscribe(data => {
+        this.meta.updateMetaTags(data['seodata']);
+        this.loading = false;
+    });
   }
 
 }

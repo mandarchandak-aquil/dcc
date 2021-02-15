@@ -1,3 +1,6 @@
+<div id="preloader" *ngIf="loading">
+   <div id="status">&nbsp;</div>
+</div>
 <div class="dc_pg_spcHead">
   <div class="main-container">
      <div class="dc_pgHead_wrap text-center" style="background-image:url(./assets/images/head-bg.jpg);">
@@ -231,21 +234,20 @@
               <div class="slider">
                  <div class="testimonials dc_testiArrow">
                     <!-- You can now use your library component in app.component.html -->
-                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" *ngIf="slides">
                     <div ngxSlickItem *ngFor="let slide of slides; let i = index" class="slide-item">
                        <div class="transtn">
                           <div class="bx-shadow testiRect">
                              <div class="d-flex mar-b-38">
                                 <div class="clientimg">
-                                   <img class="w-100" src="./assets/images/dij.svg" alt="">
+                                   <img class="w-100" src="{{slide.image.link}}" alt="">
                                 </div>
                                 <div class="f-s-16 f-w-b align-self-center clientName f-w-B">
-                                   Dij Phukan
-                                   <div class="clientName-pos">Patient</div>
+                                   {{slide.name}}
+                                   <div class="clientName-pos">{{slide.designation}}</div>
                                 </div>
                              </div>
-                             <div class="testiTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.
+                             <div class="testiTxt" [innerHTML]="slide.content">
                              </div>
                           </div>
                        </div>

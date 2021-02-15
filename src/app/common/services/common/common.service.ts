@@ -33,9 +33,31 @@ export class CommonService {
       catchError(this.handleError)
     )
   }
+  career(req:any) : Observable<any> { 
+    return this.http.post<any>(this.apiurl+'careersform/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+  doctordetailspage(req:any) : Observable<any> { 
+    return this.http.post<any>(this.apiurl+'doctordetailspage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  servicetailspage(req:any) : Observable<any> { 
+    return this.http.post<any>(this.apiurl+'servicedetailspage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
 
    // Error handling 
-   handleError(error) {
+   handleError(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
       // Get client-side error

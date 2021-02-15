@@ -22,40 +22,32 @@ const httpOptions = {
 })
 export class MetaServiceService {
 
-
-  apiurl =  "https://ardemos.in:3010/";
- // apiurl = environment.API_URL;
+  apiurl = environment.API_URL;
     // constructor() { }
     constructor(private meta: Meta,private http: HttpClient) { }
-  // apiurl = "https://ardemos.in:3010/";
-  //apiurl = "https://ardemos.in:3007/";
-  
-  
-  updateMetaTags(metaTags : any){
-  
-    var metaData:any= {
-      "metaTags" :[
-        { name: 'description', content:metaTags.meta_desc},
-        { property: 'og:title', content:metaTags.meta_title },
-        { proprety: 'og:description', content:metaTags.meta_desc},   
-        { property: 'og:robots', content: metaTags.meta_robots },
-        { property: 'og:keywords', content: metaTags.meta_keywords },           
-      ]
+    updateMetaTags(metaTags : any){
+      var metaData:any= {
+        "metaTags" :[
+          { name: 'description', content:metaTags.description},
+          { property: 'og:title', content:metaTags.title },
+          { proprety: 'og:description', content:metaTags.description},          
+          { property: 'og:keywords', content: metaTags.keywords },           
+        ]
+      }
+    //  var element: any = document.querySelector(`link[rel='canonical']`) || null
+    //  if (element == null) {
+    //      element = document.createElement('link') as HTMLLinkElement;
+    //      document.head.appendChild(element);
+    //  }
+    //  element.setAttribute('rel', 'canonical')
+    //  element.setAttribute('href', metaTags.canonical_tag)
+      console.log(metaData,"metaTagsmetaTags",metaTags);
+      metaData['metaTags'].forEach((m:any) =>    
+          this.meta.updateTag(m)
+      );
     }
-     var element: any = document.querySelector(`link[rel='canonical']`) || null
-     if (element == null) {
-         element = document.createElement('link') as HTMLLinkElement;
-         document.head.appendChild(element);
-     }
-     element.setAttribute('rel', 'canonical')
-     element.setAttribute('href', metaTags.canonical_tag)
-    //  console.log(element,"metaTagsmetaTags",metaTags);
-     metaData['metaTags'].forEach((m:any) =>    
-        this.meta.updateTag(m)
-     );
-  }
     getProduct(req:any ) : Observable<any > {
-      return this.http.post<any>(this.apiurl+'cmspages/healthinsurance', JSON.stringify(req), httpOptions)
+      return this.http.post<any>(this.apiurl+'seodata/v1', JSON.stringify(req), httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

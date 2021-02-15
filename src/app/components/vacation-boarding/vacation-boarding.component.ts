@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CommonService } from '../../common/services/common/common.service';
+import { MetaServiceService } from '../../common/meta-service.service';
 @Component({
   selector: 'app-vacation-boarding',
   templateUrl: './vacation-boarding.component.html',
   styleUrls: ['./vacation-boarding.component.css']
 })
 export class VacationBoardingComponent implements OnInit {
+  loading :boolean = true;
   public vacationdata : any;
   heading: any;
   left_content: any;
@@ -16,18 +19,56 @@ export class VacationBoardingComponent implements OnInit {
   left_content_bottom: any;
   right_content_bottom: any;
   faqheading: any;
-
-  constructor(private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
+  bordingdetails: any = [];
+  faq_question: any = [];
+  leftfaq: any = [];
+  rightfaq: any = [];
+  constructor(public comman:CommonService,private meta : MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
   ngOnInit() {
-    this.vacationdata = this.route.snapshot.data['vacationdata'];    
-    console.log("this.vacationdata",this.vacationdata);
-    this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['heading']);
-    this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['left_content']);
-    this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['right_content']);
-    this.footersection = JSON.stringify(this.vacationdata['footersection']);
-    this.left_content_bottom = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['left_content_bottom']);
-    this.right_content_bottom = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['right_content_bottom']);
-    this.faqheading = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['faqsection']['heading']);
+
+    console.log(this.router.url.replace("/ourservices/service-details/", ""))
+    let data = this.router.url.replace("/ourservices/service-details/", "");
+    let req = {
+      "serviceid": data
+    }
+      this.comman.servicetailspage(req).subscribe(datas=> {
+        
+        
+     //   console.log(" this.bordingdetails", datasnew);
+
+        console.log(datas,'datas');
+         this.vacationdata = datas; 
+         console.log("this.vacationdata",this.vacationdata);
+         this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['heading']);
+         this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['left_content']);
+         this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['right_content']);
+         this.footersection = JSON.stringify(this.vacationdata['footersection']);
+         this.left_content_bottom = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['left_content_bottom']);
+         this.right_content_bottom = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['right_content_bottom']);
+        this.faqheading = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['faqsection']['heading']);
+         this.faq_question = this.vacationdata.faqsection.faqs.length/2;
+       let len =   this.vacationdata.faqsection.faqs.length/2;
+       let right = [];
+       console.log(this.vacationdata.faqsection.faqs.length,len,'len')
+     
+         for(let i=0;i<len;i++){
+          console.log(i,'i');
+          this.rightfaq.push(this.vacationdata.faqsection.faqs[i]);
+         }
+        
+         for(let j = len;j<this.vacationdata.faqsection.faqs.length;j++){
+          this.leftfaq.push(this.vacationdata.faqsection.faqs[j]);
+         }
+       
+         let datasnew = datas;
+         this.bordingdetails = datasnew.details.images;
+         console.log(this.bordingdetails[0].image);
+        // this.bordingdetails = datasnew;
+         //console.log("faq_question", this.faq_question);
+         this.loading = false;
+      });
+  
+      
     
   }
 

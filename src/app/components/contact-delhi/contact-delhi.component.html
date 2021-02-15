@@ -1,3 +1,6 @@
+<div id="preloader" *ngIf="loading">
+   <div id="status">&nbsp;</div>
+</div>
 <div class="dc_pg_spcHead">
     <div class="main-container">
        <div class="dc_pgHead_wrap text-center" style="background-image:url(/assets/images/head-bg.jpg);">
@@ -62,9 +65,9 @@
                    E-556, Greater Kailash Part-II, New Delhi – 110048
                 </div>
                 <div [innerHTML]="contacts"></div>
-                <div class="btnSec">
+                <div ngbDropdown class="btnSec ">
                    <div class="btnSec_wra d-inline">
-                      <a href="#" class="ml-0 pagebtn pagebtnblue f-w-B">
+                      <a  href="javascript:void(0)"  class="ml-0 pagebtn pagebtnblue f-w-B " ngbDropdownToggle>
                       {{contact.details.button_1_text}}
                       </a>
                    </div>

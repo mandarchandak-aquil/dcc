@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 // import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { MetaServiceService } from '../../common/meta-service.service';
 @Component({
   selector: 'app-aboutus',
   templateUrl: './aboutus.component.html',
   styleUrls: ['./aboutus.component.css', "../../common/style.css"]
 })
 export class AboutusComponent implements OnInit {
-
+  loading :boolean = true;  
   slideConfig = {
     infinite: true,
     slidesToShow: 3,
@@ -56,9 +56,10 @@ export class AboutusComponent implements OnInit {
   //   'useTransform': true,
   //   'cssEase': 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
   // };
-
-  slides = [342, 453, 846, 855, 234, 564, 744, 243];
-
+// 
+ // slides = [342, 453, 846, 855, 234, 564, 744, 243];
+ slides : any =[];
+ 
   public aboutData : any;
   heading: any;
   content:any;
@@ -89,9 +90,10 @@ export class AboutusComponent implements OnInit {
   support: any =[];
   supporticon: any = [];
   footersection: any;
-  constructor(private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
+  constructor(private sanitizer: DomSanitizer,private meta : MetaServiceService, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.MetaTags();
     this.aboutData = this.route.snapshot.data['aboutData'];
     console.log(this.aboutData,"this.aboutData")
     this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['heading']);
@@ -121,12 +123,23 @@ export class AboutusComponent implements OnInit {
     this.supportcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['content']);
     this.support = this.aboutData['oursupportsections'];
     this.supporticon = this.aboutData['oursupportsections']['icons'];
+    this.slides  = this.aboutData.testimonialssection.testimonials;
     this.footersection = JSON.stringify(this.aboutData['footersection']);
    
   }
 
   getContent(param:any){
     this.testimonialcontent = this.sanitizer.bypassSecurityTrustHtml(param);   
+  }
+  MetaTags(){
+    let dataReq = {
+      "page": "about",
+      "id": ""
+    }
+    this.meta.getProduct(dataReq).subscribe(data => {
+        this.meta.updateMetaTags(data['seodata']);
+        this.loading = false;
+    });
   }
   
 

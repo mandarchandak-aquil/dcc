@@ -24,7 +24,7 @@ export class VacationBoardingResolver implements Resolve<any> {
    console.log(this.activeroute.snapshot.paramMap.get('index'),"service id");
   //  this.activeroute.snapshot.paramMap.get('index')
         let req = {
-            "serviceid": 459
+            "serviceid": "cardiology"
         }
         return this.http.post<any>(this.apiurl+'servicedetailspage/v1', JSON.stringify(req), httpOptions).pipe(
         map( (dataFromApi) => dataFromApi ),

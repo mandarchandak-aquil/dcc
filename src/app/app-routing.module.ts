@@ -47,7 +47,7 @@ const routes: Routes = [
       { path: 'Team-Details', 
         loadChildren: () => import('./components/team-details/team-details.module').then(m => m.TeamDetailsModule) 
       },  
-      { path: 'ourservices/vacation-boarding/:index', 
+      { path: 'ourservices/service-details', 
         loadChildren: () => import('./components/vacation-boarding/vacation-boarding.module').then(m => m.VacationBoardingModule) 
       },
     ],

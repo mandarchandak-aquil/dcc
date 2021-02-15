@@ -1,3 +1,6 @@
+
+
+
 // Fixed Header
 $(window).scroll(function(){
 if ($(window).scrollTop() >= 1) {
@@ -18,6 +21,13 @@ speed: 1000,
 autoplaySpeed: 8000,
 dots:true,
 centerMode: true,    
+responsive: [  {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,       
+      }
+    }]
 
 
 });
@@ -26,3 +36,10 @@ centerMode: true,
 $(".getDirection").click(function(){
   $(".directionList").toggleClass("directionShow");
 });
+
+//Loader
+  $(window).on('load', function() {
+    $('#status').fadeOut();
+    $('#preloader').delay(150).fadeOut('fast'); 
+    $('body').delay(50).css({'overflow':'visible'});
+  })

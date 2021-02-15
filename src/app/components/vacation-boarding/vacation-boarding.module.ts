@@ -5,6 +5,7 @@ import {LayoutModule} from "../../layout/layout.module";
 
 import { VacationBoardingRoutingModule } from './vacation-boarding-routing.module';
 import { VacationBoardingComponent } from './vacation-boarding.component';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { VacationBoardingComponent } from './vacation-boarding.component';
   imports: [
     CommonModule,
     VacationBoardingRoutingModule,
-    LayoutModule
+    LayoutModule,
+    NgbAccordionModule,
   ]
 })
 export class VacationBoardingModule { }
