@@ -9,11 +9,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HeaderComponent implements OnInit {
   public headerData: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.headerData = this.route.snapshot.data['headerData'];
-    console.log(this.headerData, "headerData");   
+    console.log(this.headerData, "headerData");    
   }
 
 }

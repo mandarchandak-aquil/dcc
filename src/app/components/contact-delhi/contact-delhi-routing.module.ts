@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ContactDelhiComponent } from './contact-delhi.component';
-import { ContactdelhiResolver } from '../../common/resolver/contactdelhi-resolver.service';
+// import { ContactdelhiResolver } from '../../common/resolver/contactdelhi-resolver.service';
 const routes: Routes = [{ path: '', component: ContactDelhiComponent,
-resolve: {
-  contact: ContactdelhiResolver
-}
+// resolve: {
+//   contact: ContactdelhiResolver
+// }
  }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [ContactdelhiResolver] 
+  // providers: [ContactdelhiResolver] 
 })
 export class ContactDelhiRoutingModule { }

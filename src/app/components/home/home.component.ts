@@ -12,7 +12,7 @@ import { MetaServiceService } from '../../common/meta-service.service';
 })
 export class HomeComponent implements OnInit {
   public homepage: any;
-  loading :boolean = true;  
+  loading :boolean = false;  
   topsectionContent:any;
   aboutsectionContent:any;
   servicesectionContent:any;
@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   constructor(public api_page: HomeService,private meta : MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    
     this.MetaTags();
     this.homepage = this.route.snapshot.data['homepage'];
     console.log(this.homepage, "homepage");    
@@ -52,13 +53,14 @@ export class HomeComponent implements OnInit {
    
   }
   MetaTags(){
+    // this.loading = true;
     let dataReq = {
       "page": "home",
       "id": ""
     }
     this.meta.getProduct(dataReq).subscribe(data => {
         this.meta.updateMetaTags(data['seodata']);
-        this.loading = false;
+        // this.loading = false;
     });
   }
 

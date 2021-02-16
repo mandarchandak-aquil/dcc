@@ -3,6 +3,7 @@ import { DomSanitizer} from '@angular/platform-browser';
 // import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MetaServiceService } from '../../common/meta-service.service';
+import { CommonService } from '../../common/services/common/common.service';
 @Component({
   selector: 'app-ourteam',
   templateUrl: './ourteam.component.html',
@@ -18,18 +19,37 @@ export class OurteamComponent implements OnInit {
   short_desc:any;
   locations: any;
   footersection: any;
-  constructor(private sanitizer: DomSanitizer,private meta : MetaServiceService, public router: Router, private route: ActivatedRoute) { }
+  constructor(private sanitizer: DomSanitizer, public apiCall : CommonService, private meta : MetaServiceService, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.getDataInit();
     this.MetaTags();
-    this.teamsdata = this.route.snapshot.data['teamsdata'];
-    console.log(this.teamsdata, "teamsdata");    
-    this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['heading']);
-    this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['left_content']);
-    this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['right_content']);
-    this.doctors = this.teamsdata['details']['doctors'];
-    this.locations = this.teamsdata['details']['locations'];
-    this.footersection = JSON.stringify(this.teamsdata['footersection'])
+    // this.teamsdata = this.route.snapshot.data['teamsdata'];
+    // console.log(this.teamsdata, "teamsdata");    
+    // this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['heading']);
+    // this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['left_content']);
+    // this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['right_content']);
+    // this.doctors = this.teamsdata['details']['doctors'];
+    // this.locations = this.teamsdata['details']['locations'];
+    // this.footersection = JSON.stringify(this.teamsdata['footersection'])
+  }
+
+  getDataInit(){
+    let dataReq = {
+      "pagename": "our team"
+    }
+    this.apiCall.teamsData(dataReq).subscribe(data => {
+      if(data){
+        this.teamsdata = data;
+          console.log(this.teamsdata, "teamsdata");    
+      this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['heading']);
+      this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['left_content']);
+      this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.teamsdata['details']['right_content']);
+      this.doctors = this.teamsdata['details']['doctors'];
+      this.locations = this.teamsdata['details']['locations'];
+      this.footersection = JSON.stringify(this.teamsdata['footersection'])
+      }   
+    });    
   }
 
 

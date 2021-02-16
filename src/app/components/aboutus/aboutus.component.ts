@@ -3,6 +3,7 @@ import { DomSanitizer} from '@angular/platform-browser';
 // import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MetaServiceService } from '../../common/meta-service.service';
+import { CommonService } from '../../common/services/common/common.service';
 @Component({
   selector: 'app-aboutus',
   templateUrl: './aboutus.component.html',
@@ -91,42 +92,90 @@ export class AboutusComponent implements OnInit {
   support: any =[];
   supporticon: any = [];
   footersection: any;
-  constructor(private sanitizer: DomSanitizer,private meta : MetaServiceService, public router: Router, private route: ActivatedRoute) { }
+  constructor(private sanitizer: DomSanitizer,public apiCall : CommonService, private meta : MetaServiceService, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.getDataInit();
     this.MetaTags();
-    this.aboutData = this.route.snapshot.data['aboutData'];
-    console.log(this.aboutData,"this.aboutData")
-    this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['heading']);
-    this.content =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['content']);
-    this.advisorheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['heading']);
-    this.advisorcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['content']);
-    this.advisors = this.aboutData['ouradvisorssection']['advisors'];
-    this.missionheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourmissionsection']['heading']);
-    this.missioncontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourmissionsection']['content']);
-    this.mission = this.aboutData['ourmissionsection'];
-    this.visionheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvisionsection']['heading']);
-    this.visioncontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvisionsection']['content']);
-    this.vision = this.aboutData['ourvisionsection'];
-    this.valueheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvaluessection']['heading']);
-    this.valuecontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvaluessection']['content']);
-    this.value = this.aboutData['ourvaluessection'];
-    this.valueicons = this.aboutData['ourvaluessection']['icons'];
-    this.testimonialheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['testimonialssection']['heading']);   
-    this.testimonial = this.aboutData['testimonialssection']['testimonials'];
-    this.technologyheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourtechnologiessection']['heading']);
-    this.technologycontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourtechnologiessection']['content']);
-    this.technology = this.aboutData['ourtechnologiessection'];
-    this.softwareheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursoftwaresections']['heading']);
-    this.softwarecontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursoftwaresections']['content']);
-    this.software = this.aboutData['oursoftwaresections'];
-    this.supportheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['heading']);
-    this.supportcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['content']);
-    this.support = this.aboutData['oursupportsections'];
-    this.supporticon = this.aboutData['oursupportsections']['icons'];
-    this.slides  = this.aboutData.testimonialssection.testimonials;
-    this.footersection = JSON.stringify(this.aboutData['footersection']);
+    // this.aboutData = this.route.snapshot.data['aboutData'];
+    // console.log(this.aboutData,"this.aboutData")
+    // this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['heading']);
+    // this.content =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['content']);
+    // this.advisorheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['heading']);
+    // this.advisorcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['content']);
+    // this.advisors = this.aboutData['ouradvisorssection']['advisors'];
+    // this.missionheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourmissionsection']['heading']);
+    // this.missioncontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourmissionsection']['content']);
+    // this.mission = this.aboutData['ourmissionsection'];
+    // this.visionheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvisionsection']['heading']);
+    // this.visioncontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvisionsection']['content']);
+    // this.vision = this.aboutData['ourvisionsection'];
+    // this.valueheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvaluessection']['heading']);
+    // this.valuecontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvaluessection']['content']);
+    // this.value = this.aboutData['ourvaluessection'];
+    // this.valueicons = this.aboutData['ourvaluessection']['icons'];
+    // this.testimonialheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['testimonialssection']['heading']);   
+    // this.testimonial = this.aboutData['testimonialssection']['testimonials'];
+    // this.technologyheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourtechnologiessection']['heading']);
+    // this.technologycontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourtechnologiessection']['content']);
+    // this.technology = this.aboutData['ourtechnologiessection'];
+    // this.softwareheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursoftwaresections']['heading']);
+    // this.softwarecontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursoftwaresections']['content']);
+    // this.software = this.aboutData['oursoftwaresections'];
+    // this.supportheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['heading']);
+    // this.supportcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['content']);
+    // this.support = this.aboutData['oursupportsections'];
+    // this.supporticon = this.aboutData['oursupportsections']['icons'];
+    // this.slides  = this.aboutData.testimonialssection.testimonials;
+    // this.footersection = JSON.stringify(this.aboutData['footersection']);
    
+  }
+
+  getDataInit(){
+    let dataReq = {
+      "pagename": "about us"
+  }
+
+  this.apiCall.aboutData(dataReq).subscribe(data => {
+
+    if(data){
+      this.aboutData = data;
+      console.log(this.aboutData,"this.aboutData")
+      this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['heading']);
+      this.content =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['content']);
+      this.advisorheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['heading']);
+      this.advisorcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['content']);
+      this.advisors = this.aboutData['ouradvisorssection']['advisors'];
+      this.missionheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourmissionsection']['heading']);
+      this.missioncontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourmissionsection']['content']);
+      this.mission = this.aboutData['ourmissionsection'];
+      this.visionheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvisionsection']['heading']);
+      this.visioncontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvisionsection']['content']);
+      this.vision = this.aboutData['ourvisionsection'];
+      this.valueheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvaluessection']['heading']);
+      this.valuecontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvaluessection']['content']);
+      this.value = this.aboutData['ourvaluessection'];
+      this.valueicons = this.aboutData['ourvaluessection']['icons'];
+      this.testimonialheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['testimonialssection']['heading']);   
+      this.testimonial = this.aboutData['testimonialssection']['testimonials'];
+      this.technologyheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourtechnologiessection']['heading']);
+      this.technologycontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourtechnologiessection']['content']);
+      this.technology = this.aboutData['ourtechnologiessection'];
+      this.softwareheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursoftwaresections']['heading']);
+      this.softwarecontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursoftwaresections']['content']);
+      this.software = this.aboutData['oursoftwaresections'];
+      this.supportheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['heading']);
+      this.supportcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['content']);
+      this.support = this.aboutData['oursupportsections'];
+      this.supporticon = this.aboutData['oursupportsections']['icons'];
+      this.slides  = this.aboutData.testimonialssection.testimonials;
+      this.footersection = JSON.stringify(this.aboutData['footersection']);
+    }
+   
+});
+
+
+    
   }
 
   getContent(param:any){

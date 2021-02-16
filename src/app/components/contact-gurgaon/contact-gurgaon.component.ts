@@ -4,6 +4,8 @@ import { DomSanitizer} from '@angular/platform-browser';
 // import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MetaServiceService } from '../../common/meta-service.service';
+import { CommonService } from '../../common/services/common/common.service';
+
 @Component({
   selector: 'app-contact-gurgaon',
   templateUrl: './contact-gurgaon.component.html',
@@ -14,17 +16,38 @@ export class ContactGurgaonComponent implements OnInit {
   contact :any =[];
   contacts :any;
   footersection: any = [];
-  constructor( private sanitizer: DomSanitizer,private meta : MetaServiceService, public router: Router, private route: ActivatedRoute) { }
+  constructor( private sanitizer: DomSanitizer,private meta : MetaServiceService, public router: Router, private route: ActivatedRoute, public comman:CommonService,) { }
 
 
   ngOnInit(): void {
+    this.getDataInit();
+  //   this.contact = this.route.snapshot.data['contact'];
+  //  this.contacts =  this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
+  //   console.log(this.contacts, "contact");   
+  //   this.footersection = JSON.stringify(this.contact['footersection']) 
    
-    this.contact = this.route.snapshot.data['contact'];
-   this.contacts =  this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
-    console.log(this.contacts, "contact");   
-    this.footersection = JSON.stringify(this.contact['footersection']) 
-    this.MetaTags();
+    // this.MetaTags();
   }
+
+  getDataInit(){
+    this.loading = true;
+    let dataReq = {
+      "contactid": "gurgaon"
+  }
+  
+    this.comman.contactDelhiData(dataReq).subscribe(data => {
+      this.loading = false;  
+      if(data){
+        this.contact = data;        
+        this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
+        console.log(this.contact, "contact");    
+        this.footersection = JSON.stringify(this.contact['footersection']);   
+        this.MetaTags();
+      }  
+      
+  });    
+  }
+
 
   MetaTags(){
     

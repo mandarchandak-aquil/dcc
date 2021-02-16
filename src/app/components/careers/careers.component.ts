@@ -26,6 +26,7 @@ export class CareersComponent implements OnInit {
   constructor(public comman:CommonService,private meta : MetaServiceService, private formBuilder: FormBuilder, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getDataInit();
     this.MetaTags();
     this.career = this.formBuilder.group({
         name : ['',[Validators.required]],
@@ -35,10 +36,28 @@ export class CareersComponent implements OnInit {
         resume: ['',[Validators.required]],
         // fileSource: ['',[Validators.required]],
     });
-    this.contact = this.route.snapshot.data['contact'];
-    this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
-    this.footersection = JSON.stringify(this.contact['footersection']) 
+    // this.contact = this.route.snapshot.data['contact'];
+    // this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
+    // this.footersection = JSON.stringify(this.contact['footersection']) 
+    //  console.log(this.contact, "contact");    
+  }
+
+
+  getDataInit(){
+    let dataReq = {
+      "pagename": "careers"
+  }
+  this.comman.carerrsData(dataReq).subscribe(data => {
+    if(data){
+      this.contact = data;
+       this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
+      this.footersection = JSON.stringify(this.contact['footersection']) 
      console.log(this.contact, "contact");    
+    }    
+});
+
+
+    
   }
   // public onFileChanged(event: any) {
   //   if (event.target.files && event.target.files.length) {

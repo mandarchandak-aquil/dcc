@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonService } from '../../common/services/common/common.service';
 import { MetaServiceService } from '../../common/meta-service.service';
+
 @Component({
   selector: 'app-team-details',
   templateUrl: './team-details.component.html',
@@ -40,8 +41,9 @@ export class TeamDetailsComponent implements OnInit {
         this.footersection = JSON.stringify(this.doctorsdata['footersection'])
         console.log("doctorsdetails",this.doctorsdetails);
         this.loading = false;
+        this.MetaTags(); 
       });   
-      this.MetaTags(); 
+      
   }
   shows(id:any){
     this.show = id;

@@ -68,8 +68,9 @@ export class VacationBoardingComponent implements OnInit {
         // this.bordingdetails = datasnew;
          //console.log("faq_question", this.faq_question);
          this.loading = false;
+         this.MetaTags();
       });
-     this.MetaTags();
+    
   }
 
   MetaTags(){  

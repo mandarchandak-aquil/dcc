@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, from } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError,map } from 'rxjs/operators';
 import { environment } from "../../../../environments/environment";
 
 const httpOptions = {
@@ -64,6 +64,85 @@ export class CommonService {
       catchError(this.handleError)
     )
   }
+
+
+  serviceData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'servicespage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  aboutData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'aboutpage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  teamsData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'teampage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  mediaData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'medianewspage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  carerrsData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'careerspage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  contactDelhiData(req:any) : Observable<any>{
+
+    return this.http.post<any>(this.apiurl+'contactdetails/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+    // return this.http.post<any>(this.apiurl+'contactdetails/v1', JSON.stringify(req), httpOptions).pipe(
+    //   map( (dataFromApi) => dataFromApi ),
+    //   catchError(this.handleError)
+    // )
+  }
+
+  contactGurgaonData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'contactdetails/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  teamDetails(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'doctordetailspage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  serviceDetails(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'servicedetailspage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
 
    // Error handling 
    handleError(error:any) {
