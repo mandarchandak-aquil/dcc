@@ -42,7 +42,7 @@
        <div class="main-container">
           <div class="btnSec text-center">
              <div class="btnSec_wra d-inline" *ngFor="let cn of contact.details.contactlist">
-                <a href="{{cn.slug}}" class="ml-0 pagebtn pagebtngreen f-w-B">
+                <a href="{{cn.slug}}" class="pagebtn pagebtngreen f-w-B">
                 {{cn.name}}
                 </a>
              </div>
@@ -92,7 +92,7 @@
                    <div class="col-md-12">
                       <div class="commonLinks text-center contactGet">
                          <ul class="list-unstyled d-flex flex-wrap">
-                            <li class="contactList-item">
+                            <!-- <li class="contactList-item">
                                <div class="dropSec position-relative">
                                   <a href="javascript:void(0)"
                                      class="ml-0 pagebtn pagebtnblue dc_btn_min f-w-B getDirection">{{contact.details.button_1_text}}</a>
@@ -107,7 +107,18 @@
                                      </ul>
                                   </div>
                                </div>
-                            </li>
+                            </li> -->
+                            <li class="contactList-item">
+                              <div ngbDropdown class="dropSec position-relative directList">
+                                <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle id="dropdownMenuButton">{{contact.details.button_1_text}}</a>
+               
+                                <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
+                                   <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of contact.details.locations">
+                                      <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
+                                   </ul>
+                                </div>
+                              </div>
+                           </li>
                             <li class="contactList-item"><a href="{{contact.details.button_2_link}}" class="pagebtn dc_btn_min f-w-B">{{contact.details.button_2_text}}</a></li>
                          </ul>
                       </div>

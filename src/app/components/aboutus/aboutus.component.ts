@@ -19,6 +19,7 @@ export class AboutusComponent implements OnInit {
     autoplaySpeed: 8000,
     dots:true,
     centerMode: true, 
+    adaptiveHeight: false,
     responsive: [
       {
         breakpoint: 992,

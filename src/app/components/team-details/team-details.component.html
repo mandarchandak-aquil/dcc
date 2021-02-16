@@ -22,7 +22,7 @@
              <div class="col-md-6">
                 <div class="aboutDCC_wrap">
                    <div class="dccSubTitle f-w-B opacity-5 mrg-b-60 text-uppercase">
-                     {{doctorsdata.designation}}
+                     {{doctorsdata.details.designation}}
                    </div>
                    <div class="mrg-b-30 ">
                       <h2 class="f-w-B headingSec line_H_1" [innerHTML]="heading"></h2>
@@ -33,7 +33,17 @@
                    </div>
                    <ul class="list-unstyled d-flex flex-wrap mt__60 ">
                       <li><a [href]="doctorsdata.details.button_1_link" class="pagebtn dc_btn_min f-w-B">{{doctorsdata.details.button_1_text}}</a></li>
-                      <li><a href="#" class="pagebtn pagebtnblue dc_btn_min f-w-B">{{doctorsdata.details.button_2_text}}</a></li>
+                      <li>
+                        <div ngbDropdown class="dropSec position-relative directList">
+                          <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle id="dropdownMenuButton">{{doctorsdata.details.button_2_text}}</a>
+
+                          <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
+                             <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of doctorsdata.details.locations">
+                                <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
+                             </ul>
+                          </div>
+                        </div>
+                     </li>
                    </ul>
                 </div>
              </div>

@@ -68,17 +68,16 @@
               <ul class="list-unstyled d-flex flex-wrap justify-content-center mt__60 dc_btnList-spc_60">
                  <li><a [href]="teamsdata.details.button_1_link" class="pagebtn dc_btn_min f-w-B">{{teamsdata.details.button_1_text}}</a></li>
                  <li>
-                    <div class="dropSec position-relative">
-                       <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection">{{teamsdata.details.button_2_text}}</a>
-                       <div class="directionList transtn-1">
-                          <ul class="dire_listSec mb-0 list-unstyled" *ngIf="locations">
-                             <li class="list-item" *ngFor="let location of locations"> 
-                               <a [href]="locations.link" class="direLink"> {{location.name}}</a> 
-                              </li>                         
-                          </ul>
-                       </div>
+                  <div ngbDropdown class="dropSec position-relative directList">
+                    <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle id="dropdownMenuButton">{{teamsdata.details.button_2_text}}</a>
+
+                    <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
+                       <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of teamsdata.details.locations">
+                          <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
+                       </ul>
                     </div>
-                 </li>
+                  </div>
+               </li>
               </ul>
            </div>
         </div>

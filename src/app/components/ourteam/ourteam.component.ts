@@ -6,7 +6,7 @@ import { MetaServiceService } from '../../common/meta-service.service';
 @Component({
   selector: 'app-ourteam',
   templateUrl: './ourteam.component.html',
-  styleUrls: ['./ourteam.component.css']
+  styleUrls: ['./ourteam.component.css','../../common/style.css']
 })
 export class OurteamComponent implements OnInit {
   loading :boolean = true; 

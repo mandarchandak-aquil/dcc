@@ -82,11 +82,11 @@
          <div class="col-4">
            <div>Get updates about your pets health and more</div>
            <div class="email-search">
-             <form>
+            <form [formGroup]="email" enctype="multipart/form-data" (ngSubmit)="onSubmit()" >
              <div class="input-group mb-3">
-               <input type="text" class="form-control" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+               <input type="text" class="form-control"  name="email" formControlName="email" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
                <div class="input-group-append">
-                 <button class="btn" type="button">Send</button>
+                 <button class="btn" type="submit">Send</button>
                </div>
              </div>
              </form>

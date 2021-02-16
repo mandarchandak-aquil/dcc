@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer} from '@angular/platform-browser';
+import {  FormBuilder, Validators } from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 
+import { CommonService } from '../../common/services/common/common.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -9,14 +12,18 @@ import { DomSanitizer} from '@angular/platform-browser';
 })
 export class FooterComponent implements OnInit {
   public footerData: any;
+  email: FormGroup;
   address:any;
   phone:any;
   timing:any;
   footerlogocontent:any;
 
-  constructor(private route: ActivatedRoute,private sanitizer: DomSanitizer,) { }
+  constructor(public comman:CommonService,private route: ActivatedRoute,private sanitizer: DomSanitizer,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.email = this.formBuilder.group({
+      email : ['',[Validators.required,Validators.email]],
+    });
     this.footerData = this.route.snapshot.data['footerData'];
     console.log(this.footerData, "footerData");
     
@@ -27,5 +34,10 @@ export class FooterComponent implements OnInit {
 
    
   }
+  onSubmit(){
 
+    this.comman.subscribeform(this.email.value).subscribe(data => {
+   console.log(data,'send');
+  });
+  }
 }

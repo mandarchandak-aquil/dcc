@@ -56,6 +56,15 @@ export class CommonService {
     )
   }
 
+
+  subscribeform(req:any) : Observable<any> { 
+    return this.http.post<any>(this.apiurl+'subscribeform/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
    // Error handling 
    handleError(error:any) {
     let errorMessage = '';

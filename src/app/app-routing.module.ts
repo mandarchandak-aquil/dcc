@@ -50,13 +50,14 @@ const routes: Routes = [
       { path: 'ourservices/service-details', 
         loadChildren: () => import('./components/vacation-boarding/vacation-boarding.module').then(m => m.VacationBoardingModule) 
       },
+      { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
     ],
     resolve: {
       headerData: HeaderResolver, 
       footerData: FooterResolver
     }
   },  
-  { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
+  
   
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },
   

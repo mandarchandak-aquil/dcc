@@ -87,7 +87,7 @@
                                   <div class="input-group ">
                                      <span class="input-group-btn">
                                         <div class="btn btn-default  custom-file-uploader">
-                                           <input type="file" name="resume" formControlName="resume">
+                                           <input type="file" (change)="handleUpload($event)" name="resume" formControlName="resume">
                                            <i class="fa fa-paperclip"></i>
                                         </div>
                                      </span>

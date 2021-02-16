@@ -248,7 +248,7 @@ a:focus, .slick-slide:focus{outline: none}
     text-align:center;
     background-color:#fff;
     top:0;
-    z-index:99;
+    z-index:1050;
     animation:smoothScroll .6s forwards;
     -webkit-box-shadow:0 10px 21px -14px rgba(0,0,0,.2);
     -moz-box-shadow:0 10px 21px -14px rgba(0,0,0,.2);
@@ -550,17 +550,21 @@ font-size: 2.143vw;color: transparent;
     padding: 0;
     border-bottom: solid 1px #E9F0F2;
     background-color: transparent;
+    margin-bottom: 1px !important;
 }
 .faq_card .btn-header-link {
     font-size: 1.514vw;
     letter-spacing: normal;
     padding: 0;
-    padding-bottom: 1.071vw;    padding-top: 1.071vw;
+    padding-bottom: 1.071vw;    padding-top: 1.071vw;width:100%;
+    text-align: left;
 }
 .faq_card .card-body {
     padding: 1.071vw 0;
 }
 .faq_card .btn-header-link:focus{outline: none;box-shadow: none;}
+
+
 
 /*Media and News*/
 .f-s-24{font-size: 1.714vw;}
@@ -756,6 +760,8 @@ font-size: 2.143vw;color: transparent;
 /* Loader CSS */
 #preloader {position: fixed;top: 0;left: 0; right: 0;bottom: 0;background-color: #fff; z-index: 9999999;} 
 #status { width: 10.417vw; height: 10.417vw;position: absolute;left: 50%;top: 50%;background-image: url(../images/spinner.svg);background-repeat: no-repeat;background-position: center;  margin: -5.208vw 0 0 -5.208vw;}
+
+.testimonials.dc_testiArrow .slick-initialized .slick-slide{height: 32.714vw;}
 
 @keyframes smoothScroll{0%{transform:translateY(-40px);-ms-transform:translateY(-40px);-o-transform:translateY(-40px)}
 100%{transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0)}

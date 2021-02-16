@@ -7,7 +7,7 @@ import { MetaServiceService } from '../../common/meta-service.service';
 @Component({
   selector: 'app-vacation-boarding',
   templateUrl: './vacation-boarding.component.html',
-  styleUrls: ['./vacation-boarding.component.css']
+  styleUrls: ['./vacation-boarding.component.css',"../../common/style.css"]
 })
 export class VacationBoardingComponent implements OnInit {
   loading :boolean = true;
@@ -23,11 +23,13 @@ export class VacationBoardingComponent implements OnInit {
   faq_question: any = [];
   leftfaq: any = [];
   rightfaq: any = [];
+  public slug:any;
   constructor(public comman:CommonService,private meta : MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
   ngOnInit() {
 
     console.log(this.router.url.replace("/ourservices/service-details/", ""))
     let data = this.router.url.replace("/ourservices/service-details/", "");
+    this.slug = data;
     let req = {
       "serviceid": data
     }
@@ -67,9 +69,19 @@ export class VacationBoardingComponent implements OnInit {
          //console.log("faq_question", this.faq_question);
          this.loading = false;
       });
-  
-      
-    
+     this.MetaTags();
+  }
+
+  MetaTags(){  
+    let dataReq = {
+      "page": "services",
+      "id": this.slug
+    }
+    console.log("slug",dataReq);
+    this.meta.getProduct(dataReq).subscribe(data => {
+        this.meta.updateMetaTags(data['seodata']);
+        this.loading = false;
+    });
   }
 
 }

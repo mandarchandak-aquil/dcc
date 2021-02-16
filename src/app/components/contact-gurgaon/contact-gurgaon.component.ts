@@ -7,7 +7,7 @@ import { MetaServiceService } from '../../common/meta-service.service';
 @Component({
   selector: 'app-contact-gurgaon',
   templateUrl: './contact-gurgaon.component.html',
-  styleUrls: ['./contact-gurgaon.component.css']
+  styleUrls: ['./contact-gurgaon.component.css',"../../common/style.css"]
 })
 export class ContactGurgaonComponent implements OnInit {
   loading :boolean = true;

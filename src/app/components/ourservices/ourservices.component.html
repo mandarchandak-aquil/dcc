@@ -62,17 +62,17 @@
                    <ul class="list-unstyled d-flex flex-wrap justify-content-center dc_btnList-spc_60">
                       <li><a [href]="servicedata.details.button_1_link" class="pagebtn dc_btn_min f-w-B">{{servicedata.details.button_1_text}}</a></li>
                       <li>
-                         <div class="dropSec position-relative">
-                            <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection">{{servicedata.details.button_2_text}}</a>
-                            <div class="directionList transtn-1">
-                               <ul class="dire_listSec mb-0 list-unstyled">
-                                  <li class="list-item"> <a href="#" class="direLink"> Sec 23, Gurgaon </a> </li>
-                                  <li class="list-item"> <a href="#" class="direLink"> GK-2, New Delhi </a> </li>
-                               </ul>
-                            </div>
+                         <div ngbDropdown class="dropSec position-relative directList">
+                           <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle id="dropdownMenuButton">{{servicedata.details.button_2_text}}</a>
+
+                           <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
+                              <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of servicedata.details.locations">
+                                 <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
+                              </ul>
+                           </div>
                          </div>
                       </li>
-                   </ul>
+                   </ul>                  
                 </div>
              </div>
           </div>

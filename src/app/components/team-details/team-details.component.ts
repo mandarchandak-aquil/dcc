@@ -4,10 +4,11 @@ import { DomSanitizer} from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonService } from '../../common/services/common/common.service';
+import { MetaServiceService } from '../../common/meta-service.service';
 @Component({
   selector: 'app-team-details',
   templateUrl: './team-details.component.html',
-  styleUrls: ['./team-details.component.css']
+  styleUrls: ['./team-details.component.css','../../common/style.css']
 })
 export class TeamDetailsComponent implements OnInit {
   loading :boolean = true;
@@ -20,11 +21,13 @@ export class TeamDetailsComponent implements OnInit {
   show:any=1;
   doctorcontent: any;
   footersection: any;
-  constructor(private http: HttpClient,public comman:CommonService,private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
+  public slug:any;
+  constructor(private http: HttpClient,private meta : MetaServiceService,public comman:CommonService,private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log(this.router.url.replace("/Team-Details/", ""))
     let data = this.router.url.replace("/Team-Details/", "");
+    this.slug = data;
     let req = {
       "doctorid": data
     }
@@ -37,10 +40,23 @@ export class TeamDetailsComponent implements OnInit {
         this.footersection = JSON.stringify(this.doctorsdata['footersection'])
         console.log("doctorsdetails",this.doctorsdetails);
         this.loading = false;
-      });    
+      });   
+      this.MetaTags(); 
   }
   shows(id:any){
     this.show = id;
+  }
+
+  MetaTags(){  
+    let dataReq = {
+      "page": "doctors",
+      "id": this.slug
+    }
+    console.log("slug",dataReq);
+    this.meta.getProduct(dataReq).subscribe(data => {
+        this.meta.updateMetaTags(data['seodata']);
+        this.loading = false;
+    });
   }
 
   getsentize(param:any){
