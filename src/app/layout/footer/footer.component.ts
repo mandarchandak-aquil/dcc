@@ -17,6 +17,7 @@ export class FooterComponent implements OnInit {
   phone:any;
   timing:any;
   footerlogocontent:any;
+  submitted = false;
 
   constructor(public comman:CommonService,private route: ActivatedRoute,private sanitizer: DomSanitizer,private formBuilder: FormBuilder) { }
 
@@ -34,9 +35,21 @@ export class FooterComponent implements OnInit {
 
    
   }
-  onSubmit(){
 
+  get f() { return this.email.controls; }
+
+
+  // get name() { return this.email.get('email'); }
+
+  onSubmit(){
+    this.submitted = true;
+    if (this.email.invalid) {
+      return;
+    }
     this.comman.subscribeform(this.email.value).subscribe(data => {
+      if(data['response'] == 200){
+        this.email.reset();
+      }
    console.log(data,'send');
   });
   }

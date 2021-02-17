@@ -86,9 +86,22 @@
              <div class="input-group mb-3">
                <input type="text" class="form-control"  name="email" formControlName="email" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
                <div class="input-group-append">
-                 <button class="btn" type="submit">Send</button>
+                 <button class="btn" type="submit" [disabled]="!email.valid">Send</button>
                </div>
              </div>
+            <!-- f.email.invalid && (f.email.dirty || f.email.touched) -->
+             <!-- hello {{f.email.errors.required}}  how {{f.email.errors.email}} -->
+             <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" >
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+
+             
+
+
+              <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+     
+              </div> -->
              </form>
            </div>
          </div>

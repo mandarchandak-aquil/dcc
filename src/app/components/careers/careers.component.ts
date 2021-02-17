@@ -20,7 +20,7 @@ export class CareersComponent implements OnInit {
   contacts :any;
   footersection: any;
   fileBase64 : any;
-  imageError : any;
+  imageError : Number = 0;
   // certEscolar: File ;
 
   constructor(public comman:CommonService,private meta : MetaServiceService, private formBuilder: FormBuilder, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
@@ -42,6 +42,7 @@ export class CareersComponent implements OnInit {
     //  console.log(this.contact, "contact");    
   }
 
+  get f() { return this.career.controls; }
 
   getDataInit(){
     let dataReq = {
@@ -77,6 +78,7 @@ export class CareersComponent implements OnInit {
 
 
   handleUpload(event : any) {
+    this.imageError = 0;
     this.loading = true;
     console.log("file Upload", event.target.files[0], "size is", event.target.files[0].size )
     // const max_size = 625000; 253104
@@ -84,7 +86,8 @@ export class CareersComponent implements OnInit {
     // const max_height = 15200;
     // const max_width = 25600;
 
-    if (event.target.files[0].size <= 625000) {
+    if (event.target.files[0].size <= 250000) {
+      this.imageError = 0;
       // console.log(event, "file Upload", event.target.files[0], "size is", event.target.files[0].size )
       const file = event.target.files[0];
       const reader = new FileReader();
@@ -95,6 +98,7 @@ export class CareersComponent implements OnInit {
           console.log(this.fileBase64, "base 64 bytes");
       };
     }else{
+      this.loading = false;
       this.imageError = 1;  // 1 for max size exceed;
       console.log("size exceed");
     }
