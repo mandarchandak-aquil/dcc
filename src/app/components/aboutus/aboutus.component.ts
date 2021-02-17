@@ -21,13 +21,29 @@ export class AboutusComponent implements OnInit {
     dots:true,
     centerMode: true, 
     adaptiveHeight: false,
-    responsive: [  {
-      breakpoint: 769,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,       
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll:1,
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll:1,
+        }
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
       }
-    }]
+    ]
   };
 
   // slideConfig = {

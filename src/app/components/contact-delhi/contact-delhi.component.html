@@ -41,7 +41,7 @@
     </div>
     <div class="dc_spacer_t_30 dc_spacer_b_30" *ngIf="contact.details">
        <div class="main-container">
-          <div class="btnSec text-center pageCont">
+          <div class="btnSec text-center">
              <div class="btnSec_wra d-inline" *ngFor="let cn of contact.details.contactlist">
                 <a [href]="'contact/'+cn.slug" class="pagebtn pagebtngreen f-w-B">
                 {{cn.name}}
@@ -53,20 +53,6 @@
     <div class="dc_spacer_t_30 dc_spacer_b_30">
        <div class="main-container">
           <div class="row row_gutter_30">
-            <div class="col-md-6 order-md-2">
-                <div class="row rowSpace">
-                   <div class="col-6 col-md-12">
-                      <div class="teamPage_wrap mar-b-30">
-                         <img src="{{contact.details.image_1.link}}" class="w-100">
-                      </div>
-                   </div>
-                   <div class="col-6 col-md-12">
-                      <div class="teamPage_wrap mar-b-30">
-                         <img src="{{contact.details.image_2.link}}" class="w-100">
-                      </div>
-                   </div>
-                </div>
-             </div>
              <div class="col-md-6">
                 <div class="careers-form">
                    <div class="dccSubTitle f-w-B opacity-5 mrg-b-30 text-uppercase">

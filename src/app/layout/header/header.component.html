@@ -1,4 +1,3 @@
-
 <header class="headerSec">
     <div class="main-container container">
        <div class="cstNavbar_sec">
@@ -6,7 +5,9 @@
              <a class="navbar-brand navbarLogo" href="/">
              <img class="w-100" [src]="headerData.logo" alt="DCC Logo">
              </a>
-             
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+             <span class="navbar-toggler-icon"></span>
+             </button>
              <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto" *ngIf="headerData">
                     <li class="nav-item" *ngFor="let data of headerData.mainmenu;let i = index">
@@ -31,21 +32,11 @@
                    </li> -->
                 </ul>
              </div>
-
-             <div class="mobMenu_sec">
-                   <div class="mobSec d-flex">
-                     <div class="emergencyBtn_sec">
-                     <a href="#" class="emergencyLink font-rubik f-w-M transtn-1">
-                     Emergency
-                     </a>
-                  </div>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                  <span class="navbar-toggler-icon"></span>
-                  </button>
-                  </div>
-                 </div>
-
-            
+             <div class="emergencyBtn_sec">
+                <a href="#" class="emergencyLink font-rubik f-w-M transtn-1">
+                  Emergency
+                </a>
+             </div>
           </nav>
        </div>
     </div>

@@ -40,7 +40,7 @@
     </div>
     <div class="dc_spacer_t_30 dc_spacer_b_30">
        <div class="main-container">
-          <div class="btnSec text-center pageCont">
+          <div class="btnSec text-center">
              <div class="btnSec_wra d-inline" *ngFor="let cn of contact.details.contactlist">
                 <a href="{{cn.slug}}" class="pagebtn pagebtngreen f-w-B">
                 {{cn.name}}
@@ -63,13 +63,13 @@
        <div class="main-container">
           <div class="row row_gutter_30">
              <div class="col-md-6">
-                <div class="row rowSpace">
-                   <div class="col-6 col-md-12">
+                <div class="row">
+                   <div class="col-12">
                       <div class="teamPage_wrap mar-b-30">
                          <img src="{{contact.details.image_1.link}}" class="w-100">
                       </div>
                    </div>
-                   <div class="col-6 col-md-12">
+                   <div class="col-12">
                       <div class="teamPage_wrap mar-b-30">
                          <img src="{{contact.details.image_2.link}}" class="w-100">
                       </div>

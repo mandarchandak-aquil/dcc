@@ -24,7 +24,7 @@
                 </div>
              </div>
           </div>
-          <div class="col-md-6 align-self-end">
+          <div class="col-md-6">
              <div class="bannerImg_sec">
                 <img [src]="homepage.topsection.image.link" class="w-100" [alt]="homepage.topsection.image.alt" />
              </div>
@@ -209,17 +209,9 @@
        <div class="row" >
           <div class="col-sm-6 col-md-4" *ngFor="let blog of homepage.pethealthsection.blogs;">
              <div class="pethealth-box">
-                <div class="img-wrap">
-                  <a href="#" class="dc_blogLink d-block h-100">
-                  <img [src]="blog.image.link" class="w-100" [alt]="blog.image.alt"/>
-                </a>
-                </div>
+                <div class="img-wrap"><img [src]="blog.image.link" class="w-100" [alt]="blog.image.alt"/></div>
                 <div class="detail">{{blog.category}} <span>{{blog.date}}</span></div>
-                <div class="title">
-                <a href="#" class="dc_txtLink d-block transtn-1">
-                {{blog.category}}
-              </a>
-            </div>
+                <div class="title">{{blog.category}}</div>
              </div>
           </div>         
        </div>
@@ -255,17 +247,9 @@
                 </div> -->
              </div>
           </div>
-          <div class="col-md-2 text-md-right">
-             <div class="app-store">
-              <a href="" class="storeLink">
-              <img src="{{homepage.footersection.app_store_image.link}}" alt="{{homepage.footersection.app_store_image.alt}}" />
-            </a>
-            </div>
-             <div class="google-play">
-              <a href="" class="storeLink">
-              <img src="{{homepage.footersection.play_store_image.link}}" alt="{{homepage.footersection.play_store_image.alt}}" />
-            </a>
-            </div>
+          <div class="col-md-2 text-right">
+             <div class="app-store"><img src="{{homepage.footersection.app_store_image.link}}" alt="{{homepage.footersection.app_store_image.alt}}" /></div>
+             <div class="google-play"><img src="{{homepage.footersection.play_store_image.link}}" alt="{{homepage.footersection.play_store_image.alt}}" /></div>
           </div>
        </div>
     </div>
