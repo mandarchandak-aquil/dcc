@@ -140,10 +140,10 @@
                   </div>
                </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" *ngIf="leftfaq.length > 0">
                <div class="faqSec">
                   <div class="ng-accordian" id="faq_left">
-                     <ngb-accordion [closeOthers]="true" class="faq_card"   [animation]="true">
+                     <ngb-accordion [closeOthers]="true" class="faq_card"   [animation]="true" >
                         <ngb-panel class="card-header"  id="id{{i}}" *ngFor="let faq of leftfaq;let i=index;" >
   
                            <ng-template ngbPanelTitle>
@@ -159,10 +159,10 @@
                  
                </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" *ngIf="rightfaq.length > 0">
                <div class="faqSec">
                   <div class="ng-accordian" id="faq_right">
-                     <ngb-accordion [closeOthers]="true" class="faq_card"   [animation]="true">
+                     <ngb-accordion [closeOthers]="true" class="faq_card"   [animation]="true" >
                         <ngb-panel class="card-header"  id="id{{i}}" *ngFor="let faq of rightfaq;let i=index;">
   
                            <ng-template ngbPanelTitle>

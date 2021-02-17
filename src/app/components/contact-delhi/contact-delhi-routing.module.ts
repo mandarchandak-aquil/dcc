@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ContactDelhiComponent } from './contact-delhi.component';
 // import { ContactdelhiResolver } from '../../common/resolver/contactdelhi-resolver.service';
-const routes: Routes = [{ path: '', component: ContactDelhiComponent,
+const routes: Routes = [{ path: ':slug', component: ContactDelhiComponent,
 // resolve: {
 //   contact: ContactdelhiResolver
 // }
