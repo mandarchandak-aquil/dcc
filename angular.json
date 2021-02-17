@@ -33,8 +33,8 @@
               "src/assets/css/font-awesome.min.css",
               "node_modules/slick-carousel/slick/slick.css",
               "node_modules/slick-carousel/slick/slick-theme.css",
-              "src/assets/css/stylesheet.css",
               "src/assets/css/custom-style.css",
+              "src/assets/css/stylesheet.css",
               "src/styles.css"
             ],
             "scripts": [

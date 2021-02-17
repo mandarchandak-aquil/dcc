@@ -52,16 +52,21 @@ export class VacationBoardingComponent implements OnInit {
        let len =   this.vacationdata.faqsection.faqs.length/2;
        let right = [];
        console.log(this.vacationdata.faqsection.faqs.length,len,'len')
-     
+       this.rightfaq = []
          for(let i=0;i<len;i++){
-          console.log(i,'i');
-          this.rightfaq.push(this.vacationdata.faqsection.faqs[i]);
+          if(this.vacationdata.faqsection.faqs[i]){
+            this.rightfaq.push(this.vacationdata.faqsection.faqs[i]);
+          }          
          }
         
+         this.leftfaq = []
          for(let j = len;j<this.vacationdata.faqsection.faqs.length;j++){
-          this.leftfaq.push(this.vacationdata.faqsection.faqs[j]);
+           if(this.vacationdata.faqsection.faqs[j]){
+            this.leftfaq.push(this.vacationdata.faqsection.faqs[j]);
+           }
+          
          }
-       
+         console.log("leftcontent",this.leftfaq,"right",this.rightfaq);
          let datasnew = datas;
          this.bordingdetails = datasnew.details.images;
          console.log(this.bordingdetails[0].image);

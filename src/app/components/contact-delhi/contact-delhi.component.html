@@ -1,3 +1,4 @@
+
 <div id="preloader" *ngIf="loading">
    <div id="status">&nbsp;</div>
 </div>
@@ -12,7 +13,7 @@
           </ol>
        </div>
     </div>
-    <div class="dc_spacer_t_90 dc_spacer_b_60">
+    <div class="dc_spacer_t_90 dc_spacer_b_60" *ngIf="contact.details">
        <div class="main-container">
           <div class="row row_gutter_30">
              <div class="col-md-6">
@@ -38,11 +39,11 @@
           </div>
        </div>
     </div>
-    <div class="dc_spacer_t_30 dc_spacer_b_30">
+    <div class="dc_spacer_t_30 dc_spacer_b_30" *ngIf="contact.details">
        <div class="main-container">
           <div class="btnSec text-center">
              <div class="btnSec_wra d-inline" *ngFor="let cn of contact.details.contactlist">
-                <a [href]="cn.slug" class="pagebtn pagebtngreen f-w-B">
+                <a [href]="'contact/'+cn.slug" class="pagebtn pagebtngreen f-w-B">
                 {{cn.name}}
                 </a>
              </div>
@@ -55,14 +56,14 @@
              <div class="col-md-6">
                 <div class="careers-form">
                    <div class="dccSubTitle f-w-B opacity-5 mrg-b-30 text-uppercase">
-                      NEW DELHI
+                      {{contactSlug | uppercase}}
                    </div>
                 </div>
                 <div class="dc_txtSummary">
                    <h2 class="headingSec line_H_1 mrg-b-30">DCC Animal Hospital</h2>
                 </div>
                 <div class="contnt opacity-5 mrg-b-30">
-                   E-556, Greater Kailash Part-II, New Delhi – 110048
+                   {{contact.details.address}}
                 </div>
                 <div [innerHTML]="contacts"></div>
                 <!-- <div ngbDropdown class="btnSec ">
@@ -78,7 +79,7 @@
                    </div>
                 </div> -->
 
-                <div class="commonLinks text-center contactGet">
+                <div class="commonLinks text-center contactGet" *ngIf="contact.details">
                   <ul class="list-unstyled d-flex flex-wrap">
                      <li class="contactList-item">
                         <div ngbDropdown class="dropSec position-relative directList">
@@ -96,7 +97,7 @@
                </div>
              </div>
              <div class="col-md-6">
-                <div class="row">
+                <div class="row" *ngIf="contact.details">
                    <div class="col-12">
                       <div class="teamPage_wrap mar-b-30">
                          <img src="{{contact.details.image_1.link}}" class="w-100">
@@ -113,4 +114,6 @@
        </div>
     </div>
  </div>
+ <fieldset *ngIf="footersection">
  <app-footer-top [dataString]="footersection"></app-footer-top>
+</fieldset>

@@ -90,7 +90,7 @@
                 </div>
                 <div class="serviceList_sec mrg-b-60" *ngIf="services">
                    <ul class="mb-0 serviceSec">
-                      <li class="service-item" *ngFor="let service of services"> <a href="#" class="serviceLink transtn-1"> {{service.name}} </a> </li>                     
+                      <li class="service-item" *ngFor="let service of services"> <a [routerLink]="'ourservices/service-details/'+service.slug" class="serviceLink transtn-1"> {{service.name}} </a> </li>                     
                    </ul>
                 </div>
                 <div class="btnSec">
@@ -111,7 +111,7 @@
              <div class="servicebox_sec">
                 <div class="row rowSpace" *ngIf="serviceList.length > 0">               
                      <div class="col-md-6" *ngFor="let data of serviceList">
-                        <div class="serviceBx bx-shadow text-center">
+                        <div class="serviceBx bx-shadow text-center" [routerLink]="'ourservices/service-details/'+data.slug">
                            <div class="service_iconSec">
                               <img [src]="data.icon.link" class="w-100" [alt]="data.icon.alt">
                            </div>
@@ -217,7 +217,7 @@
        </div>
        <div class="btnSec">
           <a [href]="homepage.pethealthsection.button_link" class="pagebtn f-w-B">
-         {{homepage.pethealthsection.button_text}}
+               {{homepage.pethealthsection.button_text}}
           </a>
        </div>
     </div>

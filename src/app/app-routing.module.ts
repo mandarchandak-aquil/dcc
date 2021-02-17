@@ -35,12 +35,12 @@ const routes: Routes = [
         path: 'careers', 
         loadChildren: () => import('./components/careers/careers.module').then(m => m.CareersModule) 
       },  
-      { path: 'Contact-delhi', 
+      { path: 'contact', 
         loadChildren: () => import('./components/contact-delhi/contact-delhi.module').then(m => m.ContactDelhiModule) 
       },
-      { path: 'Contact-Gurgaon',
-        loadChildren: () => import('./components/contact-gurgaon/contact-gurgaon.module').then(m => m.ContactGurgaonModule) 
-      },
+      // { path: 'contact',
+      //   loadChildren: () => import('./components/contact-gurgaon/contact-gurgaon.module').then(m => m.ContactGurgaonModule) 
+      // },
       { path: 'Pet-Health', 
         loadChildren: () => import('./components/pet-health/pet-health.module').then(m => m.PetHealthModule) 
       },

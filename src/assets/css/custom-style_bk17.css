@@ -75,9 +75,10 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 .dc_pg_title {
-	font-size:3.214vw;
+	font-size:3.819vw;
 	padding-bottom:1.042vw;
 	position:relative;
+	line-height:.8;
 	margin-bottom:1.042vw;
 }
 .dc_pg_title:after {
