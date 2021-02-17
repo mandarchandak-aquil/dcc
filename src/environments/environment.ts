@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   API_URL : "https://ardemos.in/DCC/wp-json/",
+  
 };
 
 /*

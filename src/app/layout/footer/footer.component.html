@@ -1,29 +1,29 @@
-<div class="spacer_t_30 spacer_b_30 bg-green footer">
+<div class="spacer_t_30 spacer_b_30 bg-green footer" *ngIf="footerData">
     <div class="main-container">
        <div class="row rowSpace align-items-center">
          <div class="col-md-6">
-           <ul class="list-unstyled left-sec">
+           <ul class="list-unstyled left-sec" >
              <li>
                <div class="icon"><img src="./assets/images/address-pin.svg" alt="pin" /></div>
-               <div class="content">
-                 <p><strong>Gurgaon</strong></p>
+               <div class="content" [innerHTML]="address">
+                 <!-- <p><strong>Gurgaon</strong></p>
                  <p>Jagdamba Farm, Carterpuri Marg, Sector 23A, Gurugram,Haryana – 122016</p>
                  <p><strong>New Delhi</strong></p>
-                 <p>E-556, Greater Kailash Part-II, New Delhi – 110048</p>
+                 <p>E-556, Greater Kailash Part-II, New Delhi – 110048</p> -->
                </div>
              </li>
               <li>
                <div class="icon"><img src="./assets/images/call-icon.svg" alt="call" /></div>
-               <div class="content">
-                 <p><strong>Gurgaon</strong> (+91) 9311560101</p>
-                 <p><strong>New Delhi</strong> (+91) (+91) 9311560101</p>
+               <div class="content" [innerHTML]="phone">
+                 <!-- <p><strong>Gurgaon</strong> (+91) 9311560101</p>
+                 <p><strong>New Delhi</strong> (+91) (+91) 9311560101</p> -->
                </div>
              </li>
               <li>
                <div class="icon"><img src="./assets/images/clock-icon.svg" alt="call" /></div>
-               <div class="content">
-                 <p><strong>Gurgaon</strong> 10AM - 5PM daily.</p>
-                 <p><strong>New Delhi</strong> 10 AM - 5 PM Daily</p>
+               <div class="content" [innerHTML]="timing">
+                 <!-- <p><strong>Gurgaon</strong> 10AM - 5PM daily.</p>
+                 <p><strong>New Delhi</strong> 10 AM - 5 PM Daily</p> -->
                </div>
              </li>
              </ul>
@@ -33,28 +33,29 @@
              <div class="col-md-4">
                <ul class="list-unstyled">
                  <div class="title">Quick link</div>
-                 <li><a href="#">About DCC</a></li>
-                 <li><a href="#">Our Services</a></li>
+                 <li *ngFor="let data of footerData.quicklinks;"><a [href]="data.link">{{data.name}}</a></li>
+                 <!-- <li><a href="#">Our Services</a></li>
                  <li><a href="#">Our Team</a></li>
-                 <li><a href="#">Contact Us</a></li>
+                 <li><a href="#">Contact Us</a></li> -->
                </ul>
              </div>
              <div class="col-md-4">
                <ul class="list-unstyled">
                <div class="title">Department</div>
-               <li><a href="#">Who We are</a></li>
-               <li><a href="#">Our Mission</a></li>
+               <li *ngFor="let data of footerData.department;"><a [href]="data.link">{{data.name}}</a></li>
+               <!-- <li><a href="#">Our Mission</a></li>
                <li><a href="#">Awards</a></li>
-               <li><a href="#">Experience</a></li>
+               <li><a href="#">Experience</a></li> -->
              </ul>
              </div>
              <div class="col-md-4">
                <ul class="list-unstyled">
                <div class="title">Other</div>
-               <li><a href="#">Faqs</a></li>
+               <li *ngFor="let data of footerData.othermenu;"><a [href]="data.link">{{data.name}}</a></li>
+               <!-- <li><a href="#">Faqs</a></li>
                <li><a href="#">Careers</a></li>
                <li><a href="#">Press & Media</a></li>
-               <li><a href="#">Experience</a></li>
+               <li><a href="#">Experience</a></li> -->
                </ul>
              </div>
            </div>
@@ -66,26 +67,41 @@
          <div class="col">
            <ul class="list-unstyled logo-sec d-inline-flex">
              <li>
-               <div><a href="#"><img src="./assets/images/footer-logo.png" alt="footer logo" /></a></div>
+               <div><a href="/"><img [src]="footerData.details.footerlogo" alt="footer logo" /></a></div>
                <div class="social-icon">
-                 <a href="#"><img src="./assets/images/fb.svg" alt="" /></a>
-                 <a href="#"><img src="./assets/images/insta.svg" alt="" /></a>
-                 <a href="#"><img src="./assets/images/linkedin.svg" alt="" /></a>
+                 <a [href]="footerData.details.facebook"><img src="./assets/images/fb.svg" alt="fb" /></a>
+                 <a [href]="footerData.details.instagram"><img src="./assets/images/insta.svg" alt="insta" /></a>
+                 <a [href]="footerData.details.linkedin"><img src="./assets/images/linkedin.svg" alt="linkin" /></a>
                </div>
              </li>
-             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <br /> do eiusmod tempor incididunt ut labore et dolore magna <br />aliqua Lorem ipsum should fix the margin.</li>
+             <li [innerHTML]="footerlogocontent">
+               <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <br /> do eiusmod tempor incididunt ut labore et dolore magna <br />aliqua Lorem ipsum should fix the margin. -->
+            </li>
            </ul>
          </div>
          <div class="col-4">
            <div>Get updates about your pets health and more</div>
            <div class="email-search">
-             <form>
+            <form [formGroup]="email" enctype="multipart/form-data" (ngSubmit)="onSubmit()" >
              <div class="input-group mb-3">
-               <input type="text" class="form-control" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+               <input type="text" class="form-control"  name="email" formControlName="email" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
                <div class="input-group-append">
-                 <button class="btn" type="button">Send</button>
+                 <button class="btn" type="submit" [disabled]="!email.valid">Send</button>
                </div>
              </div>
+            <!-- f.email.invalid && (f.email.dirty || f.email.touched) -->
+             <!-- hello {{f.email.errors.required}}  how {{f.email.errors.email}} -->
+             <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" >
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+
+             
+
+
+              <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+     
+              </div> -->
              </form>
            </div>
          </div>
