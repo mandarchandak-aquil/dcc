@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd,ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,17 @@ export class AppComponent {
   }
 
 
+  ngOnInit(){
+  
+    // scroll animate
+      AOS.init(
+        {
+          duration: 1200,
+          delay: 200,
+          once: true
+        }
+    );
+  }
   recallJsFuntions() {
     this.routerSubscription = this.router.events
         .pipe(filter(event => event instanceof NavigationEnd))

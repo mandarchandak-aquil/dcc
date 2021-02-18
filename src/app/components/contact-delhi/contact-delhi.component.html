@@ -1,7 +1,17 @@
 
+<!-- Loader Start -->
 <div id="preloader" *ngIf="loading">
-   <div id="status">&nbsp;</div>
+   <div id="status">
+       <div id="cms-loadding">
+           <div class="loading-spinner">
+               <div class="cms-bounce1"></div>
+               <div class="cms-bounce2"></div>
+               <div class="cms-bounce3"></div>
+           </div>
+       </div>
+   </div>
 </div>
+<!-- Loader End -->
 <div class="dc_pg_spcHead">
     <div class="main-container">
        <div class="dc_pgHead_wrap text-center" style="background-image:url(/assets/images/head-bg.jpg);">
@@ -41,7 +51,7 @@
     </div>
     <div class="dc_spacer_t_30 dc_spacer_b_30" *ngIf="contact.details">
        <div class="main-container">
-          <div class="btnSec text-center">
+          <div class="btnSec text-center pageCont">
              <div class="btnSec_wra d-inline" *ngFor="let cn of contact.details.contactlist">
                 <a [href]="'contact/'+cn.slug" class="pagebtn pagebtngreen f-w-B">
                 {{cn.name}}
@@ -53,6 +63,20 @@
     <div class="dc_spacer_t_30 dc_spacer_b_30">
        <div class="main-container">
           <div class="row row_gutter_30">
+            <div class="col-md-6 order-md-2">
+               <div class="row rowSpace">
+                  <div class="col-6 col-md-12">
+                     <div class="teamPage_wrap mar-b-30">
+                        <img src="{{contact.details.image_1.link}}" class="w-100">
+                     </div>
+                  </div>
+                  <div class="col-6 col-md-12">
+                     <div class="teamPage_wrap mar-b-30">
+                        <img src="{{contact.details.image_2.link}}" class="w-100">
+                     </div>
+                  </div>
+               </div>
+            </div>
              <div class="col-md-6">
                 <div class="careers-form">
                    <div class="dccSubTitle f-w-B opacity-5 mrg-b-30 text-uppercase">
@@ -95,21 +119,7 @@
                       <li class="contactList-item"><a href="{{contact.details.button_2_link}}" class="pagebtn dc_btn_min f-w-B">{{contact.details.button_2_text}}</a></li>
                   </ul>
                </div>
-             </div>
-             <div class="col-md-6">
-                <div class="row" *ngIf="contact.details">
-                   <div class="col-12">
-                      <div class="teamPage_wrap mar-b-30">
-                         <img src="{{contact.details.image_1.link}}" class="w-100">
-                      </div>
-                   </div>
-                   <div class="col-12">
-                      <div class="teamPage_wrap mar-b-30">
-                         <img src="{{contact.details.image_2.link}}" class="w-100">
-                      </div>
-                   </div>
-                </div>
-             </div>
+             </div>            
           </div>
        </div>
     </div>

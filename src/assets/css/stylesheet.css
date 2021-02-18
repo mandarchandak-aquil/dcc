@@ -82,7 +82,8 @@ body{  font-family: 'Lato';font-size: 1.286vw;color: #0E1F3B;letter-spacing:0.01
 a{transition: all .3s ease-in-out;-webkit-transition: all .3s ease-in-out;
 -o-transition: all .3s ease-in-out;}
 a:hover{text-decoration: none;}
-a:focus, .slick-slide:focus, button:focus{outline: none !important;}
+a:focus, .slick-slide:focus, button:focus{outline: none !important;    text-decoration: none;}
+.btn-link.focus, .btn-link:focus{ text-decoration: none;}
 
 .form-control:focus{box-shadow: none;}
 .transtn-1 {transition: all .3s ease-in-out;-webkit-transition: all .3s ease-in-out;
@@ -357,7 +358,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.1);
 .footer .footer-bottom ul.logo-sec li { display: inline-block;  }
 .footer .footer-bottom ul.logo-sec .social-icon { display: flex; justify-content: space-between; margin-top: 1.11vw; }
 .footer .footer-bottom ul.logo-sec li:last-child{ padding-left: 2.083vw; }
-.footer .footer-bottom .email-search { margin-top: 0.55vw; }
+.footer .footer-bottom .email-search { margin-top: 0.55vw;position: relative; }
 .footer .footer-bottom .email-search input[type="text"] { background-color: transparent; border-color: #0E1F3B; border-radius: 0.277vw 0 0 0.277vw; height: 3.33vw; padding: 1.11vw 1.66vw;color:  #fff;  }
 .footer .footer-bottom .email-search .btn{ background-color: #0E1F3B; color: white; min-width: 6.87vw; height: 3.33vw; }
 .footer .footer-bottom .email-search input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -825,6 +826,19 @@ font-size: 2.143vw;color: transparent;
 .teamdetails_btn li:last-child {
     margin-left: 2.143vw;
 }
+.errorMsg {
+    position: absolute;
+    bottom: -1.943vw;
+    color: #d81616;
+    font-weight: bold;
+    font-size: 1.286vw;
+    width: 100%;
+    left: 0;
+}
+.errorMsg.errorResume {
+    bottom: 0;
+}
+
 
 
 @keyframes smoothScroll{0%{transform:translateY(-40px);-ms-transform:translateY(-40px);-o-transform:translateY(-40px)}
@@ -981,7 +995,7 @@ z-index: 9;}
 .vacationImg {border-radius: 8px;}
 .vactoionBoarding_sec {margin-bottom: 15px;}
 .vacationbox_sec [class*=col]:nth-child(2n) {margin-top: 0;}
-.faq_card .btn-header-link{font-size: 16px; padding-bottom: 10px; padding-top: 10px; text-align: left;line-height: 1;}
+.faq_card .btn-header-link{    padding-right: 10px;font-size: 16px; padding-bottom: 10px; padding-top: 10px; text-align: left;line-height: 1;}
 .faq_card .card-header .btn-header-link:after{    margin-left: 5px;}
 .row_gutter_30, .dc_btnList-spc_60 {margin-left: -7px;margin-right: -7px;}
 .careers-form .cmslabel {margin-bottom: 10px;}
@@ -1024,6 +1038,8 @@ z-index: 9;}
 .blogFormatting ul{font-size: 16px;padding-left: 0;}
 .blogFormatting img, .blogFormatting h4, .blogFormatting h5, .blogFormatting h6, .blogFormatting ul li {
 margin-bottom: 15px;}
+.errorMsg {font-size: 14px;bottom: -20px;}
+.errorMsg.errorResume {bottom: 10px;}
 
 }
 

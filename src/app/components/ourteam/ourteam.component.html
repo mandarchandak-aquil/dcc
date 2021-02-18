@@ -1,6 +1,16 @@
+<!-- Loader Start -->
 <div id="preloader" *ngIf="loading">
-   <div id="status">&nbsp;</div>
+   <div id="status">
+       <div id="cms-loadding">
+           <div class="loading-spinner">
+               <div class="cms-bounce1"></div>
+               <div class="cms-bounce2"></div>
+               <div class="cms-bounce3"></div>
+           </div>
+       </div>
+   </div>
 </div>
+<!-- Loader End -->
 <div class="dc_pg_spcHead">
   <div class="main-container">
      <div class="dc_pgHead_wrap text-center" style="background-image:url(assets/images/head-bg.jpg);">
@@ -36,7 +46,7 @@
      <div class="main-container">
         <div class="pageTeam_sec">
            <div class="row rowSpace">
-              <div class="col-md-3" *ngFor="let data of doctors">
+              <div class="col-sm-6 col-md-3" *ngFor="let data of doctors">
                  <div class="dcTeam_bx mrg-b-60">
                     <div class="dcTeam_img mrg-b-30">
                        <img [src]="data.image.link" class="w-100" [alt]="data.image.alt">

@@ -21,45 +21,15 @@ export class AboutusComponent implements OnInit {
     dots:true,
     centerMode: true, 
     adaptiveHeight: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll:1,
-        }
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll:1,
-        }
-      },
-      {
-        breakpoint: 360,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
+    responsive: [  {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,       
       }
-    ]
+    }]
   };
 
-  // slideConfig = {
-  //   "slidesToShow": 4,
-  //   "slidesToScroll": 4,
-  //   "dots": true,
-  //   "infinite": true,
-  //   'autoplay': false,
-  //   'speed': 1000,
-  //   'autoplaySpeed': 1000,
-  //   'centerPadding': '0',
-  //   'useTransform': true,
-  //   'cssEase': 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
-  // };
-// 
- // slides = [342, 453, 846, 855, 234, 564, 744, 243];
  slides : any =[];
  
   public aboutData : any;
@@ -96,38 +66,7 @@ export class AboutusComponent implements OnInit {
 
   ngOnInit() {
     this.getDataInit();
-    this.MetaTags();
-    // this.aboutData = this.route.snapshot.data['aboutData'];
-    // console.log(this.aboutData,"this.aboutData")
-    // this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['heading']);
-    // this.content =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['content']);
-    // this.advisorheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['heading']);
-    // this.advisorcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['content']);
-    // this.advisors = this.aboutData['ouradvisorssection']['advisors'];
-    // this.missionheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourmissionsection']['heading']);
-    // this.missioncontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourmissionsection']['content']);
-    // this.mission = this.aboutData['ourmissionsection'];
-    // this.visionheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvisionsection']['heading']);
-    // this.visioncontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvisionsection']['content']);
-    // this.vision = this.aboutData['ourvisionsection'];
-    // this.valueheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvaluessection']['heading']);
-    // this.valuecontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourvaluessection']['content']);
-    // this.value = this.aboutData['ourvaluessection'];
-    // this.valueicons = this.aboutData['ourvaluessection']['icons'];
-    // this.testimonialheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['testimonialssection']['heading']);   
-    // this.testimonial = this.aboutData['testimonialssection']['testimonials'];
-    // this.technologyheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourtechnologiessection']['heading']);
-    // this.technologycontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ourtechnologiessection']['content']);
-    // this.technology = this.aboutData['ourtechnologiessection'];
-    // this.softwareheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursoftwaresections']['heading']);
-    // this.softwarecontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursoftwaresections']['content']);
-    // this.software = this.aboutData['oursoftwaresections'];
-    // this.supportheading =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['heading']);
-    // this.supportcontent =  this.sanitizer.bypassSecurityTrustHtml(this.aboutData['oursupportsections']['content']);
-    // this.support = this.aboutData['oursupportsections'];
-    // this.supporticon = this.aboutData['oursupportsections']['icons'];
-    // this.slides  = this.aboutData.testimonialssection.testimonials;
-    // this.footersection = JSON.stringify(this.aboutData['footersection']);
+    this.MetaTags();   
    
   }
 

@@ -1,6 +1,16 @@
+<!-- Loader Start -->
 <div id="preloader" *ngIf="loading">
-   <div id="status">&nbsp;</div>
+   <div id="status">
+       <div id="cms-loadding">
+           <div class="loading-spinner">
+               <div class="cms-bounce1"></div>
+               <div class="cms-bounce2"></div>
+               <div class="cms-bounce3"></div>
+           </div>
+       </div>
+   </div>
 </div>
+<!-- Loader End -->
 <div class="dc_pg_spcHead">
     <div class="main-container">
        <div class="dc_pgHead_wrap text-center" style="background-image:url(/assets/images/head-bg.jpg);">
@@ -31,7 +41,7 @@
                    <div class="bannerTxt">
                      <p [innerHTML]="content"></p>
                    </div>
-                   <ul class="list-unstyled d-flex flex-wrap mt__60 ">
+                   <ul class="list-unstyled d-flex flex-wrap mt__60 teamdetails_btn">
                       <li><a [href]="doctorsdata.details.button_1_link" class="pagebtn dc_btn_min f-w-B">{{doctorsdata.details.button_1_text}}</a></li>
                       <li>
                         <div ngbDropdown class="dropSec position-relative directList">

@@ -1,6 +1,16 @@
+<!-- Loader Start -->
 <div id="preloader" *ngIf="loading">
-   <div id="status">&nbsp;</div>
+   <div id="status">
+       <div id="cms-loadding">
+           <div class="loading-spinner">
+               <div class="cms-bounce1"></div>
+               <div class="cms-bounce2"></div>
+               <div class="cms-bounce3"></div>
+           </div>
+       </div>
+   </div>
 </div>
+<!-- Loader End -->
 <div class="dc_pg_spcHead">
   <div class="main-container">
      <div class="dc_pgHead_wrap text-center" style="background-image:url(./assets/images/head-bg.jpg);">
@@ -14,6 +24,15 @@
   <div class="dc_spacer_t_90 dc_spacer_b_60">
      <div class="main-container">
         <div class="row row_gutter_30">
+
+         <div class="col-md-6 align-self-center order-md-2">
+            <div class="dc_txtSummary">
+               <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="heading"></h2>
+               <div class="dc_txt_summary dc_last_p text-justify">
+                 <p [innerHTML]="content"></p>
+               </div>
+            </div>
+         </div>
            <div class="col-md-6">
               <div class="dc_About_media_wrap">
                  <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
@@ -27,15 +46,7 @@
                     </li>
                  </ul>
               </div>
-           </div>
-           <div class="col-md-6 align-self-center">
-              <div class="dc_txtSummary">
-                 <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="heading"></h2>
-                 <div class="dc_txt_summary dc_last_p text-justify">
-                   <p [innerHTML]="content"></p>
-                 </div>
-              </div>
-           </div>
+           </div>          
         </div>
         <ul class="list-unstyled d-flex flex-wrap justify-content-center mt__60 dc_btnList-spc_60">
            <li><a [href]="aboutData.topsection.button_1_link" class="pagebtn dc_btn_min f-w-B">{{aboutData.topsection.button_1_text}}</a></li>
@@ -104,6 +115,16 @@
   <div class="dc_spacer_t_30 dc_spacer_b_30">
      <div class="main-container">
         <div class="row row_gutter_30">
+
+         <div class="col-md-6 align-self-center order-md-2">
+            <div class="dc_txtSummary">
+               <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{aboutData.ourmissionsection.small_heading}}</div>
+               <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="missionheading"></h2>
+               <div class="dc_txt_summary dc_last_p text-justify">
+                 <p [innerHTML]="content"></p>
+               </div>
+            </div>
+         </div>
            <div class="col-md-6">
               <div class="dc_About_media_wrap">
                  <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
@@ -125,16 +146,7 @@
                     </li>
                  </ul>
               </div>
-           </div>
-           <div class="col-md-6 align-self-center">
-              <div class="dc_txtSummary">
-                 <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{aboutData.ourmissionsection.small_heading}}</div>
-                 <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="missionheading"></h2>
-                 <div class="dc_txt_summary dc_last_p text-justify">
-                   <p [innerHTML]="content"></p>
-                 </div>
-              </div>
-           </div>
+           </div>         
         </div>
      </div>
   </div>
@@ -178,6 +190,24 @@
   <div class="dc_spacer_t_30 dc_spacer_b_30">
      <div class="main-container">
         <div class="row row_gutter_30">
+         <div class="col-md-6 align-self-center order-md-2">
+            <div class="dc_txtSummary">
+               <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{aboutData.ourvaluessection.small_heading}}</div>
+               <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="valueheading"></h2>
+               <div class="dc_txt_summary dc_last_p text-justify">
+                <p [innerHTML]="valuecontent"></p>
+               </div>
+               <div class="d-flex justify-content-center">
+                  <div class="mar-80 " *ngFor="let icondata of valueicons">
+                     <div class="selfless ">
+                        <img class="w-100" [src]="icondata.image.link" [alt]="icondata.image.alt">
+                     </div>
+                     <div class="f-s-18">{{icondata.text}}</div>
+                  </div>
+                 
+               </div>
+            </div>
+         </div>
            <div class="col-md-6">
               <div class="dc_About_media_wrap">
                  <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
@@ -199,25 +229,7 @@
                     </li>
                  </ul>
               </div>
-           </div>
-           <div class="col-md-6 align-self-center">
-              <div class="dc_txtSummary">
-                 <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{aboutData.ourvaluessection.small_heading}}</div>
-                 <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="valueheading"></h2>
-                 <div class="dc_txt_summary dc_last_p text-justify">
-                  <p [innerHTML]="valuecontent"></p>
-                 </div>
-                 <div class="d-flex justify-content-center">
-                    <div class="mar-80 " *ngFor="let icondata of valueicons">
-                       <div class="selfless ">
-                          <img class="w-100" [src]="icondata.image.link" [alt]="icondata.image.alt">
-                       </div>
-                       <div class="f-s-18">{{icondata.text}}</div>
-                    </div>
-                   
-                 </div>
-              </div>
-           </div>
+           </div>          
         </div>
      </div>
   </div>
@@ -359,6 +371,15 @@
   <div class="dc_spacer_t_30 dc_spacer_b_30">
      <div class="main-container">
         <div class="row row_gutter_30">
+         <div class="col-md-6 align-self-center order-md-2">
+            <div class="dc_txtSummary">
+               <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{technology.small_heading}}S</div>
+               <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="technologyheading"></h2>
+               <div class="dc_txt_summary dc_last_p text-justify">
+                  <p [innerHTML]="technologycontent"></p>
+               </div>
+            </div>
+         </div>
            <div class="col-md-6">
               <div class="dc_About_media_wrap">
                  <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
@@ -380,16 +401,7 @@
                     </li>
                  </ul>
               </div>
-           </div>
-           <div class="col-md-6 align-self-center">
-              <div class="dc_txtSummary">
-                 <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{technology.small_heading}}S</div>
-                 <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="technologyheading"></h2>
-                 <div class="dc_txt_summary dc_last_p text-justify">
-                    <p [innerHTML]="technologycontent"></p>
-                 </div>
-              </div>
-           </div>
+           </div>          
         </div>
      </div>
   </div>
@@ -433,6 +445,23 @@
   <div class="dc_spacer_t_30 dc_spacer_b_30">
      <div class="main-container">
         <div class="row row_gutter_30">
+         <div class="col-md-6 align-self-center order-md-2">
+            <div class="dc_txtSummary">     
+              <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{aboutData.oursupportsections.small_heading}}</div>
+               <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="supportheading"></h2>
+               <div class="dc_txt_summary dc_last_p text-justify">
+                <p [innerHTML]="supportcontent"></p>
+               </div>
+               <div class="d-flex justify-content-center">
+                  <div class="mar-80 " *ngFor="let icondata of supporticon">
+                     <div class="selfless ">
+                        <img class="w-100" [src]="icondata.image.link" [alt]="icondata.image.alt">
+                     </div>
+                     <div class="f-s-18">{{icondata.text}}</div>
+                  </div>                    
+               </div>
+            </div>
+         </div>
            <div class="col-md-6">
               <div class="dc_About_media_wrap">
                  <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
@@ -454,24 +483,7 @@
                     </li>
                  </ul>
               </div>
-           </div>
-           <div class="col-md-6 align-self-center">
-              <div class="dc_txtSummary">     
-                <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{aboutData.oursupportsections.small_heading}}</div>
-                 <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="supportheading"></h2>
-                 <div class="dc_txt_summary dc_last_p text-justify">
-                  <p [innerHTML]="supportcontent"></p>
-                 </div>
-                 <div class="d-flex justify-content-center">
-                    <div class="mar-80 " *ngFor="let icondata of supporticon">
-                       <div class="selfless ">
-                          <img class="w-100" [src]="icondata.image.link" [alt]="icondata.image.alt">
-                       </div>
-                       <div class="f-s-18">{{icondata.text}}</div>
-                    </div>                    
-                 </div>
-              </div>
-           </div>
+           </div>           
         </div>
      </div>
   </div>
