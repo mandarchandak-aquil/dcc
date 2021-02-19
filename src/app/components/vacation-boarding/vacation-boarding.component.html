@@ -163,10 +163,10 @@
                             </ng-template>
                       
                         <ng-template x ngbPanelContent>
-                           <div class="" [innerHTML]="faq.content"></div>
-                           <a href="#" class="dc_readmore font-rubik">
+                           <div class="" >{{faq.content}} <a href="{{faq.link}}" class="dc_readmore font-rubik" *ngIf="faq.link">
                               Read More
-                            </a>
+                            </a></div>
+                          
                          </ng-template>
                         </ngb-panel>
                      </ngb-accordion>
@@ -185,7 +185,9 @@
                             </ng-template>
                       
                         <ng-template x ngbPanelContent>
-                           <div class="card-body" [innerHTML]="faq.content"></div>
+                           <div class="" >{{faq.content}} <a href="{{faq.link}}" class="dc_readmore font-rubik" *ngIf="faq.link">
+                              Read More
+                            </a></div>
                          </ng-template>
                         </ngb-panel>
                      </ngb-accordion>
