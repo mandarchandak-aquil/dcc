@@ -1,0 +1,255 @@
+<!-- Loader Start -->
+<div id="preloader" *ngIf="loading">
+   <div id="status">
+       <div id="cms-loadding">
+           <div class="loading-spinner">
+               <div class="cms-bounce1"></div>
+               <div class="cms-bounce2"></div>
+               <div class="cms-bounce3"></div>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- Loader End -->
+<div class="dc_pg_spcHead">
+    <div class="main-container" *ngIf="doctorsdata">
+      <fieldset data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+       <div class="dc_pgHead_wrap text-center" style="background-image:url(/assets/images/head-bg.jpg);">
+          <h1 class="dc_pg_title">{{doctorsdata.pagetitle}}</h1>
+          <ol class="breadcrumb dc_cstBread f-w-B justify-content-center">
+             <li class="breadcrumb-item"><a href="#">Home</a></li>
+             <li class="breadcrumb-item active">{{doctorsdata.pagetitle}}</li>
+          </ol>
+       </div>
+       </fieldset>
+    </div>
+    <div class="dc_spacer_t_90 dc_spacer_b_60">
+       <div class="main-container">
+          <div class="row row_gutter_30">
+             <div class="col-md-6" *ngIf="doctorsdata">
+                <div class="teamPage_wrap" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                   <img [src]="doctorsdata.details.image.link" [alt]="doctorsdata.details.image.alt" class="w-100">
+                </div>
+             </div>
+             <div class="col-md-6" *ngIf="doctorsdata">
+                <div class="aboutDCC_wrap">
+                   <fieldset data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"> 
+                   <div class="dccSubTitle f-w-B opacity-5 mrg-b-60 text-uppercase">
+                     {{doctorsdata.details.designation}}
+                   </div>
+                  </fieldset>
+                   <div class="mrg-b-30 " data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+                      <h2 class="f-w-B headingSec line_H_1" [innerHTML]="heading"></h2>
+                   </div>
+                   <div class="hrLine mrg-b-30" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600"></div>
+                   <div class="bannerTxt" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
+                     <p [innerHTML]="content"></p>
+                   </div>
+                   <ul class="list-unstyled d-flex flex-wrap mt__60 teamdetails_btn" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                      <li><a [href]="doctorsdata.details.button_1_link" class="pagebtn dc_btn_min f-w-B">{{doctorsdata.details.button_1_text}}</a></li>
+                      <li>
+                        <div ngbDropdown class="dropSec position-relative directList">
+                          <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle id="dropdownMenuButton">{{doctorsdata.details.button_2_text}}</a>
+
+                          <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
+                             <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of doctorsdata.details.locations">
+                                <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
+                             </ul>
+                          </div>
+                        </div>
+                     </li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    
+
+
+
+    <div class="spacer_t_30 spacer_b_90">
+      <div class="main-container">
+         <div class="row rowSpace">
+            <div class="col-md-12 d-none d-md-block">
+               <div class="teamDetail_sec" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+                  <div class="teamDetailsTab mrg-b-60" *ngIf="doctorsdata">
+                     <ul id="tabs" class="nav nav-tabs justify-content-center" role="tablist">
+                        <li class="nav-item">
+                           <a  (click)="shows(1)" class="nav-link active" data-toggle="tab" role="tab">{{doctorsdata.details.doctorsdetails[0].heading}}</a>
+                        </li>
+                        <li class="nav-item">
+                           <a   (click)="shows(2)"  class="nav-link" data-toggle="tab" role="tab">{{doctorsdata.details.doctorsdetails[1].heading}}</a>
+                        </li>
+                        <li class="nav-item">
+                           <a   (click)="shows(3)"  class="nav-link" data-toggle="tab" role="tab">{{doctorsdata.details.doctorsdetails[2].heading}}</a>
+                        </li>
+                        <li class="nav-item">
+                           <a  (click)="shows(4)"  class="nav-link" data-toggle="tab" role="tab">{{doctorsdata.details.doctorsdetails[3].heading}}</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="teamDetailsTxt_sec" *ngIf="doctorsdata">
+                     <div id="content" class="tab-content" role="tablist">
+                        <div  class="card tab-pane fade" [ngClass]="{ 'show active': show == 1}"
+                        role="tabpanel" aria-labelledby="position-tab" *ngIf="show == 1 ">
+                         
+                           <!-- Note: New place of `data-parent` -->
+                           <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
+                              <div class="card-body">
+                                 <div class="row row_gutter_30">
+                                    <div class="col-md-6">
+                                       <div class="dc_txtSummary">
+                                         1
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[0].left_content">
+                                          
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="dc_txtSummary">
+                                          
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">
+                                         
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div  class="card tab-pane fade" [ngClass]="{ 'show active': show == 2}" role="tabpanel" aria-labelledby="office-tab" *ngIf="show == 2 ">
+                          
+                           <div id="collapse-B" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-B">
+                              <div class="card-body">
+                                 <div class="row row_gutter_30">
+                                    <div class="col-md-6">
+                                       <div class="dc_txtSummary">
+                                          2
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[1].left_content">
+                                          
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="dc_txtSummary">
+                                         
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[1].right_content">
+                                          
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card tab-pane fade" [ngClass]="{ 'show active': show == 3}" role="tabpanel" aria-labelledby="experience-tab" *ngIf="show == 3 ">
+                          
+                           <div id="collapse-C" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-C">
+                              <div class="card-body">
+                                 <div class="row row_gutter_30">
+                                    <div class="col-md-6">
+                                       <div class="dc_txtSummary">
+                                           3
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[2].left_content">
+                                           
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="dc_txtSummary">
+                                         
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[2].right_content">
+                                          
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div  class="card tab-pane fade" [ngClass]="{ 'show active': show == 4}" role="tabpanel" aria-labelledby="services-tab" *ngIf="show == 4 ">
+                           
+                           <div id="collapse-D" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-D">
+                              <div class="card-body">
+                                 <div class="row row_gutter_30">
+                                    <div class="col-md-6">
+                                       <div class="dc_txtSummary">
+                                          4
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[3].left_content">
+                                           
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="dc_txtSummary">
+                                          
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[3].right_content">
+                                              
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-12 d-md-none d-sm-block" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+                  <div class="teamSec_mobile" *ngIf="doctorsdata">
+                     <div class="teamSecTitle_wrap" (click)="shows(1)">
+                        <span class="teamSecTitle nav-link active">{{doctorsdata.details.doctorsdetails[0].heading}}</span>
+                     </div>
+                     <div class="teamDetails_Txt_mobile" *ngIf="show == 1" [innerHTML]="doctorsdata.details.doctorsdetails[0].left_content">
+                       
+                     </div>
+                     <div class="dc_txt_summary dc_last_p text-justify" *ngIf="show == 1" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">
+                                         
+                     </div>
+                  </div>
+                  <div class="teamSec_mobile" *ngIf="doctorsdata">
+                     <div class="teamSecTitle_wrap" (click)="shows(2)">
+                        <span class="teamSecTitle nav-link">{{doctorsdata.details.doctorsdetails[1].heading}}</span>
+                     </div>
+                     <div class="teamDetails_Txt_mobile" *ngIf="show == 2" [innerHTML]="doctorsdata.details.doctorsdetails[1].left_content">
+                       
+                     </div>
+                     <div class="dc_txt_summary dc_last_p text-justify" *ngIf="show == 2" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">
+                                         
+                     </div>
+                  </div>
+                  <div class="teamSec_mobile" *ngIf="doctorsdata">
+                     <div class="teamSecTitle_wrap" (click)="shows(3)">
+                        <span class="teamSecTitle nav-link">{{doctorsdata.details.doctorsdetails[2].heading}}</span>
+                     </div>
+                     <div class="teamDetails_Txt_mobile" *ngIf="show == 3" [innerHTML]="doctorsdata.details.doctorsdetails[2].left_content">
+                      
+                     </div>
+                     <div class="dc_txt_summary dc_last_p text-justify" *ngIf="show == 3" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">
+                                         
+                     </div>
+                  </div>
+                  <div class="teamSec_mobile" *ngIf="doctorsdata">
+                     <div class="teamSecTitle_wrap" (click)="shows(4)">
+                        <span class="teamSecTitle nav-link">{{doctorsdata.details.doctorsdetails[3].heading}}</span>
+                     </div>
+                     <div class="teamDetails_Txt_mobile" *ngIf="show == 4" [innerHTML]="doctorsdata.details.doctorsdetails[3].left_content">
+                        
+                     </div>
+                     <div class="dc_txt_summary dc_last_p text-justify" *ngIf="show == 4" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">
+                                         
+                     </div>
+                  </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+
+
+
+ </div>
+ <app-footer-top [dataString]="footersection"></app-footer-top>

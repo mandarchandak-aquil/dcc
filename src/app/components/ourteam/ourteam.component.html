@@ -1,0 +1,101 @@
+<!-- Loader Start -->
+<div id="preloader" *ngIf="loading">
+   <div id="status">
+       <div id="cms-loadding">
+           <div class="loading-spinner">
+               <div class="cms-bounce1"></div>
+               <div class="cms-bounce2"></div>
+               <div class="cms-bounce3"></div>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- Loader End -->
+<div class="dc_pg_spcHead" *ngIf="teamsdata">
+  <div class="main-container">
+   <fieldset data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+     <div class="dc_pgHead_wrap text-center" style="background-image:url(assets/images/head-bg.jpg);">
+        <h1 class="dc_pg_title">{{teamsdata.pagetitle}}</h1>
+        <ol class="breadcrumb dc_cstBread f-w-B justify-content-center">
+           <li class="breadcrumb-item"><a href="#">Home</a></li>
+           <li class="breadcrumb-item active">{{teamsdata.pagetitle}}</li>
+        </ol>
+     </div>
+     </fieldset>
+  </div>
+  <div class="dc_spacer_t_90 dc_spacer_b_60">
+     <div class="main-container">
+        <div class="row row_gutter_30">
+           <div class="col-md-6">
+              <div class="dc_txtSummary">
+               <fieldset data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                 <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="heading"></h2>
+                  </fieldset>
+                 <div class="dc_txt_summary dc_last_p text-justify" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+                  <p [innerHTML]="left_content"></p>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-6">
+              <div class="dc_txtSummary">
+                 <div class="dc_txt_summary dc_last_p text-justify" data-aos="fade-up" data-aos-duration="700" data-aos-delay="900">
+                    <p [innerHTML]="right_content"></p>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="dc_spacer_t_60 dc_spacer_b_60">
+     <div class="main-container">
+        <div class="pageTeam_sec">
+           <div class="row rowSpace" *ngIf="doctors.length > 0">
+              <div class="col-sm-6 col-md-3" *ngFor="let data of doctors; let i = index">
+                 <div class="dcTeam_bx mrg-b-60" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                    <div class="dcTeam_img mrg-b-30">
+                       <img [src]="data.image.link" class="w-100" [alt]="data.image.alt">
+                    </div>
+                    <div class="teamName_sec text-center mrg-b-30">
+                       <div class="teamName f-w-B f-s-24 line_H_1">
+                          {{data.name}}
+                       </div>
+                       <div class="teamDesignation text-uppercase">
+                         {{data.designation}}
+                       </div>
+                    </div>
+
+                    <!-- {{getsentize(data.short_description)}} -->
+                    <div class="teamDesc text-center f-s-18 line_H_1_5 mrg-b-20" [innerHTML]="data.short_description">
+                      
+                    </div>
+                    <div class="teamRead_more text-center line_H_1">
+                       <a routerLink="/Team-Details/{{data.slug}}" class="dc_readmore font-rubik f-w-M">
+                       Read More
+                       </a>
+                    </div>
+                 </div> 
+              </div>              
+           </div>
+        </div>
+        <div class="row rowSpace">
+           <div class="col-md-12">
+              <ul class="list-unstyled d-flex flex-wrap justify-content-center mt__60 dc_btnList-spc_60" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                 <li><a [href]="teamsdata.details.button_1_link" class="pagebtn dc_btn_min f-w-B">{{teamsdata.details.button_1_text}}</a></li>
+                 <li>
+                  <div ngbDropdown class="dropSec position-relative directList">
+                    <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle id="dropdownMenuButton">{{teamsdata.details.button_2_text}}</a>
+
+                    <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
+                       <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of teamsdata.details.locations">
+                          <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
+                       </ul>
+                    </div>
+                  </div>
+               </li>
+              </ul>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<app-footer-top [dataString]="footersection"></app-footer-top>
