@@ -65,9 +65,19 @@ export class ContactComponent implements OnInit {
         }
         console.log("location_details",this.locations);
         this.footersection = JSON.stringify(this.contact['footersection']);   
-        // this.MetaTags();
+        this.MetaTags();
       }  
   });    
+  }
+
+  MetaTags(){
+    let dataReq = {
+      "page": "contact",
+      "id": ""
+    }
+    this.meta.getProduct(dataReq).subscribe(data => {
+        this.meta.updateMetaTags(data['seodata']);   
+    });
   }
 
 }

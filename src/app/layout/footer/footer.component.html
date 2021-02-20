@@ -1,4 +1,4 @@
-<div class="spacer_t_30 spacer_b_30 bg-green footer" *ngIf="footerData">
+<div class="spacer_t_60 spacer_b_30 bg-green footer" *ngIf="footerData">
     <div class="main-container overflow-hidden">
       <div class="row rowSpace">
          <div class="col-md-6">
@@ -41,7 +41,7 @@
              </div>
              <div class="col-md-4">
                <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-               <div class="title">Department</div>
+               <div class="title">Search Query</div>
                <li *ngFor="let data of footerData.department;"><a [href]="data.link">{{data.name}}</a></li>
                <!-- <li><a href="#">Our Mission</a></li>
                <li><a href="#">Awards</a></li>

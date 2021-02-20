@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL : "https://ardemos.in/DCC/wp-json/",
+  // API_URL : "https://ardemos.in/DCC/wp-json/",
+   API_URL : "http://ardemosdevelopment.in/DCC/wp-json/"  
   
 };
 

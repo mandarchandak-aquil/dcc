@@ -8,7 +8,7 @@ import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'; 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 const domino = require('domino'); 
 const win = domino.createWindow(''); 
 global['window'] = win; global['document'] = win.document; 
