@@ -106,6 +106,14 @@ export class CommonService {
     )
   }
 
+  contactData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'contactuspage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
   contactDelhiData(req:any) : Observable<any>{
 
     return this.http.post<any>(this.apiurl+'contactdetails/v1', JSON.stringify(req), httpOptions)

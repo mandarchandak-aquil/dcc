@@ -53,34 +53,18 @@
         <ul class="list-unstyled d-flex flex-wrap justify-content-center mt__60 dc_btnList-spc_60" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
            <li *ngIf="aboutData"><a [href]="aboutData.topsection.button_1_link" class="pagebtn dc_btn_min f-w-B">{{aboutData.topsection.button_1_text}}</a></li>
            <li>
-              <!-- <div class="dropSec position-relative">
-                 <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection">Get Direction</a>
-                 <div class="directionList transtn-1">
-                   <ul class="dire_listSec mb-0 list-unstyled">
-                     <li class="list-item"> <a href="#" class="direLink"> Sec 23, Gurgaon </a> </li>
-                     <li class="list-item"> <a href="#" class="direLink"> GK-2, New Delhi </a> </li>
-                   </ul>
-                 </div>
-                 </div> -->
+         
               <div ngbDropdown class="dropSec position-relative directList" *ngIf="aboutData">
                  <!-- <button class="btn btn-outline-primary" id="dropdownMenuButton" ngbDropdownToggle>Get Direction</button> -->
                  <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle
                     id="dropdownMenuButton">{{aboutData.topsection.button_2_text}}</a>
                  <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
                     <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of aboutData.topsection.locations">
-                       <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
+                       <li class="list-item"> <a [routerLink]="buttondata.link" class="direLink" >{{buttondata.name}}</a> </li>
                     </ul>
                  </div>
               </div>
-              <!-- <div ngbDropdown  class="dropSec position-relative">
-                 <button class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" id="dropdownMenuButton" ngbDropdownToggle>Get Direction</button>
-                 <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="directionList transtn-1">
-                     <ul class="dire_listSec mb-0 list-unstyled">
-                         <li class="list-item"> <a href="#" class="direLink"> Sec 23, Gurgaon </a> </li>
-                         <li class="list-item"> <a href="#" class="direLink"> GK-2, New Delhi </a> </li>
-                     </ul>
-                 </div>
-                 </div> -->
+            
            </li>
         </ul>
      </div>

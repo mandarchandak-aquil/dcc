@@ -12,7 +12,7 @@ import { MetaServiceService } from '../../common/meta-service.service';
 })
 export class HomeComponent implements OnInit {
   public homepage: any;
-  loading :boolean = false;  
+  loading :boolean = true;  
   topsectionContent:any;
   aboutsectionContent:any;
   servicesectionContent:any;
@@ -31,6 +31,9 @@ export class HomeComponent implements OnInit {
     
     this.MetaTags();
     this.homepage = this.route.snapshot.data['homepage'];
+    if(this.homepage){
+      this.loading = false;
+    }
     console.log(this.homepage, "homepage");    
 
     this.topsectionContent = this.sanitizer.bypassSecurityTrustHtml(this.homepage['topsection']['content']);
@@ -60,7 +63,7 @@ export class HomeComponent implements OnInit {
     }
     this.meta.getProduct(dataReq).subscribe(data => {
         this.meta.updateMetaTags(data['seodata']);
-        // this.loading = false;
+        
     });
   }
 

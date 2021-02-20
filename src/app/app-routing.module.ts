@@ -34,7 +34,11 @@ const routes: Routes = [
       { 
         path: 'careers', 
         loadChildren: () => import('./components/careers/careers.module').then(m => m.CareersModule) 
-      },  
+      }, 
+      { 
+        path: 'contact', 
+        loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule) 
+      },   
       { path: 'contact', 
         loadChildren: () => import('./components/contact-delhi/contact-delhi.module').then(m => m.ContactDelhiModule) 
       },
@@ -56,7 +60,8 @@ const routes: Routes = [
       headerData: HeaderResolver, 
       footerData: FooterResolver
     }
-  },  
+  },
+  
   
   
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },

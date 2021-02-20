@@ -12,7 +12,7 @@ import { CommonService } from '../../common/services/common/common.service';
   styleUrls: ['./ourservices.component.css','../../common/style.css']
 })
 export class OurservicesComponent implements OnInit {
-  loading :boolean = true; 
+  loading :boolean = false; 
   public servicedata:any;
   heading: any;
   left_content: any;
@@ -35,6 +35,7 @@ export class OurservicesComponent implements OnInit {
   }
 
   getDataInit(){
+    this.loading = true;
     let dataReq = {
       "pagename": "our services"
   }
@@ -48,6 +49,7 @@ export class OurservicesComponent implements OnInit {
       this.services = this.servicedata['details']['services'];
       this.footersection = JSON.stringify(this.servicedata['footersection'])
       console.log("this.services",this.services);
+      this.loading = false;
     }    
 });
 
@@ -61,8 +63,7 @@ export class OurservicesComponent implements OnInit {
       "id": ""
     }
     this.meta.getProduct(dataReq).subscribe(data => {
-        this.meta.updateMetaTags(data['seodata']);
-        this.loading = false;
+        this.meta.updateMetaTags(data['seodata']);       
     });
   }
 
