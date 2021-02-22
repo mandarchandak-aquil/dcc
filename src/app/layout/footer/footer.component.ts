@@ -25,15 +25,34 @@ export class FooterComponent implements OnInit {
     this.email = this.formBuilder.group({
       email : ['',[Validators.required,Validators.email]],
     });
-    this.footerData = this.route.snapshot.data['footerData'];
-    console.log(this.footerData, "footerData");
+    // this.footerData = this.route.snapshot.data['footerData'];
+    // console.log(this.footerData, "footerData");
     
-     this.address = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['address']);
-     this.phone = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['phone']);
-     this.timing = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['timing']);
-     this.footerlogocontent = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['footerlogocontent']);
+    //  this.address = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['address']);
+    //  this.phone = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['phone']);
+    //  this.timing = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['timing']);
+    //  this.footerlogocontent = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['footerlogocontent']);
 
-   
+    this.getDataInit();
+  }
+
+  
+  getDataInit(){
+    let dataReq = {
+      "pagename": "footer"
+  }
+    this.comman.footerData(dataReq).subscribe(data => {
+      if(data){
+         this.footerData = data;
+        console.log(this.footerData, "footerData");
+        
+         this.address = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['address']);
+         this.phone = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['phone']);
+         this.timing = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['timing']);
+         this.footerlogocontent = this.sanitizer.bypassSecurityTrustHtml(this.footerData['details']['footerlogocontent']);
+
+      }   
+    });    
   }
 
   get f() { return this.email.controls; }

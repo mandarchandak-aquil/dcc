@@ -12,7 +12,7 @@
 </div>
 <!-- Loader End -->
 <!-- topsection -->
-<div class="topSlider_sec" *ngIf="homepage.topsection">
+<div class="topSlider_sec" *ngIf="homepage">
     <div class="main-container overflow-hidden">
        <div class="row no-gutters">
          <div class="col-md-6  align-self-end order-md-2">
@@ -48,7 +48,7 @@
 <!-- topsection End-->
 
 <!-- aboutsection -->
- <div class="spacer_t_30 spacer_b_30 bg-white">
+ <div class="spacer_t_30 spacer_b_30 bg-white" *ngIf="homepage">
     <div class="main-container">
        <div class="row rowSpace">
          <div class="col-md-6 order-md-2">
@@ -89,7 +89,7 @@
  <!--aboutsection End -->
 
  <!-- servicesection -->
- <div class="spacer_t_30 spacer_b_30">
+ <div class="spacer_t_30 spacer_b_30" *ngIf="homepage">
     <div class="main-container">
        <div class="row rowSpace">
           <div class="col-md-6 align-self-center">
@@ -162,7 +162,7 @@
 <!-- servicesection End -->
 
 <!-- teamsection -->
- <div class="spacer_t_30 spacer_b_30 bg-white">
+ <div class="spacer_t_30 spacer_b_30 bg-white" *ngIf="homepage">
     <div class="main-container">
        <div class="row rowSpace">
           <div class="col-md-6">
@@ -234,7 +234,7 @@
 <!-- teamsection End -->
 
 <!-- pethealthsection -->
- <div class="spacer_t_30 spacer_b_30">
+ <div class="spacer_t_30 spacer_b_30" *ngIf="homepage">
     <div class="main-container">
        <div class="row rowSpace">
           <div class="col-md-6 align-self-center">
@@ -281,7 +281,7 @@
 <!-- pethealthsection End -->
 
 <!-- footersection -->
- <div class="spacer_t_30 spacer_b_30 bg-white">
+ <div class="spacer_t_30 spacer_b_30 bg-white" *ngIf="homepage">
     <div class="main-container">
        <div class="row rowSpace align-items-center">
           <div class="col-md-10">

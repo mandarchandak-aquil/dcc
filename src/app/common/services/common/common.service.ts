@@ -33,6 +33,15 @@ export class CommonService {
       catchError(this.handleError)
     )
   }
+  
+  homepageData(req:any) : Observable<any> { 
+    return this.http.post<any>(this.apiurl+'homepage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
   career(req:any) : Observable<any> { 
     return this.http.post<any>(this.apiurl+'careersform/v1', JSON.stringify(req), httpOptions)
     .pipe(
@@ -145,6 +154,22 @@ export class CommonService {
 
   serviceDetails(req:any) : Observable<any>{
     return this.http.post<any>(this.apiurl+'servicedetailspage/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  headerData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'header/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  footerData(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'footer/v1', JSON.stringify(req), httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)

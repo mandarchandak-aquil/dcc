@@ -58,7 +58,8 @@ export class ContactGurgaonComponent implements OnInit {
     }
     console.log("slug",dataReq);
     this.meta.getProduct(dataReq).subscribe(data => {
-        this.meta.updateMetaTags(data['seodata']);
+      let url = this.router.url
+        this.meta.updateMetaTags(data['seodata'],url);
         this.loading = false;
     });
   }

@@ -127,7 +127,9 @@ export class AboutusComponent implements OnInit {
       "id": ""
     }
     this.meta.getProduct(dataReq).subscribe(data => {
-        this.meta.updateMetaTags(data['seodata']);
+      console.log("routerurl",this.router.url);
+      let url = this.router.url
+        this.meta.updateMetaTags(data['seodata'],url);
         // this.loading = false;
     });
   }

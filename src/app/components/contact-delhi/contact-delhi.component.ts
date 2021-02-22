@@ -101,8 +101,9 @@ console.log(this.contact.details.button_2_link, "button_2_link")
       "id": slug
     }
     console.log("slug",dataReq);
+    let url = this.router.url
     this.meta.getProduct(dataReq).subscribe(data => {
-        this.meta.updateMetaTags(data['seodata']);
+        this.meta.updateMetaTags(data['seodata'],url);
         this.loading = false;
     });
   }

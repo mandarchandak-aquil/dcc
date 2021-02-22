@@ -27,8 +27,8 @@ export class TeamDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
-    console.log(this.router.url.replace("/Team-Details/", ""))
-    let data = this.router.url.replace("/Team-Details/", "");
+    console.log(this.router.url.replace("/our-pet-care-doctors/", ""))
+    let data = this.router.url.replace("/our-pet-care-doctors/", "");
     this.slug = data;
     let req = {
       "doctorid": data
@@ -57,8 +57,8 @@ export class TeamDetailsComponent implements OnInit {
     }
     console.log("slug",dataReq);
     this.meta.getProduct(dataReq).subscribe(data => {
-        this.meta.updateMetaTags(data['seodata']);
-        
+      let url = this.router.url
+      this.meta.updateMetaTags(data['seodata'],url);
     });
   }
 

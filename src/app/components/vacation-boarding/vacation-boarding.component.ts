@@ -27,8 +27,8 @@ export class VacationBoardingComponent implements OnInit {
   constructor(public comman:CommonService,private meta : MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
   ngOnInit() {
 
-    console.log(this.router.url.replace("/ourservices/service-details/", ""))
-    let data = this.router.url.replace("/ourservices/service-details/", "");
+    console.log(this.router.url.replace("/DCC-pet-services/", ""))
+    let data = this.router.url.replace("/DCC-pet-services/", "");
     this.slug = data;
     let req = {
       "serviceid": data
@@ -85,8 +85,8 @@ export class VacationBoardingComponent implements OnInit {
     }
     console.log("slug",dataReq);
     this.meta.getProduct(dataReq).subscribe(data => {
-        this.meta.updateMetaTags(data['seodata']);
-        this.loading = false;
+      let url = this.router.url
+      this.meta.updateMetaTags(data['seodata'],url);        
     });
   }
 

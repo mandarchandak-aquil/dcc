@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, from } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-
+import { Router, ActivatedRoute } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { environment } from "../../environments/environment";
 import { DOCUMENT } from '@angular/common';
@@ -23,15 +23,17 @@ const httpOptions = {
 export class MetaServiceService {
 
   apiurl = environment.API_URL;
+  domainurl = environment.DOMAIN_URL;
     // constructor() { }
-    constructor(private meta: Meta,private http: HttpClient) { }
-    updateMetaTags(metaTags : any){
+    constructor(private meta: Meta, @Inject(DOCUMENT) private doc:any, private http: HttpClient,public router: Router) { }
+    updateMetaTags(metaTags : any,can : any){
       var metaData:any= {
         "metaTags" :[
           { name: 'description', content:metaTags.description},
           { property: 'og:title', content:metaTags.title },
           { proprety: 'og:description', content:metaTags.description},          
-          { property: 'og:keywords', content: metaTags.keywords },           
+          { property: 'og:keywords', content: metaTags.keywords },   
+
         ]
       }
     //  var element: any = document.querySelector(`link[rel='canonical']`) || null
@@ -39,9 +41,16 @@ export class MetaServiceService {
     //      element = document.createElement('link') as HTMLLinkElement;
     //      document.head.appendChild(element);
     //  }
+
+     let curl= this.domainurl+''+this.router.url;
     //  element.setAttribute('rel', 'canonical')
-    //  element.setAttribute('href', metaTags.canonical_tag)
-      console.log(metaData,"metaTagsmetaTags",metaTags);
+    //  element.setAttribute('href', curl)
+    let link: HTMLLinkElement = this.doc.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    this.doc.head.appendChild(link);
+    link.setAttribute('href', curl);
+      
+      console.log(link,"metaTagsmetaTags");
       metaData['metaTags'].forEach((m:any) =>    
           this.meta.updateTag(m)
       );

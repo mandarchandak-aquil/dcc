@@ -16,15 +16,15 @@ const routes: Routes = [
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule) 
       },
       { 
-        path: 'aboutus', 
+        path: 'about-dccpets', 
         loadChildren: () => import('./components/aboutus/aboutus.module').then(m => m.AboutusModule) 
       },
       { 
-        path: 'ourservices', 
+        path: 'DCC-pet-services', 
         loadChildren: () => import('./components/ourservices/ourservices.module').then(m => m.OurservicesModule) 
       },
       { 
-        path: 'ourteam', 
+        path: 'our-pet-care-doctors', 
         loadChildren: () => import('./components/ourteam/ourteam.module').then(m => m.OurteamModule) 
       },     
       { 
@@ -36,10 +36,10 @@ const routes: Routes = [
         loadChildren: () => import('./components/careers/careers.module').then(m => m.CareersModule) 
       }, 
       { 
-        path: 'contact', 
+        path: 'contact-us', 
         loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule) 
       },   
-      { path: 'contact', 
+      { path: 'contact-us', 
         loadChildren: () => import('./components/contact-delhi/contact-delhi.module').then(m => m.ContactDelhiModule) 
       },
       // { path: 'contact',
@@ -48,10 +48,10 @@ const routes: Routes = [
       { path: 'Pet-Health', 
         loadChildren: () => import('./components/pet-health/pet-health.module').then(m => m.PetHealthModule) 
       },
-      { path: 'Team-Details', 
+      { path: 'our-pet-care-doctors', 
         loadChildren: () => import('./components/team-details/team-details.module').then(m => m.TeamDetailsModule) 
       },  
-      { path: 'ourservices/service-details', 
+      { path: 'DCC-pet-services', 
         loadChildren: () => import('./components/vacation-boarding/vacation-boarding.module').then(m => m.VacationBoardingModule) 
       },
       { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },

@@ -76,7 +76,8 @@ export class ContactComponent implements OnInit {
       "id": ""
     }
     this.meta.getProduct(dataReq).subscribe(data => {
-        this.meta.updateMetaTags(data['seodata']);   
+      let url = this.router.url
+        this.meta.updateMetaTags(data['seodata'],url);   
     });
   }
 
