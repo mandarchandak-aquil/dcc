@@ -104,7 +104,7 @@
                
                 <div class="commonLinks text-center contactGet" *ngIf="contact">
                   <ul class="list-unstyled d-flex flex-wrap">
-                     <li class="contactList-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                     <li class="contactList-item"  data-aos="fade-up"  data-aos-duration="700" data-aos-delay="300">
                         <div ngbDropdown class="dropSec position-relative directList">
                            <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle id="dropdownMenuButton">{{button_1_text}}</a>
 
@@ -117,7 +117,7 @@
                      </li>
                     
                       <li class="contactList-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                         <a [href]="button_2_link" class="pagebtn dc_btn_min f-w-B">{{button_2_text}}</a>
+                         <a [href]="button_2_link" target="_blank" class="pagebtn dc_btn_min f-w-B">{{button_2_text}}</a>
                         </li>
                   </ul>
                </div>

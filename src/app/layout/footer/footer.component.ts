@@ -18,6 +18,7 @@ export class FooterComponent implements OnInit {
   timing:any;
   footerlogocontent:any;
   submitted = false;
+  success:boolean = false;
 
   constructor(public comman:CommonService,private route: ActivatedRoute,private sanitizer: DomSanitizer,private formBuilder: FormBuilder) { }
 
@@ -57,6 +58,13 @@ export class FooterComponent implements OnInit {
 
   get f() { return this.email.controls; }
 
+  hidemsg(){
+    setTimeout(() => {
+      this.email.controls.email.clearValidators()
+      this.email.controls.email.setErrors(null)
+      this.email.controls.email.markAsPristine()
+    }, 5000);
+  }
 
   // get name() { return this.email.get('email'); }
 
@@ -68,6 +76,11 @@ export class FooterComponent implements OnInit {
     this.comman.subscribeform(this.email.value).subscribe(data => {
       if(data['response'] == 200){
         this.email.reset();
+        this.success = true;
+        setTimeout(() => {
+          this.success = false;
+        }, 3000);
+
       }
    console.log(data,'send');
   });

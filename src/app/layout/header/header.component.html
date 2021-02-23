@@ -7,7 +7,7 @@
                   <span class="navbar-toggler-icon"></span>
                 </button>
              </div>
-             <a class="navbar-brand navbarLogo" href="#">
+             <a class="navbar-brand navbarLogo" href="/">
              <img class="w-100" [src]="headerData.logo" alt="DCC Logo">
              </a>
              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -45,7 +45,7 @@
              <div class="mobMenu_sec">
                <div class="mobSec d-flex">
                   <div class="emergencyBtn_sec">
-                     <a href="#" class="emergencyLink font-rubik f-w-M transtn-1">
+                     <a [href]="headerData.emergency_link" target="_blank" class="emergencyLink font-rubik f-w-M transtn-1">
                         Emergency
                      </a>
                   </div>                  

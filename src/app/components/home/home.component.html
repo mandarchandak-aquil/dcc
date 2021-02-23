@@ -14,9 +14,9 @@
 <!-- topsection -->
 <div class="topSlider_sec" *ngIf="homepage">
     <div class="main-container overflow-hidden">
-       <div class="row no-gutters">
-         <div class="col-md-6  align-self-end order-md-2">
-            <div class="bannerImg_sec" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+       <div class="row no-gutters" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+         <div class="col-md-6  align-self-end order-md-2" >
+            <div class="bannerImg_sec">
                <img [src]="homepage.topsection.image.link" class="w-100" [alt]="homepage.topsection.image.alt" />
             </div>
          </div>
@@ -33,7 +33,7 @@
                    </div>
                    <div class="btnSec">
                      <div class="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500"> 
-                      <a [href]="homepage.topsection.button_link" class="pagebtn f-w-B">
+                      <a [href]="homepage.topsection.button_link" target="_blank" class="pagebtn f-w-B">
                         {{homepage.topsection.button_text}}
                       </a>
                      </div>
@@ -57,7 +57,7 @@
                   <img [src]="homepage.aboutsection.image1.link" class="w-100" [alt]="homepage.aboutsection.image1.alt">
                </div>
                <div class="abtdcc_imgSec_2" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
-                  <img [src]="homepage.aboutsection.image1.link" class="w-100" [alt]="homepage.aboutsection.image1.alt">
+                  <img [src]="homepage.aboutsection.image2.link" class="w-100" [alt]="homepage.aboutsection.image2.alt">
                </div>
             </div>
          </div>
@@ -108,7 +108,8 @@
                 </div>
                 <div class="serviceList_sec mrg-b-60" *ngIf="services">
                    <ul class="mb-0 serviceSec" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
-                      <li class="service-item" *ngFor="let service of services"> <a [routerLink]="'ourservices/service-details/'+service.slug" class="serviceLink transtn-1"> {{service.name}} </a> </li>                     
+                      <li class="service-item" *ngFor="let service of services" > <span class="serviceLink transtn-1">{{service.name}}</span> </li>     
+                      <!-- <a [routerLink]="'DCC-pet-services/'+service.slug" class="serviceLink transtn-1"> </a>                 -->
                    </ul>
                 </div>
                 <div class="btnSec d-none d-md-block" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
@@ -129,7 +130,8 @@
              <div class="servicebox_sec">
                 <div class="row rowSpace" *ngIf="serviceList.length > 0">               
                      <div class="col-6 col-md-6" *ngFor="let data of serviceList">
-                        <div class="serviceBx bx-shadow text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300" [routerLink]="'ourservices/service-details/'+data.slug">
+                        <div class="serviceBx bx-shadow text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                           <!-- [routerLink]="'DCC-pet-services/service-details/'+data.slug" -->
                            <div class="service_iconSec">
                               <img [src]="data.icon.link" class="w-100" [alt]="data.icon.alt">
                            </div>

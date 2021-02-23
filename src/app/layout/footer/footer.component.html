@@ -85,7 +85,7 @@
            <div class="email-search">
             <form [formGroup]="email" enctype="multipart/form-data" (ngSubmit)="onSubmit()" >
              <div class="input-group mb-3">
-               <input type="text" class="form-control"  name="email" formControlName="email" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+               <input type="text" class="form-control" (focusout)="hidemsg()"  name="email" formControlName="email" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
                <div class="input-group-append">
                  <button class="btn" type="submit" [disabled]="!email.valid">Send</button>
                </div>
@@ -96,7 +96,9 @@
                   <div *ngIf="f.email.errors.required">Email is required</div>
                   <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
               </div>
-
+              <div class="input-group mb-3" *ngIf="success">
+                Thank you. We will get in touch with you shortly.
+              </div>
              
 
 

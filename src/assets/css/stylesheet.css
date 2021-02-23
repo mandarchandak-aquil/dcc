@@ -1064,7 +1064,7 @@ z-index: 9;}
 .teamDesignation {font-size: 12px;}
 
 /*New Updates CSS*/
-.btnSec .btnSec_wra { margin-right: 15px;}
+.btnSec .btnSec_wra { margin:0 5px;}
 .testimonials.dc_testiArrow .slick-initialized .slick-slide {height: 400px;}
 .dcTeam_img img{border-radius: 8px}
 .pagebtn.pagebtngreen{ margin-left: 15px;}

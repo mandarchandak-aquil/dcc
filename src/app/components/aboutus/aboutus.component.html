@@ -51,7 +51,7 @@
            </div>          
         </div>
         <ul class="list-unstyled d-flex flex-wrap justify-content-center mt__60 dc_btnList-spc_60" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-           <li *ngIf="aboutData"><a [href]="aboutData.topsection.button_1_link" class="pagebtn dc_btn_min f-w-B">{{aboutData.topsection.button_1_text}}</a></li>
+           <li *ngIf="aboutData"><a [href]="aboutData.topsection.button_1_link" target="_blank" class="pagebtn dc_btn_min f-w-B">{{aboutData.topsection.button_1_text}}</a></li>
            <li>
          
               <div ngbDropdown class="dropSec position-relative directList" *ngIf="aboutData">
@@ -286,7 +286,7 @@
          <div class="col-md-6 align-self-center order-md-2">
             <div class="dc_txtSummary">
                <fieldset data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"> 
-               <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{technology.small_heading}}S</div>
+               <div class="dccSubTitle f-w-B opacity-5 mrg-b-30">{{technology.small_heading}}</div>
             </fieldset>
             <fieldset data-aos="fade-up" data-aos-duration="700" data-aos-delay="400"> 
                <h2 class="headingSec line_H_1 mrg-b-30" [innerHTML]="technologyheading"></h2>
