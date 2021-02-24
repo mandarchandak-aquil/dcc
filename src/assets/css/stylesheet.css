@@ -937,7 +937,7 @@ transform: translateY(8px) rotate(-45deg);}
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 border-color: transparent;}
 
-.topBanner_sec {padding-top: 20px;}
+.topBanner_sec {padding-top: 70px;}
 .mrg-b-30 {margin-bottom: 15px;}
 .headingSec {font-size: 26px;}
 .titleWrap{ max-width: 220px;}
@@ -1124,6 +1124,7 @@ box-shadow: 10px 0px 9px -7px rgb(0 0 0 / 10%);transform: translateX(-105%);tran
 span.teamSecTitle {font-size: 16px; padding: 10px 15px; border-radius: 8px; margin-bottom: 10px; background-color: #2EAD5A; color: #fff; border: none;
 width: 100%; display: block; margin: auto;text-align: center;}
 .teamDetails_Txt_mobile {padding: 15px 0;}
+.topBanner_sec {padding-top: 20px;}
 
 }
 
