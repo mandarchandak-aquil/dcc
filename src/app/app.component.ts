@@ -11,7 +11,7 @@ import * as AOS from 'aos';
 export class AppComponent {
   title = 'dcc';
   routerSubscription: any;
-  loading:boolean = true;
+  loading:boolean = false;
   constructor(public router: Router ){
     this. recallJsFuntions();  
   }
@@ -27,8 +27,12 @@ export class AppComponent {
         }
     );
     setTimeout(() => {
-      this.loading = false;
+ 
     }, 2000);
+  }
+  ngAfterViewInit() {
+    document.body.classList.add('siteLoad');
+    this.loading = false;
   }
   recallJsFuntions() {
     this.routerSubscription = this.router.events

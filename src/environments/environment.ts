@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  // API_URL : "https://ardemos.in/DCC/wp-json/",
+
   API_URL : "https://dccpets.in/pet-care-blog/wp-json/",
-  DOMAIN_URL: "https://dccpets.in/Dccnew"
+  DOMAIN_URL: "https://dccpets.in/"
+
 };
 
 /*
