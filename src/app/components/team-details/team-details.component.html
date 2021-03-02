@@ -53,7 +53,7 @@
 
                           <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
                              <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of doctorsdata.details.locations">
-                                <li class="list-item"> <a [routerLink]="buttondata.link" class="direLink" >{{buttondata.name}}</a> </li>
+                                <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
                              </ul>
                           </div>
                         </div>
@@ -74,7 +74,7 @@
             <div class="col-md-12 d-none d-md-block">
                <div class="teamDetail_sec" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
                   <div class="teamDetailsTab mrg-b-60" *ngIf="doctorsdata">
-                     <ul id="tabs" class="nav nav-tabs justify-content-center" role="tablist">
+                     <!-- <ul id="tabs" class="nav nav-tabs justify-content-center" role="tablist">
                         <li class="nav-item">
                            <a  (click)="shows(1)" class="nav-link active" data-toggle="tab" role="tab">{{doctorsdata.details.doctorsdetails[0].heading}}</a>
                         </li>
@@ -87,7 +87,7 @@
                         <li class="nav-item">
                            <a  (click)="shows(4)"  class="nav-link" data-toggle="tab" role="tab">{{doctorsdata.details.doctorsdetails[3].heading}}</a>
                         </li>
-                     </ul>
+                     </ul> -->
                   </div>
                   <div class="teamDetailsTxt_sec" *ngIf="doctorsdata">
                      <div id="content" class="tab-content" role="tablist">
@@ -252,4 +252,6 @@
 
 
  </div>
- <app-footer-top [dataString]="footersection"></app-footer-top>
+ <fieldset *ngIf="footersection">
+   <app-footer-top [dataString]="footersection"></app-footer-top>
+</fieldset>

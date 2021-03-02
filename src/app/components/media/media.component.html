@@ -138,4 +138,6 @@
        </div>
     </div>
 </div>
-<app-footer-top [dataString]="footersection"></app-footer-top>
+<fieldset *ngIf="footersection">
+   <app-footer-top [dataString]="footersection"></app-footer-top>
+</fieldset>

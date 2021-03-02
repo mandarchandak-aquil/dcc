@@ -38,7 +38,8 @@ export class MediaComponent implements OnInit {
         this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.mediadata['details']['right_content']);
         this.medianews = this.mediadata['mediaandnews'];
         console.log(this.mediadata, "mediadata"); 
-        this.footersection = JSON.stringify(this.mediadata['footersection'])
+        this.footersection = JSON.stringify(this.mediadata['footersection']);
+        console.log("footerd",this.footersection);
         this.loading = false;
       }   
     });    

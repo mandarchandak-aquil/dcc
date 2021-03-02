@@ -60,7 +60,12 @@
                    <a [href]="'contact-us/'+loc.slug" class="pagebtn pagebtngreen f-w-B">
                         {{loc.name}}
                    </a>
-                </div>               
+                </div>  
+                <div class="btnSec_wra d-inline">
+                  <a  (click)="scroll('enquiryformid')" class="pagebtn scrollClick pagebtngreen f-w-B">
+                      Enquiry Form
+                  </a>
+               </div>              
              </div>
           </div>
        </div>
@@ -107,7 +112,7 @@
                                         <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
                                            <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of even.locations">
                                             
-                                              <li class="list-item"> <a [routerLink]="buttondata.link" class="direLink" >{{buttondata.name}}</a> </li>
+                                              <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
                                            </ul>
                                         </div>
                                       </div>                      
@@ -124,7 +129,7 @@
           </div>
        </div>
     </div>
-    <div class="contact_delhiWrap">
+    <div class="contact_delhiWrap dc_spacer_t_30">
        <div class="dc_spacer_t_30 dc_spacer_b_30">
           <div class="main-container" *ngIf="odddata">
              <div class="row row_gutter_30" *ngFor="let odd of odddata">
@@ -152,7 +157,7 @@
                                 <a href="javascript:void(0)" class="pagebtn pagebtnblue dc_btn_min f-w-B getDirection" ngbDropdownToggle id="dropdownMenuButton">{{odd.button_1_text}}</a>             
                                 <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
                                    <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of odd.locations">
-                                      <li class="list-item"> <a [routerLink]="buttondata.link" class="direLink" >{{buttondata.name}}</a> </li>
+                                      <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
                                    </ul>
                                 </div>
                               </div>         
@@ -181,6 +186,111 @@
           </div>
        </div>
     </div>
+
+    <div class="dc_spacer_t_90 dc_spacer_b_60" id="enquiryformid">
+      <div class="main-container">
+         <div class="row row_gutter_30" *ngIf="contact">
+            <div class="col-md-6">
+               <div class="dc_txtSummary" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+                  <h2 class="headingSec line_H_1 mrg-b-30"  [innerHTML]="enquiryheading"></h2>
+               </div>
+               <div class="hrLine mrg-b-30" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400"></div>
+            </div>
+         </div>
+         <div class="row row_gutter_30" *ngIf="contact">
+            <div class="col-md-6">
+               <div class="dc_txtSummary" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                  <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="enquiryleft_content">
+                    
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="dc_txtSummary" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+                  <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="enquiryright_content">
+                   
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+    <div class="dc_spacer_t_30 dc_spacer_b_90">
+      <div class="main-container">
+         <div class="row row_gutter_30">
+            <div class="col-md-6">
+               <div class="dc_About_media_wrap mar-b-30">
+                  <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD" *ngIf="contact">
+                     <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img1.link}}" alt="{{img1.alt}}" /></div>
+                     </li>
+                     <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img2.link}}" alt="{{img2.alt}}" /></div>
+                     </li>
+                     <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img3.link}}" alt="{{img3.alt}}" /></div>
+                     </li>
+                     <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
+                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img3.link}}" alt="{{img3.alt}}" /></div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-md-6" >
+               <div class="careers-form" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                  <form [formGroup]="career" enctype="multipart/form-data" (ngSubmit)="onSubmit()" >
+                     <div class="row_gutter_30">
+                        <div class="col-12">
+                           <div class="position-relative">
+                             <label class="f-s-24 f-w-B cmslabel">What is your name?</label>
+                             <input type="text" class="form-control cmsfield" name="name" formControlName="name">
+                             <div *ngIf="f.name.errors && (f.name.dirty || f.name.touched)" >
+                               <div *ngIf="f.name.errors.required" class="errorMsg">Name is required</div>
+                            </div>
+                           </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="position-relative">
+                           <label class="f-s-24 f-w-B cmslabel">What is your Email Address?</label>
+                           <input type="text" class="form-control cmsfield" name="email" formControlName="email">
+                           <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" >
+                             <div *ngIf="f.email.errors.required" class="errorMsg">Email is required</div>
+                             <div *ngIf="f.email.errors.email" class="errorMsg">Email must be a valid email address</div>
+                         </div>
+                         </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="position-relative">
+                           <label class="f-s-24 f-w-B cmslabel">What is Your phone number?</label>
+                           <input type="text" class="form-control cmsfield" accept="number" maxlength="10" name="phoneno" formControlName="phoneno">
+                           <div *ngIf="f.phoneno.errors && (f.phoneno.dirty || f.phoneno.touched)" >
+                             <div *ngIf="f.phoneno.errors.required" class="errorMsg">Phone number is required</div>
+                             <div class="errorMsg" *ngIf="f.phoneno.errors.pattern || f.phoneno.errors.maxlength || f.phoneno.errors.minlength">Phone number must be at least 10 numbers</div>
+                             <!-- <div *ngIf="f.phoneno.errors.pattern" class="errorMsg">Please Entry Only Numbers</div> -->
+                         </div>
+                         </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="position-relative">
+                           <label class="f-s-24 f-w-B cmslabel">Please Write to us</label>
+                           <textarea class="form-control cmsfield tell" rows="5" name="message" formControlName="message"></textarea>
+                           <div *ngIf="f.message.errors && (f.message.dirty || f.message.touched)" >
+                             <div *ngIf="f.message.errors.required" class="errorMsg">This field is required</div>                             
+                           </div>
+                           </div>
+                        </div>
+                        <div class="col-12">
+                           <div class="d-flex justify-content-between">                        
+                              <button class="pagebtn f-w-B transtn-1" type="submit" [disabled]="!career.valid">Book an appointment</button>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
  </div>
  <fieldset *ngIf="footersection">
     <app-footer-top [dataString]="footersection"></app-footer-top>

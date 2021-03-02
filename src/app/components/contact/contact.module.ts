@@ -4,6 +4,7 @@ import {LayoutModule} from "../../layout/layout.module";
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ContactComponent],
@@ -11,6 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     ContactRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
     LayoutModule
   ]
 })

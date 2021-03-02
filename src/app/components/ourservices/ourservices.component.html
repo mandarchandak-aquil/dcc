@@ -81,7 +81,7 @@
 
                            <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
                               <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of servicedata.details.locations">
-                                 <li class="list-item"> <a [routerLink]="buttondata.link" class="direLink" >{{buttondata.name}}</a> </li>
+                                 <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
                               </ul>
                            </div>
                          </div>

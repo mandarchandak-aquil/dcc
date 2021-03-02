@@ -16,7 +16,7 @@
 <div class="dc_pg_spcHead" *ngIf="contact">
    <div class="main-container">
       <fieldset data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-       <div class="dc_pgHead_wrap text-center" *ngIf="contact" style="background-image:url(/assets/images/head-bg.jpg);">
+       <div class="dc_pgHead_wrap text-center" *ngIf="contact" style="background-image:url(assets/images/head-bg.jpg);">
           <h1 class="dc_pg_title">Contact Us</h1>
           <ol class="breadcrumb dc_cstBread f-w-B justify-content-center">
              <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -58,9 +58,9 @@
     </div>
     <div class="dc_spacer_t_30 dc_spacer_b_30" >
        <div class="main-container">
-          <div class="btnSec text-center pageCont" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+          <div class="btnSec text-center contactAct"  data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
              <div class="btnSec_wra d-inline"  *ngFor="let cn of contactlist">
-                <a [href]="'contact-us/'+cn.slug" class="pagebtn pagebtngreen f-w-B">
+                <a [href]="'contact-us/'+cn.slug" class="pagebtn  f-w-B" [ngClass]="{'contact-active': cn.slug == dataurl }">
                 {{cn.name}}
                 </a>
              </div>
@@ -110,7 +110,7 @@
 
                            <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="dirList">
                               <ul class="dire_listSec mb-0 list-unstyled" *ngFor="let buttondata of locations">
-                                 <li class="list-item"> <a [routerLink]="buttondata.link" class="direLink" >{{buttondata.name}}</a> </li>
+                                 <li class="list-item"> <a [href]="buttondata.link" target="_blank" class="direLink" >{{buttondata.name}}</a> </li>
                               </ul>
                            </div>
                          </div>

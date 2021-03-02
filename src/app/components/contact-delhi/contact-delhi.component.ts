@@ -28,7 +28,7 @@ export class ContactDelhiComponent implements OnInit {
   button_2_text: any;
   button_2_link  : any;
   locations : any;
-
+dataurl: any;
   constructor( private sanitizer: DomSanitizer, public apiCall : CommonService, private meta : MetaServiceService, public router: Router, private route: ActivatedRoute) { 
     
     this.contactSlug = this.route.snapshot.paramMap.get('slug');
@@ -42,6 +42,9 @@ export class ContactDelhiComponent implements OnInit {
 
 
   ngOnInit(): void {   
+  let data =  this.router.url;
+  this.dataurl = this.router.url.replace("/contact-us/", "");
+   console.log(this.dataurl,'dataurl');
     // this.contact = this.route.snapshot.data['contact'];
     // this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
     //  console.log(this.contact, "contact");    

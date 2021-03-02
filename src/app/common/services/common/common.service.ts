@@ -49,6 +49,15 @@ export class CommonService {
       catchError(this.handleError)
     )
   }
+
+  contactForm(req:any) : Observable<any> { 
+    return this.http.post<any>(this.apiurl+'contactform/v1', JSON.stringify(req), httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
   doctordetailspage(req:any) : Observable<any> { 
     return this.http.post<any>(this.apiurl+'doctordetailspage/v1', JSON.stringify(req), httpOptions)
     .pipe(

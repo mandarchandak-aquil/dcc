@@ -21,6 +21,13 @@ export class CareersComponent implements OnInit {
   footersection: any;
   fileBase64 : any;
   imageError : Number = 0;
+  heading: any;
+  left_content : any;
+  right_content : any
+  img1:any=[];
+  img2:any=[];
+  img3:any=[];
+  img4:any=[];
   // certEscolar: File ;
 
   constructor(public comman:CommonService,private meta : MetaServiceService, private formBuilder: FormBuilder, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
@@ -52,9 +59,16 @@ export class CareersComponent implements OnInit {
   this.comman.carerrsData(dataReq).subscribe(data => {
     if(data){
       this.contact = data;
-       this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
+      this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.contact['details']['heading']);
+      this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.contact['details']['left_content']);
+      this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.contact['details']['right_content']);
+      this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
+      this.img1 = this.contact['details']['image1'];
+      this.img2 = this.contact['details']['image1'];
+      this.img3 = this.contact['details']['image1'];
+      this.img4 = this.contact['details']['image1'];
       this.footersection = JSON.stringify(this.contact['footersection']) 
-     console.log(this.contact, "contact");    
+     console.log(this.img1, "contact");    
       this.loading = false;
       this.MetaTags();
     }    
