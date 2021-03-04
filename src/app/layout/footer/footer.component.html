@@ -32,7 +32,7 @@
            <div class="row">
              <div class="col-md-4">
                <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-                 <div class="title">Quick link</div>
+                 <div class="title">Quick Links</div>
                  <li *ngFor="let data of footerData.quicklinks;"><a [routerLink]="data.link">{{data.name}}</a></li>
                  <!-- <li><a href="#">Our Services</a></li>
                  <li><a href="#">Our Team</a></li>
@@ -41,7 +41,8 @@
              </div>
              <div class="col-md-4">
                <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-               <div class="title">Search Query</div>
+                <div class="title"> &nbsp; </div> 
+               <!-- <div class="title">Search Query</div> -->
                <li *ngFor="let data of footerData.department;"><a [href]="data.link">{{data.name}}</a></li>
                <!-- <li><a href="#">Our Mission</a></li>
                <li><a href="#">Awards</a></li>
@@ -50,7 +51,8 @@
              </div>
              <div class="col-md-4">
                <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
-               <div class="title">Other</div>
+               <!-- <div class="title">Other</div> -->
+               <div class="title"> &nbsp; </div> 
                <li *ngFor="let data of footerData.othermenu;"><a [routerLink]="data.link">{{data.name}}</a></li>
                <!-- <li><a href="#">Faqs</a></li>
                <li><a href="#">Careers</a></li>

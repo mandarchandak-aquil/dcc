@@ -64,17 +64,14 @@
           </div>
        </div>
     </div>
-    
 
-
-
-    <div class="spacer_t_30 spacer_b_90">
+    <div class="spacer_t_30 spacer_b_90" *ngIf="doctorsdetails.length >0">
       <div class="main-container">
          <div class="row rowSpace">
-            <div class="col-md-12 d-none d-md-block">
-               <div class="teamDetail_sec" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
-                  <div class="teamDetailsTab mrg-b-60" *ngIf="doctorsdata">
-                     <!-- <ul id="tabs" class="nav nav-tabs justify-content-center" role="tablist">
+            <div class="col-md-12 d-none d-md-block"  data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+               <div class="teamDetail_sec">
+                  <!-- <div class="teamDetailsTab mrg-b-60" *ngIf="doctorsdata">
+                     <ul id="tabs" class="nav nav-tabs justify-content-center" role="tablist">
                         <li class="nav-item">
                            <a  (click)="shows(1)" class="nav-link active" data-toggle="tab" role="tab">{{doctorsdata.details.doctorsdetails[0].heading}}</a>
                         </li>
@@ -87,30 +84,26 @@
                         <li class="nav-item">
                            <a  (click)="shows(4)"  class="nav-link" data-toggle="tab" role="tab">{{doctorsdata.details.doctorsdetails[3].heading}}</a>
                         </li>
-                     </ul> -->
-                  </div>
+                     </ul>
+                  </div> -->
                   <div class="teamDetailsTxt_sec" *ngIf="doctorsdata">
                      <div id="content" class="tab-content" role="tablist">
                         <div  class="card tab-pane fade" [ngClass]="{ 'show active': show == 1}"
                         role="tabpanel" aria-labelledby="position-tab" *ngIf="show == 1 ">
                          
                            <!-- Note: New place of `data-parent` -->
-                           <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
-                              <div class="card-body">
+                           <div id="collapse-A" class="collapse show" *ngIf="doctorsdetails.length >0" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
+                              <div class="card-body" >
                                  <div class="row row_gutter_30">
-                                    <div class="col-md-6">
-                                       <div class="dc_txtSummary">
-                                         
-                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[0].left_content">
-                                          
+                                    <div class="col-md-6" *ngIf="doctorsdetails[0]['left_content']">
+                                       <div class="dc_txtSummary">                                                                                  
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[0].left_content">                                          
                                           </div>
                                        </div>
                                     </div>
                                     <div class="col-md-6">
-                                       <div class="dc_txtSummary">
-                                          
-                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">
-                                         
+                                       <div class="dc_txtSummary">                                          
+                                          <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">                                         
                                           </div>
                                        </div>
                                     </div>
@@ -118,7 +111,7 @@
                               </div>
                            </div>
                         </div>
-                        <div  class="card tab-pane fade" [ngClass]="{ 'show active': show == 2}" role="tabpanel" aria-labelledby="office-tab" *ngIf="show == 2 ">
+                        <!-- <div  class="card tab-pane fade" [ngClass]="{ 'show active': show == 2}" role="tabpanel" aria-labelledby="office-tab" *ngIf="show == 2 ">
                           
                            <div id="collapse-B" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-B">
                               <div class="card-body">
@@ -192,25 +185,23 @@
                                  </div>
                               </div>
                            </div>
-                        </div>
+                        </div> -->
                      </div>
                   </div>
                </div>
             </div>
 
             <div class="col-md-12 d-md-none d-sm-block" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
-                  <div class="teamSec_mobile" *ngIf="doctorsdata">
-                     <div class="teamSecTitle_wrap" (click)="shows(1)">
+                  <div class="teamSec_mobile" *ngIf="doctorsdetails.length >0">
+                     <!-- <div class="teamSecTitle_wrap" (click)="shows(1)">
                         <span class="teamSecTitle nav-link active">{{doctorsdata.details.doctorsdetails[0].heading}}</span>
+                     </div> -->
+                     <div class="teamDetails_Txt_mobile" *ngIf="show == 1" [innerHTML]="doctorsdata.details.doctorsdetails[0].left_content">                       
                      </div>
-                     <div class="teamDetails_Txt_mobile" *ngIf="show == 1" [innerHTML]="doctorsdata.details.doctorsdetails[0].left_content">
-                       
-                     </div>
-                     <div class="dc_txt_summary dc_last_p text-justify" *ngIf="show == 1" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">
-                                         
+                     <div class="dc_txt_summary dc_last_p text-justify" *ngIf="show == 1" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">                                         
                      </div>
                   </div>
-                  <div class="teamSec_mobile" *ngIf="doctorsdata">
+                  <!-- <div class="teamSec_mobile" *ngIf="doctorsdata">
                      <div class="teamSecTitle_wrap" (click)="shows(2)">
                         <span class="teamSecTitle nav-link">{{doctorsdata.details.doctorsdetails[1].heading}}</span>
                      </div>
@@ -242,14 +233,23 @@
                      <div class="dc_txt_summary dc_last_p text-justify" *ngIf="show == 4" [innerHTML]="doctorsdata.details.doctorsdetails[0].right_content">
                                          
                      </div>
-                  </div>
+                  </div> -->
             </div>
 
          </div>
       </div>
    </div>
 
-
+   <div class="spacer_t_30 spacer_b_30" *ngIf="deatilspara">
+      <div class="main-container">
+         <div class="row rowSpace" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+            <div class="col-md-12">
+               <div class="dc_txt_summary dc_last_p text-justify" [innerHTML]="deatilspara">                 
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
  </div>
  <fieldset *ngIf="footersection">

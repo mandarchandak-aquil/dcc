@@ -23,6 +23,7 @@ export class TeamDetailsComponent implements OnInit {
   doctorcontent: any;
   footersection: any;
   public slug:any;
+  deatilspara: any;
   constructor(private http: HttpClient,private meta : MetaServiceService,public comman:CommonService,private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -38,9 +39,10 @@ export class TeamDetailsComponent implements OnInit {
         console.log(this.doctorsdata,'datas');
         this.heading =  this.sanitizer.bypassSecurityTrustHtml(this.doctorsdata['details']['experience_heading']);
         this.content = this.sanitizer.bypassSecurityTrustHtml(this.doctorsdata['details']['content']);
-        this.doctorsdetails = JSON.stringify(this.doctorsdata['details']['doctorsdetails']);
-        this.footersection = JSON.stringify(this.doctorsdata['footersection'])
-        console.log("doctorsdetails",this.doctorsdetails);
+        this.doctorsdetails = this.doctorsdata['details']['doctorsdetails'];
+        this.footersection = JSON.stringify(this.doctorsdata['footersection']);
+        this.deatilspara =  this.doctorsdata['details']['detailspara'];
+        console.log("doctorsdetails",this.deatilspara);
         this.loading = false;
         this.MetaTags(); 
       });   

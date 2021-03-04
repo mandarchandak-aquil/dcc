@@ -13,7 +13,7 @@ import { CommonService } from '../../common/services/common/common.service';
 })
 export class HomeComponent implements OnInit {
   public homepage: any;
-  loading :boolean = true;  
+  loading :boolean = false;  
   topsectionContent:any;
   aboutsectionContent:any;
   servicesectionContent:any;
@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   getDataInit(){
+    this.loading = true;
     let dataReq = {
       "pagename": "home"
   }

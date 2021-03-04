@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { LayoutModule } from './layout/layout.module';
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,8 @@ import { AuthComponent } from './layout/auth/auth.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
+    TransferHttpCacheModule
   ],
   providers: [],
   bootstrap: [AppComponent]

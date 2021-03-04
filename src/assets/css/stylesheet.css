@@ -890,6 +890,7 @@ font-size: 2.143vw;color: transparent;
 }
 
 
+
 @keyframes smoothScroll{0%{transform:translateY(-40px);-ms-transform:translateY(-40px);-o-transform:translateY(-40px)}
 100%{transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0)}
 }
@@ -1145,5 +1146,5 @@ width: 100%; display: block; margin: auto;text-align: center;}
 .serviceTxt {font-size: 14px;margin-top: 10px;}
 .serviceBx{min-height: 130px;}
 .team-wrap{ margin-bottom: 10px;}
-
+.service_iconSec img{width: 45px !important;height: 45px !important;}
 }
