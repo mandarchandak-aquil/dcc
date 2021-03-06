@@ -10,26 +10,21 @@ import { CommonService } from '../../common/services/common/common.service';
 export class HeaderComponent implements OnInit {
   public headerData: any;
 
-  constructor(public router: Router,public apiCall : CommonService, private route: ActivatedRoute) { }
+  constructor(public router: Router, public apiCall: CommonService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.headerData = this.route.snapshot.data['headerData'];
-    // console.log("routerurl",this.router.url);
-    // console.log(this.headerData, "headerData");    
-
     this.getDataInit();
   }
 
-  getDataInit(){
+  getDataInit() {
     let dataReq = {
       "pagename": "header"
-  }
+    }
     this.apiCall.headerData(dataReq).subscribe(data => {
-      if(data){
+      if (data) {
         this.headerData = data;
-        console.log(this.headerData, "headerData");    
-      }   
-    });    
+        console.log(this.headerData, "headerData");
+      }
+    });
   }
-
 }

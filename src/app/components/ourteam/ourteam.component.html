@@ -62,11 +62,8 @@
                        <div class="teamDesignation text-uppercase">
                          {{data.designation}}
                        </div>
-                    </div>
-
-                    <!-- {{getsentize(data.short_description)}} -->
-                    <div class="teamDesc text-justify f-s-18 line_H_1_5 mrg-b-20" [innerHTML]="data.short_description">
-                      
+                    </div>               
+                    <div class="teamDesc text-justify f-s-18 line_H_1_5 mrg-b-20" [innerHTML]="data.short_description">                      
                     </div>
                     <div class="teamRead_more text-center line_H_1">
                        <a routerLink="/our-pet-care-doctors/{{data.slug}}" class="dc_readmore font-rubik f-w-M">
@@ -98,6 +95,3 @@
      </div>
   </div>
 </div>
-<fieldset *ngIf="footersection">
-   <app-footer-top [dataString]="footersection"></app-footer-top>
-</fieldset>

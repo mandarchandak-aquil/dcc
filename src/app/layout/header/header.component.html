@@ -9,32 +9,14 @@
              </div>
              <a class="navbar-brand navbarLogo" href="/">
              <img class="w-100" [src]="headerData.logo" alt="DCC Logo">
-             </a>
-             <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-             <span class="navbar-toggler-icon"></span>
-             </button> -->
+             </a>            
              <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto" *ngIf="headerData">
                     <li class="nav-item" *ngFor="let data of headerData.mainmenu;let i = index">
                        
                       <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLink]="data.link" *ngIf="data.name != 'Pet  Health'">{{data.name}}</a>
                       <a class="nav-link"  href="{{data.link}}" target="_blank" *ngIf="data.name == 'Pet  Health'">{{data.name}}</a>
-                   </li> 
-                   <!-- <li class="nav-item">
-                      <a class="nav-link" href="https://ardemos.in/dcc/about-dcc">About DCC</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="https://ardemos.in/dcc/ourservices">Services</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="https://ardemos.in/dcc/ourteam">Team</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="#">Pet Health</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="#">Contact</a>
-                   </li> -->
+                   </li>                   
                 </ul>
                 <div class="clsBtnWrap">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -54,4 +36,4 @@
           </nav>
        </div>
     </div>
- </header>
+</header>

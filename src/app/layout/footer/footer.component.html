@@ -1,120 +1,130 @@
+<div class="spacer_t_30 spacer_b_30 bg-white" *ngIf="footerData">
+  <div class="main-container">
+    <div class="row rowSpace align-items-center">
+      <div class="col-md-10" *ngIf="footerData">
+        <div class="aboutDCC_wrap" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+          <div class="dccSubTitle f-w-B opacity-5 mrg-b-60 text-uppercase">
+          </div>
+          <div class="mrg-b-30 ">
+            <h2 class="f-w-B headingSec line_H_1" [innerHTML]="heading">
+            </h2>
+          </div>
+          <div class="hrLine mrg-b-30"></div>
+          <div class="bannerTxt">
+            <p [innerHTML]="content"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 text-md-right" *ngIf="footerData">
+        <div class="app-store" *ngIf="footersection" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+          <a class="storeLink">
+            <img [src]="footerData.footersection.app_store_image.link"
+              [alt]="footerData.footersection.app_store_image.alt" class="w-100" />
+          </a>
+        </div>
+        <div class="google-play" *ngIf="footersection" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
+          <a class="storeLink">
+            <img [src]="footerData.footersection.play_store_image.link"
+              [alt]="footerData.footersection.play_store_image.alt" class="w-100" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="spacer_t_60 spacer_b_30 bg-green footer" *ngIf="footerData">
-    <div class="main-container overflow-hidden">
-      <div class="row rowSpace">
-         <div class="col-md-6">
-           <ul class="list-unstyled left-sec" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-             <li>
-               <div class="icon"><img src="./assets/images/address-pin.svg" alt="pin" /></div>
-               <div class="content" [innerHTML]="address">
-                 <!-- <p><strong>Gurgaon</strong></p>
-                 <p>Jagdamba Farm, Carterpuri Marg, Sector 23A, Gurugram,Haryana – 122016</p>
-                 <p><strong>New Delhi</strong></p>
-                 <p>E-556, Greater Kailash Part-II, New Delhi – 110048</p> -->
-               </div>
-             </li>
-              <li>
-               <div class="icon"><img src="./assets/images/call-icon.svg" alt="call" /></div>
-               <div class="content" [innerHTML]="phone">
-                 <!-- <p><strong>Gurgaon</strong> (+91) 9311560101</p>
-                 <p><strong>New Delhi</strong> (+91) (+91) 9311560101</p> -->
-               </div>
-             </li>
-              <li>
-               <div class="icon"><img src="./assets/images/clock-icon.svg" alt="call" /></div>
-               <div class="content" [innerHTML]="timing">
-                 <!-- <p><strong>Gurgaon</strong> 10AM - 5PM daily.</p>
-                 <p><strong>New Delhi</strong> 10 AM - 5 PM Daily</p> -->
-               </div>
-             </li>
-             </ul>
-         </div>
-         <div class="col-md-6">
-           <div class="row">
-             <div class="col-md-4">
-               <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-                 <div class="title">Quick Links</div>
-                 <li *ngFor="let data of footerData.quicklinks;"><a [routerLink]="data.link">{{data.name}}</a></li>
-                 <!-- <li><a href="#">Our Services</a></li>
-                 <li><a href="#">Our Team</a></li>
-                 <li><a href="#">Contact Us</a></li> -->
-               </ul>
-             </div>
-             <div class="col-md-4">
-               <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-                <div class="title"> &nbsp; </div> 
-               <!-- <div class="title">Search Query</div> -->
-               <li *ngFor="let data of footerData.department;"><a [href]="data.link">{{data.name}}</a></li>
-               <!-- <li><a href="#">Our Mission</a></li>
-               <li><a href="#">Awards</a></li>
-               <li><a href="#">Experience</a></li> -->
-             </ul>
-             </div>
-             <div class="col-md-4">
-               <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
-               <!-- <div class="title">Other</div> -->
-               <div class="title"> &nbsp; </div> 
-               <li *ngFor="let data of footerData.othermenu;"><a [routerLink]="data.link">{{data.name}}</a></li>
-               <!-- <li><a href="#">Faqs</a></li>
-               <li><a href="#">Careers</a></li>
-               <li><a href="#">Press & Media</a></li>
-               <li><a href="#">Experience</a></li> -->
-               </ul>
-             </div>
-           </div>
-         </div>
-       </div>
-       <div class="divider" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"></div>
-       <div class="footer-bottom">
-       <div class="row">
+  <div class="main-container overflow-hidden">
+    <div class="row rowSpace">
+      <div class="col-md-6">
+        <ul class="list-unstyled left-sec" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+          <li>
+            <div class="icon"><img src="./assets/images/address-pin.svg" alt="pin" /></div>
+            <div class="content" [innerHTML]="address">
+            </div>
+          </li>
+          <li>
+            <div class="icon"><img src="./assets/images/call-icon.svg" alt="call" /></div>
+            <div class="content" [innerHTML]="phone">
+            </div>
+          </li>
+          <li>
+            <div class="icon"><img src="./assets/images/clock-icon.svg" alt="call" /></div>
+            <div class="content" [innerHTML]="timing">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+              <div class="title">Quick Links</div>
+              <li *ngFor="let data of footerData.quicklinks;"><a [routerLink]="data.link">{{data.name}}</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+              <div class="title">Our Policies</div>
+              <li *ngFor="let data of footerData.department;"><a [href]="data.link">{{data.name}}</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-unstyled" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
+              <div class="title">Other Links</div>
+              <li *ngFor="let data of footerData.othermenu;"><a [routerLink]="data.link">{{data.name}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"></div>
+    <div class="footer-bottom">
+      <div class="row">
         <div class="col-md-8">
-           <ul class="list-unstyled logo-sec d-inline-flex" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-             <li>
-               <div><a href="#"><img [src]="footerData.details.footerlogo" alt="footer logo" /></a></div>
-               <div class="social-icon">
-                 <a [href]="footerData.details.facebook" target="_blank"><img src="./assets/images/fb.svg" alt="fb" /></a>
-                 <a [href]="footerData.details.instagram" target="_blank"><img src="./assets/images/insta.svg" alt="insta" /></a>
-                 <a [href]="footerData.details.linkedin" target="_blank"><img src="./assets/images/linkedin.svg" alt="linkin" /></a>
-               </div>
-             </li>
-             <li [innerHTML]="footerlogocontent">
-               <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <br /> do eiusmod tempor incididunt ut labore et dolore magna <br />aliqua Lorem ipsum should fix the margin. -->
+          <ul class="list-unstyled logo-sec d-inline-flex" data-aos="fade-up" data-aos-duration="700"
+            data-aos-delay="200">
+            <li>
+              <div><a href="#"><img [src]="footerData.details.footerlogo" alt="footer logo" /></a></div>
+              <div class="social-icon">
+                <a [href]="footerData.details.facebook" target="_blank"><img src="./assets/images/fb.svg"
+                    alt="fb" /></a>
+                <a [href]="footerData.details.instagram" target="_blank"><img src="./assets/images/insta.svg"
+                    alt="insta" /></a>
+                <a [href]="footerData.details.linkedin" target="_blank"><img src="./assets/images/linkedin.svg"
+                    alt="linkin" /></a>
+              </div>
             </li>
-           </ul>
-         </div>
-         <div class="col-md-4">
-           <div class="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-           <div>Get updates about your pets health and more</div>
-           <div class="email-search">
-            <form [formGroup]="email" enctype="multipart/form-data" (ngSubmit)="onSubmit()" >
-             <div class="input-group mb-3">
-               <input type="text" class="form-control" (focusout)="hidemsg()"  name="email" formControlName="email" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
-               <div class="input-group-append">
-                 <button class="btn" type="submit">Send</button>
-               </div>
-             </div>
-            <!-- f.email.invalid && (f.email.dirty || f.email.touched) -->
-             <!-- hello {{f.email.errors.required}}  how {{f.email.errors.email}} -->
-             <div class="errorMsg" *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" >
+            <li [innerHTML]="footerlogocontent">
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            <div>Get updates about your pets health and more</div>
+            <div class="email-search">
+              <form [formGroup]="email" enctype="multipart/form-data" (ngSubmit)="onSubmit()">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" (focusout)="hidemsg()" name="email" formControlName="email"
+                    placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button class="btn" type="submit">Send</button>
+                  </div>
+                </div>
+                <div class="errorMsg" *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
                   <div *ngIf="f.email.errors.required">Email is required</div>
                   <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-              </div>
-              <div class="errorMsg" *ngIf="failed">
-                Email must be a valid email
-              </div>
-              <div class="input-group mb-3" *ngIf="success">
-                Thank you. We will get in touch with you shortly.
-              </div>
-             
-
-
-              <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-     
-              </div> -->
-             </form>
-           </div>
+                </div>
+                <div class="errorMsg" *ngIf="failed">
+                  Email must be a valid email
+                </div>
+                <div class="input-group mb-3" *ngIf="success">
+                  Thank you. We will get in touch with you shortly.
+                </div>
+              </form>
+            </div>
           </div>
-         </div>
-       </div>
-       </div>
+        </div>
+      </div>
     </div>
- </div>
+  </div>
+</div>

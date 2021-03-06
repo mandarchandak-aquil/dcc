@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer} from '@angular/platform-browser';
-// import * as $ from 'jquery';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { MetaServiceService } from '../../common/meta-service.service';
@@ -9,106 +8,80 @@ import { CommonService } from '../../common/services/common/common.service';
 @Component({
   selector: 'app-contact-delhi',
   templateUrl: './contact-delhi.component.html',
-  styleUrls: ['./contact-delhi.component.css','../../common/style.css']
+  styleUrls: ['./contact-delhi.component.css', '../../common/style.css']
 })
 export class ContactDelhiComponent implements OnInit {
-  loading :boolean = false; 
-  contact : any = [];
+  loading: boolean = false;
+  contact: any = [];
   contactSlug;
-  contacts :any;
+  contacts: any;
   footersection: any;
-  heading : any;
-  left_content : any;
-  right_content : any
-  contactlist : any;
+  heading: any;
+  left_content: any;
+  right_content: any
+  contactlist: any;
   image_1: any;
   image_2: any;
   address: any;
   button_1_text: any;
   button_2_text: any;
-  button_2_link  : any;
-  locations : any;
-dataurl: any;
-  constructor( private sanitizer: DomSanitizer, public apiCall : CommonService, private meta : MetaServiceService, public router: Router, private route: ActivatedRoute) { 
-    
+  button_2_link: any;
+  locations: any;
+  dataurl: any;
+  constructor(private sanitizer: DomSanitizer, public apiCall: CommonService, private meta: MetaServiceService, public router: Router, private route: ActivatedRoute) {
     this.contactSlug = this.route.snapshot.paramMap.get('slug');
-    // this.contact = this.route.paramMap.pipe(map(paramMap =>paramMap.get('slug')))
-    console.log(this.contactSlug ,"contact slug")
-    // this.route.queryParams.subscribe(params => {
-    //   console.log(params ,"slug")
-    //   this.contact = params['slug'];
-    // });
+    console.log(this.contactSlug, "contact slug")
   }
 
-
-  ngOnInit(): void {   
-  let data =  this.router.url;
-  this.dataurl = this.router.url.replace("/contact-us/", "");
-   console.log(this.dataurl,'dataurl');
-    // this.contact = this.route.snapshot.data['contact'];
-    // this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
-    //  console.log(this.contact, "contact");    
-    //  this.footersection = JSON.stringify(this.contact['footersection']);   
-     this.getDataInit();
-     
+  ngOnInit(): void {
+    let data = this.router.url;
+    this.dataurl = this.router.url.replace("/contact-us/", "");
+    console.log(this.dataurl, 'dataurl');
+    this.getDataInit();
   }
 
-  getDataInit(){
+  getDataInit() {
     this.loading = true;
     this.contact = []
     let dataReq = {
       "contactid": this.contactSlug
     }
-  
     this.apiCall.contactDelhiData(dataReq).subscribe(data => {
-      this.loading = false;  
+      this.loading = false;
       console.log(data, "contact Data")
-      if(data){
-        this.contact = data;        
+      if (data) {
+        this.contact = data;
         this.contacts = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.contacts);
-        console.log(this.contact, "contact");  
-        
-
+        console.log(this.contact, "contact");
         this.heading = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.heading);
         this.right_content = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.right_content);
-
         this.left_content = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.left_content);
-
         this.contactlist = this.contact['details']['contactlist'];
-
         this.image_1 = this.contact['details']['image_1']['link'];
         this.image_2 = this.contact['details']['image_2']['link'];
-
         this.address = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.address);
         this.button_1_text = this.contact['details']['button_1_text'];
         this.button_2_text = this.contact['details']['button_2_text'];
         this.address = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.address);
         this.button_2_link = this.contact['details']['button_2_link'];
         this.locations = this.contact['details']['locations'];
-       
-        
-console.log(this.contact.details.button_2_link, "button_2_link")
-
-
-        this.footersection = JSON.stringify(this.contact['footersection']);   
+        console.log(this.contact.details.button_2_link, "button_2_link")
         this.MetaTags();
-      }  
-  });    
+      }
+    });
   }
 
-  MetaTags(){
-    
+  MetaTags() {
     let slug = this.contact.details.slug;
     let dataReq = {
       "page": "contactus",
       "id": slug
     }
-    console.log("slug",dataReq);
+    console.log("slug", dataReq);
     let url = this.router.url
     this.meta.getProduct(dataReq).subscribe(data => {
-        this.meta.updateMetaTags(data['seodata'],url);
-        this.loading = false;
+      this.meta.updateMetaTags(data['seodata'], url);
+      this.loading = false;
     });
   }
-
 }
