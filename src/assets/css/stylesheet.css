@@ -353,11 +353,13 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.1);
 .footer .left-sec { font-size: 0.97vw;  }
 .footer .title{ margin-bottom: 1.66vw; font-weight:bold;}
 .footer ul.left-sec li { position: relative; margin-bottom: 2.08vw; display: block; }
-.footer ul li a{ color: #0E1F3B; font-size: 0.97vw;}
+.footer ul li a{ color: #fff; font-size: 0.97vw;}
 .footer ul li a:hover{color: #fff}
 .footer .left-sec .icon{ position: absolute; left: 0; }
 .footer .left-sec .content p{ margin: 0;}
-.footer .left-sec .content{ padding-left: 2.222vw; }
+.footer .left-sec .content{ padding-left: 2.222vw;  }
+.footer {color: #fff;}
+.footer img {filter: brightness(0) invert(1);}
 .footer .divider { background-color: rgba(255,255,255,0.2); width: 100%; height: 1px;   }
 .footer .footer-bottom { margin-top: 2.143vw; font-size:0.97vw; }
 .footer .footer-bottom ul.logo-sec li { display: inline-block;  }
@@ -950,7 +952,7 @@ border-color: transparent;}
 .topBanner_sec {padding-top: 70px;}
 .mrg-b-30 {margin-bottom: 15px;}
 .headingSec {font-size: 26px;}
-.titleWrap{ max-width: 220px;}
+.titleWrap{ max-width: 100%;}
 .hrLine{max-width: 60px;}
 .pagebtn{font-size: 16px;padding: 10px 15px;border-radius: 8px;max-width: 200px;margin-bottom: 10px;}
 .bannerTxt p{margin-bottom: 15px;}
@@ -992,7 +994,8 @@ width: 100%;}
 a.footerLogo_sec{ max-width: 120px;}
 .footer .footer-bottom ul.logo-sec .social-icon{    margin-top: 5px;}
 .socialIcon_link{max-width: 16px;}
-.footer .footer-bottom ul.logo-sec li:last-child{ padding-left: 10px;}
+.footer .footer-bottom ul.logo-sec li:last-child{ padding-left: 10px;max-width: 200px;}
+.footer .footer-bottom ul.logo-sec li:last-child br{display: none;}
 .footer .footer-bottom .email-search {margin-top: 10px;}
 .footer .footer-bottom .email-search input[type="text"]{    height: auto;padding: 10px;  border-radius: 4px 0 0 4px;}
 .team-wrap .img-1, .team-wrap .img-2{max-width: 230px;}
@@ -1107,7 +1110,7 @@ box-shadow: 10px 0px 9px -7px rgb(0 0 0 / 10%);transform: translateX(-105%);tran
 .mrg-r-15 { margin-right:15px;}
 .teamSecTitle_wrap {margin-bottom: 15px;}
 .main-container .col-md-2 > div:last-child > .storeLink {max-width: 115px;}
-
+.footer .left-sec .content p:nth-child(2) {margin-bottom: 10px;}
 }
 
 

@@ -61,7 +61,12 @@
                      <div class="vacationImg_Wrap">
                         <div class="vacationImg">
                           
-                           <img [src]="img.image.link" class="w-100">
+                           <!-- <img [src]="img.image.link" class="w-100"> -->
+                           <picture>
+                              <source [srcset]="img.image.link_webp" type="image/webp">
+                              <source [srcset]="img.image.link" type="image/png"> 
+                              <img [src]="img.image.link_webp" [alt]="img.image.alt" class="w-100" />
+                           </picture>
                         </div>
                      </div>
                   </div>

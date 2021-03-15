@@ -18,14 +18,24 @@
       <div class="col-md-2 text-md-right" *ngIf="footerData">
         <div class="app-store" *ngIf="footersection" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
           <a class="storeLink">
-            <img [src]="footerData.footersection.app_store_image.link"
-              [alt]="footerData.footersection.app_store_image.alt" class="w-100" />
+            <picture>
+              <source [srcset]="footerData.footersection.app_store_image.link" type="image/webp">
+              <source [srcset]="footerData.footersection.app_store_image.link" type="image/png"> 
+              <img [src]="footerData.footersection.app_store_image.link" [alt]="footerData.footersection.app_store_image.alt" class="w-100" />
+           </picture>
+            <!-- <img [src]="footerData.footersection.app_store_image.link"
+              [alt]="footerData.footersection.app_store_image.alt" class="w-100" /> -->
           </a>
         </div>
         <div class="google-play" *ngIf="footersection" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
           <a class="storeLink">
-            <img [src]="footerData.footersection.play_store_image.link"
-              [alt]="footerData.footersection.play_store_image.alt" class="w-100" />
+            <picture>
+              <source [srcset]="footerData.footersection.play_store_image.link" type="image/webp">
+              <source [srcset]="footerData.footersection.play_store_image.link" type="image/png"> 
+              <img [src]="footerData.footersection.play_store_image.link" [alt]="footerData.footersection.play_store_image.alt" class="w-100" />
+           </picture>
+            <!-- <img [src]="footerData.footersection.play_store_image.link"
+              [alt]="footerData.footersection.play_store_image.alt" class="w-100" /> -->
           </a>
         </div>
       </div>
@@ -84,7 +94,9 @@
           <ul class="list-unstyled logo-sec d-inline-flex" data-aos="fade-up" data-aos-duration="700"
             data-aos-delay="200">
             <li>
-              <div><a href="#"><img [src]="footerData.details.footerlogo" alt="footer logo" /></a></div>
+              <div><a href="#">
+                <img [src]="footerData.details.footerlogo" alt="footer logo" />
+              </a></div>
               <div class="social-icon">
                 <a [href]="footerData.details.facebook" target="_blank"><img src="./assets/images/fb.svg"
                     alt="fb" /></a>

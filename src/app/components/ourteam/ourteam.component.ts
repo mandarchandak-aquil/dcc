@@ -56,7 +56,7 @@ export class OurteamComponent implements OnInit {
 
   MetaTags() {
     let dataReq = {
-      "page": "team",
+      "page": "teams",
       "id": ""
     }
     this.meta.getProduct(dataReq).subscribe(data => {

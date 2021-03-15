@@ -41,13 +41,25 @@
                <div class="dc_About_media_wrap">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="aboutData"><img class="w-100"
-                              [src]="aboutData.topsection.image1.link" [alt]="aboutData.topsection.image1.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="aboutData">
+                           <!-- <img class="w-100"
+                              [src]="aboutData.topsection.image1.link" [alt]="aboutData.topsection.image1.alt"  loading="lazy" /> -->
+                              <picture>
+                                 <source [srcset]="aboutData.topsection.image1.link_webp" type="image/webp">
+                                 <source [srcset]="aboutData.topsection.image1.link" type="image/png"> 
+                                 <img [src]="aboutData.topsection.image1.link_webp" [alt]="aboutData.topsection.image1.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="aboutData"><img class="w-100"
-                              [src]="aboutData.topsection.image2.link" [alt]="aboutData.topsection.image2.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="aboutData">
+                           <!-- <img class="w-100"
+                              [src]="aboutData.topsection.image2.link" [alt]="aboutData.topsection.image2.alt"  loading="lazy" /> -->
+                              <picture>
+                                 <source [srcset]="aboutData.topsection.image2.link_webp" type="image/webp">
+                                 <source [srcset]="aboutData.topsection.image2.link" type="image/png"> 
+                                 <img [src]="aboutData.topsection.image2.link_webp" [alt]="aboutData.topsection.image2.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                   </ul>
@@ -101,7 +113,12 @@
                         data-aos-delay="300">
                         <fieldset>
                            <div class="dc_rds_8 mrg-b-20">
-                              <img class="w-100" [src]="advisordata.image.link" [alt]="advisordata.image.alt" />
+                              <!-- <img class="w-100" [src]="advisordata.image.link" [alt]="advisordata.image.alt" /> -->
+                              <picture>
+                                 <source [srcset]="advisordata.image.link_webp" type="image/webp">
+                                 <source [srcset]="advisordata.image.link" type="image/png"> 
+                                 <img [src]="advisordata.image.link_webp" [alt]="advisordata.image.alt" class="w-100" />
+                              </picture>
                            </div>
                            <div class="advisorName text-center">
                               {{advisordata.name}}
@@ -137,23 +154,47 @@
                <div class="dc_About_media_wrap">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="mission"><img class="w-100"
-                              [src]="mission.image1.link" [alt]="mission.image1.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="mission">
+                           <!-- <img class="w-100"
+                              [src]="mission.image1.link" [alt]="mission.image1.alt" /> -->
+                              <picture>
+                                 <source [srcset]="mission.image1.link_webp" type="image/webp">
+                                 <source [srcset]="mission.image1.link" type="image/png"> 
+                                 <img [src]="mission.image1.link_webp" [alt]="mission.image1.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="mission"><img class="w-100"
-                              [src]="mission.image2.link" [alt]="mission.image2.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="mission">
+                           <!-- <img class="w-100"
+                              [src]="mission.image2.link" [alt]="mission.image2.alt" /> -->
+                              <picture>
+                                 <source [srcset]="mission.image2.link_webp" type="image/webp">
+                                 <source [srcset]="mission.image2.link" type="image/png"> 
+                                 <img [src]="mission.image2.link_webp" [alt]="mission.image2.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="mission"><img class="w-100"
-                              [src]="mission.image3.link" [alt]="mission.image3.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="mission">
+                           <!-- <img class="w-100"
+                              [src]="mission.image3.link" [alt]="mission.image3.alt" /> -->
+                              <picture>
+                                 <source [srcset]="mission.image3.link_webp" type="image/webp">
+                                 <source [srcset]="mission.image3.link" type="image/png"> 
+                                 <img [src]="mission.image3.link_webp" [alt]="mission.image3.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="900">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="mission"><img class="w-100"
-                              [src]="mission.image4.link" [alt]="mission.image4.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="mission">
+                           <!-- <img class="w-100"
+                              [src]="mission.image4.link" [alt]="mission.image4.alt" /> -->
+                              <picture>
+                                 <source [srcset]="mission.image4.link_webp" type="image/webp">
+                                 <source [srcset]="mission.image4.link" type="image/png"> 
+                                 <img [src]="mission.image4.link_webp" [alt]="mission.image4.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                   </ul>
@@ -184,23 +225,47 @@
                <div class="dc_About_media_wrap">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="vision"><img class="w-100"
-                              [src]="vision.image1.link" [alt]="vision.image1.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="vision">
+                           <!-- <img class="w-100"
+                              [src]="vision.image1.link" [alt]="vision.image1.alt" /> -->
+                              <picture>
+                                 <source [srcset]="vision.image1.link_webp" type="image/webp">
+                                 <source [srcset]="vision.image1.link" type="image/png"> 
+                                 <img [src]="vision.image1.link_webp" [alt]="vision.image1.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="vision"><img class="w-100"
-                              [src]="vision.image2.link" [alt]="vision.image2.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="vision">
+                           <!-- <img class="w-100"
+                              [src]="vision.image2.link" [alt]="vision.image2.alt" /> -->
+                              <picture>
+                                 <source [srcset]="vision.image2.link_webp" type="image/webp">
+                                 <source [srcset]="vision.image2.link" type="image/png"> 
+                                 <img [src]="vision.image2.link_webp" [alt]="vision.image2.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="vision"><img class="w-100"
-                              [src]="vision.image3.link" [alt]="vision.image3.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="vision">
+                           <!-- <img class="w-100"
+                              [src]="vision.image3.link" [alt]="vision.image3.alt" /> -->
+                              <picture>
+                                 <source [srcset]="vision.image3.link_webp" type="image/webp">
+                                 <source [srcset]="vision.image3.link" type="image/png"> 
+                                 <img [src]="vision.image3.link_webp" [alt]="vision.image3.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="900">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="vision"><img class="w-100"
-                              [src]="vision.image4.link" [alt]="vision.image4.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="vision">
+                           <!-- <img class="w-100"
+                              [src]="vision.image4.link" [alt]="vision.image4.alt" /> -->
+                              <picture>
+                                 <source [srcset]="vision.image4.link_webp" type="image/webp">
+                                 <source [srcset]="vision.image4.link" type="image/png"> 
+                                 <img [src]="vision.image4.link_webp" [alt]="vision.image4.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                   </ul>
@@ -229,7 +294,12 @@
                      data-aos-delay="900">
                      <div class="mar-80 " *ngFor="let icondata of valueicons">
                         <div class="selfless ">
-                           <img class="w-100" [src]="icondata.image.link" [alt]="icondata.image.alt">
+                           <!-- <img class="w-100" [src]="icondata.image.link" [alt]="icondata.image.alt"> -->
+                           <picture>
+                              <source [srcset]="icondata.image.link_webp" type="image/webp">
+                              <source [srcset]="icondata.image.link" type="image/png"> 
+                              <img [src]="icondata.image.link_webp" [alt]="icondata.image.alt" class="w-100" />
+                           </picture>
                         </div>
                         <div class="f-s-18">{{icondata.text}}</div>
                      </div>
@@ -241,23 +311,47 @@
                <div class="dc_About_media_wrap">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="value"><img class="w-100" [src]="value.image1.link"
-                              [alt]="value.image1.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="value">
+                           <!-- <img class="w-100" [src]="value.image1.link"
+                              [alt]="value.image1.alt" /> -->
+                              <picture>
+                                 <source [srcset]="value.image1.link_webp" type="image/webp">
+                                 <source [srcset]="value.image1.link" type="image/png"> 
+                                 <img [src]="value.image1.link_webp" [alt]="value.image1.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="value"><img class="w-100" [src]="value.image2.link"
-                              [alt]="value.image2.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="value">
+                           <!-- <img class="w-100" [src]="value.image2.link"
+                              [alt]="value.image2.alt" /> -->
+                              <picture>
+                                 <source [srcset]="value.image2.link_webp" type="image/webp">
+                                 <source [srcset]="value.image2.link" type="image/png"> 
+                                 <img [src]="value.image2.link_webp" [alt]="value.image2.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="value"><img class="w-100" [src]="value.image3.link"
-                              [alt]="value.image3.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="value">
+                           <!-- <img class="w-100" [src]="value.image3.link"
+                              [alt]="value.image3.alt" /> -->
+                              <picture>
+                                 <source [srcset]="value.image3.link_webp" type="image/webp">
+                                 <source [srcset]="value.image3.link" type="image/png"> 
+                                 <img [src]="value.image3.link_webp" [alt]="value.image3.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="900">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="value"><img class="w-100" [src]="value.image4.link"
-                              [alt]="value.image4.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="value">
+                           <!-- <img class="w-100" [src]="value.image4.link"
+                              [alt]="value.image4.alt" /> -->
+                              <picture>
+                                 <source [srcset]="value.image4.link_webp" type="image/webp">
+                                 <source [srcset]="value.image4.link" type="image/png"> 
+                                 <img [src]="value.image4.link_webp" [alt]="value.image4.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                   </ul>
@@ -291,7 +385,12 @@
                               <div class="bx-shadow testiRect">
                                  <div class="d-flex mar-b-38">
                                     <div class="clientimg">
-                                       <img class="w-100" src="{{slide.image.link}}" alt="">
+                                       <!-- <img class="w-100" src="{{slide.image.link}}" alt=""> -->
+                                       <picture>
+                                          <source [srcset]="slide.image.link_webp" type="image/webp">
+                                          <source [srcset]="slide.image.link" type="image/png"> 
+                                          <img [src]="slide.image.link_webp" [alt]="" class="w-100" />
+                                       </picture>
                                     </div>
                                     <div class="f-s-16 f-w-b align-self-center clientName f-w-B">
                                        {{slide.name}}
@@ -332,23 +431,47 @@
                <div class="dc_About_media_wrap">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="technology"><img class="w-100"
-                              [src]="technology.image1.link" [alt]="technology.image1.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="technology">
+                           <!-- <img class="w-100"
+                              [src]="technology.image1.link" [alt]="technology.image1.alt" /> -->
+                              <picture>
+                                 <source [srcset]="technology.image1.link_webp" type="image/webp">
+                                 <source [srcset]="technology.image1.link" type="image/png"> 
+                                 <img [src]="technology.image1.link_webp" [alt]="technology.image1.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="technology"><img class="w-100"
-                              [src]="technology.image2.link" [alt]="technology.image2.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="technology">
+                           <!-- <img class="w-100"
+                              [src]="technology.image2.link" [alt]="technology.image2.alt" /> -->
+                              <picture>
+                                 <source [srcset]="technology.image2.link_webp" type="image/webp">
+                                 <source [srcset]="technology.image2.link" type="image/png"> 
+                                 <img [src]="technology.image2.link_webp" [alt]="technology.image2.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="technology"><img class="w-100"
-                              [src]="technology.image3.link" [alt]="technology.image3.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="technology">
+                           <!-- <img class="w-100"
+                              [src]="technology.image3.link" [alt]="technology.image3.alt" /> -->
+                              <picture>
+                                 <source [srcset]="technology.image3.link_webp" type="image/webp">
+                                 <source [srcset]="technology.image3.link" type="image/png"> 
+                                 <img [src]="technology.image3.link_webp" [alt]="technology.image3.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="900">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="technology"><img class="w-100"
-                              [src]="technology.image4.link" [alt]="technology.image4.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="technology">
+                           <!-- <img class="w-100"
+                              [src]="technology.image4.link" [alt]="technology.image4.alt" /> -->
+                              <picture>
+                                 <source [srcset]="technology.image4.link_webp" type="image/webp">
+                                 <source [srcset]="technology.image4.link" type="image/png"> 
+                                 <img [src]="technology.image4.link_webp" [alt]="technology.image4.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                   </ul>
@@ -379,23 +502,47 @@
                <div class="dc_About_media_wrap">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="software"><img class="w-100"
-                              [src]="software.image1.link" [alt]="software.image1.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="software">
+                           <!-- <img class="w-100"
+                              [src]="software.image1.link" [alt]="software.image1.alt" /> -->
+                              <picture>
+                                 <source [srcset]="software.image1.link_webp" type="image/webp">
+                                 <source [srcset]="software.image1.link" type="image/png"> 
+                                 <img [src]="software.image1.link_webp" [alt]="software.image1.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="software"><img class="w-100"
-                              [src]="software.image2.link" [alt]="software.image2.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="software">
+                           <!-- <img class="w-100"
+                              [src]="software.image2.link" [alt]="software.image2.alt" /> -->
+                              <picture>
+                                 <source [srcset]="software.image2.link_webp" type="image/webp">
+                                 <source [srcset]="software.image2.link" type="image/png"> 
+                                 <img [src]="software.image2.link_webp" [alt]="software.image2.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="software"><img class="w-100"
-                              [src]="software.image3.link" [alt]="software.image3.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="software">
+                           <!-- <img class="w-100"
+                              [src]="software.image3.link" [alt]="software.image3.alt" /> -->
+                              <picture>
+                                 <source [srcset]="software.image3.link_webp" type="image/webp">
+                                 <source [srcset]="software.image3.link" type="image/png"> 
+                                 <img [src]="software.image3.link_webp" [alt]="software.image3.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="900">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="software"><img class="w-100"
-                              [src]="software.image4.link" [alt]="software.image4.alt" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="software">
+                           <!-- <img class="w-100"
+                              [src]="software.image4.link" [alt]="software.image4.alt" /> -->
+                              <picture>
+                                 <source [srcset]="software.image4.link_webp" type="image/webp">
+                                 <source [srcset]="software.image4.link" type="image/png"> 
+                                 <img [src]="software.image4.link_webp" [alt]="software.image4.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                   </ul>
@@ -424,7 +571,12 @@
                      data-aos-delay="900">
                      <div class="mar-80 " *ngFor="let icondata of supporticon">
                         <div class="selfless ">
-                           <img class="w-100" [src]="icondata.image.link" [alt]="icondata.image.alt">
+                           <!-- <img class="w-100" [src]="icondata.image.link" [alt]="icondata.image.alt"> -->
+                           <picture>
+                              <source [srcset]="icondata.image.link_webp" type="image/webp">
+                              <source [srcset]="icondata.image.link" type="image/png"> 
+                              <img [src]="icondata.image.link_webp" [alt]="icondata.image.alt" class="w-100" />
+                           </picture>
                         </div>
                         <div class="f-s-18">{{icondata.text}}</div>
                      </div>
@@ -435,23 +587,47 @@
                <div class="dc_About_media_wrap">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD">
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="support"><img class="w-100"
-                              [src]="support.image1.link" [alt]="support.image1.link" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="support">
+                           <!-- <img class="w-100"
+                              [src]="support.image1.link" [alt]="support.image1.link" /> -->
+                              <picture>
+                                 <source [srcset]="support.image1.link_webp" type="image/webp">
+                                 <source [srcset]="support.image1.link" type="image/png"> 
+                                 <img [src]="support.image1.link_webp" [alt]="support.image1.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="support"><img class="w-100"
-                              [src]="support.image2.link" [alt]="support.image2.link" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="support">
+                           <!-- <img class="w-100"
+                              [src]="support.image2.link" [alt]="support.image2.link" /> -->
+                              <picture>
+                                 <source [srcset]="support.image2.link_webp" type="image/webp">
+                                 <source [srcset]="support.image2.link" type="image/png"> 
+                                 <img [src]="support.image2.link_webp" [alt]="support.image2.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="support"><img class="w-100"
-                              [src]="support.image3.link" [alt]="support.image3.link" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="support">
+                           <!-- <img class="w-100"
+                              [src]="support.image3.link" [alt]="support.image3.link" /> -->
+                              <picture>
+                                 <source [srcset]="support.image3.link_webp" type="image/webp">
+                                 <source [srcset]="support.image3.link" type="image/png"> 
+                                 <img [src]="support.image3.link_webp" [alt]="support.image3.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                      <li class="col-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="900">
-                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="support"><img class="w-100"
-                              [src]="support.image4.link" [alt]="support.image4.link" />
+                        <div class="dc_wrap_abt_Img dc_rds_8" *ngIf="support">
+                           <!-- <img class="w-100"
+                              [src]="support.image4.link" [alt]="support.image4.link" /> -->
+                              <picture>
+                                 <source [srcset]="support.image4.link_webp" type="image/webp">
+                                 <source [srcset]="support.image4.link" type="image/png"> 
+                                 <img [src]="support.image4.link_webp" [alt]="support.image4.alt" class="w-100" />
+                              </picture>
                         </div>
                      </li>
                   </ul>

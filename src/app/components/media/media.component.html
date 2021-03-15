@@ -52,7 +52,12 @@
           <div class="row rowSpace dc_spacer_t_90" *ngFor="let data of medianews">
              <div class="col-md-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
                 <div class="teamPage_wrap mar-b-30">
-                   <img [src]="data.image.link" class="w-100" [alt]="data.image.alt">
+                   <!-- <img [src]="data.image.link" class="w-100" [alt]="data.image.alt"> -->
+                   <picture>
+                     <source [srcset]="data.image.link_webp" type="image/webp">
+                     <source [srcset]="data.image.link" type="image/png"> 
+                     <img [src]="data.image.link_webp" [alt]="data.image.alt" class="w-100" />
+                  </picture>
                 </div>
              </div>
              <div class="col-md-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">

@@ -56,16 +56,44 @@
                <div class="dc_About_media_wrap mar-b-30">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD" *ngIf="contact">
                      <li class="col-6" *ngIf="img1.link" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img1.link}}" alt="{{img1.alt}}" /></div>
+                        <div class="dc_wrap_abt_Img dc_rds_8">
+                           <!-- <img class="w-100" src="{{img1.link}}" alt="{{img1.alt}}" /> -->
+                           <picture>
+                              <source [srcset]="img1.link_webp" type="image/webp">
+                              <source [srcset]="img1.link" type="image/png"> 
+                              <img [src]="img1.link_webp" [alt]="img1.alt" class="w-100" />
+                           </picture>
+                        </div>
                      </li>
                      <li class="col-6" *ngIf="img2.link" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
-                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img2.link}}" alt="{{img2.alt}}" /></div>
+                        <div class="dc_wrap_abt_Img dc_rds_8">
+                           <!-- <img class="w-100" src="{{img2.link}}" alt="{{img2.alt}}" /> -->
+                           <picture>
+                              <source [srcset]="img2.link_webp" type="image/webp">
+                              <source [srcset]="img2.link" type="image/png"> 
+                              <img [src]="img2.link_webp" [alt]="img2.alt" class="w-100" />
+                           </picture>
+                        </div>
                      </li>
                      <li class="col-6" *ngIf="img3.link" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
-                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img3.link}}" alt="{{img3.alt}}" /></div>
+                        <div class="dc_wrap_abt_Img dc_rds_8">
+                           <!-- <img class="w-100" src="{{img3.link}}" alt="{{img3.alt}}" /> -->
+                           <picture>
+                              <source [srcset]="img3.link_webp" type="image/webp">
+                              <source [srcset]="img3.link" type="image/png"> 
+                              <img [src]="img3.link_webp" [alt]="img3.alt" class="w-100" />
+                           </picture>
+                        </div>
                      </li>
                      <li class="col-6" *ngIf="img4.link" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
-                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img4.link}}" alt="{{img4.alt}}" /></div>
+                        <div class="dc_wrap_abt_Img dc_rds_8">
+                           <!-- <img class="w-100" src="{{img4.link}}" alt="{{img4.alt}}" /> -->
+                           <picture>
+                              <source [srcset]="img4.link_webp" type="image/webp">
+                              <source [srcset]="img4.link" type="image/png"> 
+                              <img [src]="img4.link_webp" [alt]="img4.alt" class="w-100" />
+                           </picture>
+                        </div>
                      </li>
                   </ul>
                </div>
@@ -76,7 +104,7 @@
                   <div class="row_gutter_30">
                      <div class="col-12">
                         <div class="position-relative">
-                           <label class="f-s-24 f-w-B cmslabel">What is your name?</label>
+                           <label class="f-s-24 f-w-B cmslabel">Name</label>
                            <input type="text" class="form-control cmsfield" name="name" formControlName="name">
                            <div *ngIf="f.name.errors && (f.name.dirty || f.name.touched)" >
                               <div *ngIf="f.name.errors.required" class="errorMsg">Name is required</div>
@@ -85,7 +113,7 @@
                      </div>
                      <div class="col-12">
                         <div class="position-relative">
-                           <label class="f-s-24 f-w-B cmslabel">What is your Email Address?</label>
+                           <label class="f-s-24 f-w-B cmslabel">Email Address</label>
                            <input type="text" class="form-control cmsfield" name="email" formControlName="email">
                            <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" >
                               <div *ngIf="f.email.errors.required" class="errorMsg">Email is required</div>
@@ -95,7 +123,7 @@
                      </div>
                      <div class="col-12">
                         <div class="position-relative">
-                           <label class="f-s-24 f-w-B cmslabel">Where can we reach you?</label>
+                           <label class="f-s-24 f-w-B cmslabel">Address</label>
                            <input type="text" class="form-control cmsfield" name="reach" formControlName="reach">
                            <div *ngIf="f.reach.errors && (f.reach.dirty || f.reach.touched)" >
                               <div *ngIf="f.reach.errors.required" class="errorMsg">Address is required</div>
@@ -104,10 +132,10 @@
                      </div>
                      <div class="col-12">
                         <div class="position-relative">
-                           <label class="f-s-24 f-w-B cmslabel">Tell us something interesting about you</label>
+                           <label class="f-s-24 f-w-B cmslabel">How Can we help?</label>
                            <textarea class="form-control cmsfield tell" rows="5" name="tell_us" formControlName="tell_us"></textarea>
                            <div *ngIf="f.tell_us.errors && (f.tell_us.dirty || f.tell_us.touched)" >
-                              <div *ngIf="f.tell_us.errors.required" class="errorMsg">tell_us is required</div>
+                              <div *ngIf="f.tell_us.errors.required" class="errorMsg">This Field is required</div>
                            </div>
                         </div>
                      </div>
@@ -136,7 +164,7 @@
                                  </div>
                               </div>
                            </div>
-                           <button class="pagebtn f-w-B transtn-1" type="submit" [disabled]="!career.valid">Book an appointment</button>
+                           <button class="pagebtn f-w-B transtn-1" type="submit" [disabled]="!career.valid">Submit</button>
                         </div>
                      </div>
                   </div>

@@ -6,6 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { environment } from "../../environments/environment";
 import { DOCUMENT } from '@angular/common';
+import {Title} from "@angular/platform-browser";
 const httpOptions = {
   headers: new HttpHeaders({ 
   'Access-Control-Allow-Credentials' : 'true',
@@ -25,7 +26,7 @@ export class MetaServiceService {
   apiurl = environment.API_URL;
   domainurl = environment.DOMAIN_URL;
     // constructor() { }
-    constructor(private meta: Meta, @Inject(DOCUMENT) private doc:any, private http: HttpClient,public router: Router) { }
+    constructor(private titleService:Title, private meta: Meta, @Inject(DOCUMENT) private doc:any, private http: HttpClient,public router: Router) { }
     updateMetaTags(metaTags : any,can : any){
       var metaData:any= {
         "metaTags" :[
@@ -33,9 +34,11 @@ export class MetaServiceService {
           { property: 'og:title', content:metaTags.title },
           { proprety: 'og:description', content:metaTags.description},          
           { property: 'og:keywords', content: metaTags.keywords },   
-
+          
+          this.titleService.setTitle(metaTags.title),
         ]
       }
+      
     //  var element: any = document.querySelector(`link[rel='canonical']`) || null
     //  if (element == null) {
     //      element = document.createElement('link') as HTMLLinkElement;
@@ -49,8 +52,8 @@ export class MetaServiceService {
     link.setAttribute('rel', 'canonical');
     this.doc.head.appendChild(link);
     link.setAttribute('href', curl);
-      
-      console.log(link,"metaTagsmetaTags");
+    
+      console.log(metaTags,"metaTagsmetaTags");
       metaData['metaTags'].forEach((m:any) =>    
           this.meta.updateTag(m)
       );

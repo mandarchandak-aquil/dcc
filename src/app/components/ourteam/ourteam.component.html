@@ -53,9 +53,14 @@
               <div class="col-sm-6 col-md-3" *ngFor="let data of doctors; let i = index">
                  <div class="dcTeam_bx mrg-b-60" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
                     <div class="dcTeam_img mrg-b-30">
-                       <img [src]="data.image.link" class="w-100" [alt]="data.image.alt">
+                       <!-- <img [src]="data.image.link" class="w-100" [alt]="data.image.alt"> -->
+                       <picture>
+                        <source [srcset]="data.image.link_webp" type="image/webp">
+                        <source [srcset]="data.image.link" type="image/png"> 
+                        <img [src]="data.image.link_webp" [alt]="data.image.alt" class="w-100" />
+                     </picture>
                     </div>
-                    <div class="teamName_sec text-justify mrg-b-30">
+                    <div class="teamName_sec text-center mrg-b-30">
                        <div class="teamName f-w-B f-s-24 line_H_1">
                           {{data.name}}
                        </div>
@@ -63,7 +68,7 @@
                          {{data.designation}}
                        </div>
                     </div>               
-                    <div class="teamDesc text-justify f-s-18 line_H_1_5 mrg-b-20" [innerHTML]="data.short_description">                      
+                    <div class="teamDesc text-center f-s-18 line_H_1_5 mrg-b-20" [innerHTML]="data.short_description">                      
                     </div>
                     <div class="teamRead_more text-center line_H_1">
                        <a routerLink="/our-pet-care-doctors/{{data.slug}}" class="dc_readmore font-rubik f-w-M">

@@ -28,7 +28,12 @@
           <div class="row row_gutter_30">
              <div class="col-md-6" *ngIf="doctorsdata">
                 <div class="teamPage_wrap" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                   <img [src]="doctorsdata.details.image.link" [alt]="doctorsdata.details.image.alt" class="w-100">
+                   <!-- <img [src]="doctorsdata.details.image.link" [alt]="doctorsdata.details.image.alt" class="w-100"> -->
+                   <picture>
+                     <source [srcset]="doctorsdata.details.image.link_webp" type="image/webp">
+                     <source [srcset]="doctorsdata.details.image.link" type="image/png"> 
+                     <img [src]="doctorsdata.details.image.link_webp" [alt]="doctorsdata.details.image.alt" class="w-100" />
+                  </picture>
                 </div>
              </div>
              <div class="col-md-6" *ngIf="doctorsdata">

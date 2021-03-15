@@ -72,12 +72,22 @@
                <div class="row rowSpace">
                   <div class="col-6 col-md-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
                      <div class="teamPage_wrap mar-b-30" *ngIf="contact">
-                        <img src="{{image_1}}" class="w-100">
+                        <!-- <img src="{{image_1}}" class="w-100"> -->
+                        <picture>
+                           <source [srcset]="image_1_webp" type="image/webp">
+                           <source [srcset]="image_1" type="image/png"> 
+                           <img [src]="image_1_webp" [alt]="image_1_alt" class="w-100" />
+                        </picture>
                      </div>
                   </div>
                   <div class="col-6 col-md-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
                      <div class="teamPage_wrap mar-b-30" *ngIf="contact">
-                        <img src="{{image_2}}" class="w-100">
+                        <!-- <img src="{{image_2}}" class="w-100"> -->
+                        <picture>
+                           <source [srcset]="image_2_webp" type="image/webp">
+                           <source [srcset]="image_2" type="image/png"> 
+                           <img [src]="image_2_webp" [alt]="image_2_alt" class="w-100" />
+                        </picture>
                      </div>
                   </div>
                </div>

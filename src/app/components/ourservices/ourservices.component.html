@@ -53,7 +53,12 @@
                 <div class="dc_serviceBx transtn-1 mrg-b-30">
                    <div class="dc_serviceIcon_wrap text-center">
                       <div class="servieIcon">
-                        <img [src]="data.icon.link" class="w-100" [alt]="data.icon.alt">
+                        <!-- <img [src]="data.icon.link" class="w-100" [alt]="data.icon.alt"> -->
+                        <picture>
+                           <source [srcset]="data.icon.link_webp" type="image/webp">
+                           <source [srcset]="data.icon.link" type="image/png"> 
+                           <img [src]="data.icon.link_webp" [alt]="data.icon.alt" class="w-100" />
+                        </picture>
                       </div>
                       <div class="serviceTxt f-w-B line_H_1_5">
                         {{data.name}}

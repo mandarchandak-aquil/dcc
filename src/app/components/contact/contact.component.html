@@ -58,11 +58,11 @@
                   {{loc.name}}
                   </a>
                </div>
-               <div class="btnSec_wra d-inline">
+               <!-- <div class="btnSec_wra d-inline">
                   <a  (click)="scroll('enquiryformid')" class="pagebtn scrollClick pagebtngreen f-w-B">
                   Enquiry Form
                   </a>
-               </div>
+               </div> -->
             </div>
          </div>
       </div>
@@ -73,12 +73,22 @@
                   <div class="row rowSpace">
                      <div class="col-6 col-md-12">
                         <div class="teamPage_wrap mar-b-30" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                           <img [src]="even.image_1.link" [alt]="even.image_1.link" class="w-100">
+                           <!-- <img [src]="even.image_1.link" [alt]="even.image_1.link" class="w-100"> -->
+                           <picture>
+                              <source [srcset]="even.image_1.link_webp" type="image/webp">
+                              <source [srcset]="even.image_1.link" type="image/png"> 
+                              <img [src]="even.image_1.link_webp" [alt]="even.image_1.alt" class="w-100" />
+                           </picture>
                         </div>
                      </div>
                      <div class="col-6 col-md-12">
                         <div class="teamPage_wrap mar-b-30" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
-                           <img  [src]="even.image_2.link" [alt]="even.image_2.link" class="w-100">
+                           <!-- <img  [src]="even.image_2.link" [alt]="even.image_2.link" class="w-100"> -->
+                           <picture>
+                              <source [srcset]="even.image_2.link_webp" type="image/webp">
+                              <source [srcset]="even.image_2.link" type="image/png"> 
+                              <img [src]="even.image_2.link_webp" [alt]="even.image_2.alt" class="w-100" />
+                           </picture>
                         </div>
                      </div>
                   </div>
@@ -179,7 +189,7 @@
          </div>
       </div>
    </div>
-   <div class="dc_spacer_t_90 dc_spacer_b_60" id="enquiryformid">
+   <!-- <div class="dc_spacer_t_90 dc_spacer_b_60" id="enquiryformid">
       <div class="main-container">
          <div class="row row_gutter_30" *ngIf="contact">
             <div class="col-md-6">
@@ -212,16 +222,44 @@
                <div class="dc_About_media_wrap mar-b-30">
                   <ul class="list-unstyled row row_gutter_15 dc_wrapCols_UD" *ngIf="contact">
                      <li class="col-6" *ngIf="img1.link" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img1.link}}" alt="{{img1.alt}}" /></div>
+                        <div class="dc_wrap_abt_Img dc_rds_8">
+                        
+                           <picture>
+                              <source [srcset]="img1.link_webp" type="image/webp">
+                              <source [srcset]="img1.link" type="image/png"> 
+                              <img [src]="img1.link_webp" [alt]="img1.alt" class="w-100" />
+                           </picture>
+                        </div>
                      </li>
                      <li class="col-6" *ngIf="img2.link" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
-                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img2.link}}" alt="{{img2.alt}}" /></div>
+                        <div class="dc_wrap_abt_Img dc_rds_8">
+                       
+                           <picture>
+                              <source [srcset]="img2.link_webp" type="image/webp">
+                              <source [srcset]="img2.link" type="image/png"> 
+                              <img [src]="img2.link_webp" [alt]="img2.alt" class="w-100" />
+                           </picture>
+                        </div>
                      </li>
                      <li class="col-6" *ngIf="img3.link" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">
-                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img3.link}}" alt="{{img3.alt}}" /></div>
+                        <div class="dc_wrap_abt_Img dc_rds_8">
+                        
+                           <picture>
+                              <source [srcset]="img3.link_webp" type="image/webp">
+                              <source [srcset]="img3.link" type="image/png"> 
+                              <img [src]="img3.link_webp" [alt]="img3.alt" class="w-100" />
+                           </picture>
+                        </div>
                      </li>
                      <li class="col-6" *ngIf="img4.link" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
-                        <div class="dc_wrap_abt_Img dc_rds_8"><img class="w-100" src="{{img3.link}}" alt="{{img3.alt}}" /></div>
+                        <div class="dc_wrap_abt_Img dc_rds_8">
+                         
+                           <picture>
+                              <source [srcset]="img4.link_webp" type="image/webp">
+                              <source [srcset]="img4.link" type="image/png"> 
+                              <img [src]="img4.link_webp" [alt]="img4.alt" class="w-100" />
+                           </picture>
+                        </div>
                      </li>
                   </ul>
                </div>
@@ -279,5 +317,5 @@
             </div>
          </div>
       </div>
-   </div>
+   </div> -->
 </div>

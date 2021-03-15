@@ -18,11 +18,14 @@ imports: [
     FormsModule,
     ReactiveFormsModule,
     
+    
 ],
 exports: [
     HeaderComponent,
     FooterComponent,
     FooterTopComponent,
+    
+
 ],
 declarations: [
     HeaderComponent,

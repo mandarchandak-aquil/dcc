@@ -3,6 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MetaServiceService } from '../../common/meta-service.service';
 import { CommonService } from '../../common/services/common/common.service';
+import {Title} from "@angular/platform-browser";
+
 @Component({
   selector: 'app-aboutus',
   templateUrl: './aboutus.component.html',
@@ -60,7 +62,7 @@ export class AboutusComponent implements OnInit {
   supportcontent: any;
   support: any = [];
   supporticon: any = [];
-  constructor(private sanitizer: DomSanitizer, public apiCall: CommonService, private meta: MetaServiceService, public router: Router, private route: ActivatedRoute) { }
+  constructor(private titleService:Title,private sanitizer: DomSanitizer, public apiCall: CommonService, private meta: MetaServiceService, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getDataInit();
@@ -74,6 +76,8 @@ export class AboutusComponent implements OnInit {
       if (data) {
         this.aboutData = data;
         console.log(this.aboutData, "this.aboutData")
+        // this.titleService.setTitle("Some title");
+
         this.heading = this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['heading']);
         this.content = this.sanitizer.bypassSecurityTrustHtml(this.aboutData['topsection']['content']);
         this.advisorheading = this.sanitizer.bypassSecurityTrustHtml(this.aboutData['ouradvisorssection']['heading']);
@@ -121,6 +125,8 @@ export class AboutusComponent implements OnInit {
       console.log("routerurl", this.router.url);
       let url = this.router.url
       this.meta.updateMetaTags(data['seodata'], url);
+     
+
     });
   }
 }
