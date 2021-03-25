@@ -56,6 +56,7 @@ const routes: Routes = [
       footerData: FooterResolver
     }
   },
+  { path: 'wp-admin', redirectTo: '/', pathMatch: 'full' },
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },
 ];
 

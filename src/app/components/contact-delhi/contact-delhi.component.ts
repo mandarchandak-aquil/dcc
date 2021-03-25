@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { MetaServiceService } from '../../common/meta-service.service';
 import { CommonService } from '../../common/services/common/common.service';
@@ -13,6 +15,7 @@ import { CommonService } from '../../common/services/common/common.service';
 export class ContactDelhiComponent implements OnInit {
   loading: boolean = false;
   contact: any = [];
+  career: FormGroup;
   contactSlug;
   contacts: any;
   footersection: any;
@@ -32,7 +35,15 @@ export class ContactDelhiComponent implements OnInit {
   image_1_alt: any;
   image_2_webp: any;
   image_2_alt: any;
-  constructor(private sanitizer: DomSanitizer, public apiCall: CommonService, private meta: MetaServiceService, public router: Router, private route: ActivatedRoute) {
+  enquiryheading: any;
+  enquiryleft_content: any;
+  enquiryright_content: any;
+  enquiryimgs: any = [];
+  img1: any = [];
+  img2: any = [];
+  img3: any = [];
+  img4: any = [];
+  constructor(private sanitizer: DomSanitizer,private formBuilder: FormBuilder, public apiCall: CommonService, private meta: MetaServiceService, public router: Router, private route: ActivatedRoute) {
     this.contactSlug = this.route.snapshot.paramMap.get('slug');
     console.log(this.contactSlug, "contact slug")
   }
@@ -42,7 +53,17 @@ export class ContactDelhiComponent implements OnInit {
     this.dataurl = this.router.url.replace("/contact-us/", "");
     console.log(this.dataurl, 'dataurl');
     this.getDataInit();
+
+    this.career = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phoneno: ['', [Validators.required, Validators.pattern('^[0-9]{10}$'), Validators.minLength(10), Validators.maxLength(10)]],
+      message: ['', [Validators.required]],
+      type: this.dataurl,
+    });
   }
+
+  get f() { return this.career.controls; }
 
   getDataInit() {
     this.loading = true;
@@ -73,9 +94,32 @@ export class ContactDelhiComponent implements OnInit {
         this.address = this.sanitizer.bypassSecurityTrustHtml(this.contact.details.address);
         this.button_2_link = this.contact['details']['button_2_link'];
         this.locations = this.contact['details']['locations'];
+        this.enquiryheading = this.contact['enquiry_details']['heading'];
+        this.enquiryleft_content = this.sanitizer.bypassSecurityTrustHtml(this.contact['enquiry_details']['left_content']);
+        this.enquiryright_content = this.sanitizer.bypassSecurityTrustHtml(this.contact['enquiry_details']['right_content']);
+        this.img1 = this.contact['enquiry_details']['images'][0]['image'];
+        this.img2 = this.contact['enquiry_details']['images'][1]['image'];
+        this.img3 = this.contact['enquiry_details']['images'][2]['image'];
+        this.img4 = this.contact['enquiry_details']['images'][3]['image'];
+        console.log("enquiryimgs", this.img1);
         console.log(this.contact.details.button_2_link, "button_2_link")
         this.MetaTags();
       }
+    });
+  }
+
+  
+  onSubmit() {
+    this.loading = true;
+    let myFormValue = this.career.value;
+    console.log(myFormValue, 'myFormData');
+
+    this.apiCall.contactForm(myFormValue).subscribe(data => {
+      this.loading = false;
+      if (data['response'] == 200) {
+        this.career.reset();
+      }
+      console.log(data, "contact");
     });
   }
 
