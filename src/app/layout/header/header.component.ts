@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(public router: Router, public apiCall: CommonService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log("header ngoninit");
     this.getDataInit();
   }
 
@@ -26,5 +27,8 @@ export class HeaderComponent implements OnInit {
         console.log(this.headerData, "headerData");
       }
     });
+  }
+  ngOnDestroy(){
+ 
   }
 }

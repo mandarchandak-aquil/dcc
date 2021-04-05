@@ -123,19 +123,19 @@
                      </div>
                      <div class="col-12">
                         <div class="position-relative">
-                           <label class="f-s-24 f-w-B cmslabel">Address</label>
+                           <label class="f-s-24 f-w-B cmslabel"> Contact Number</label>
                            <input type="text" class="form-control cmsfield" name="reach" formControlName="reach">
                            <div *ngIf="f.reach.errors && (f.reach.dirty || f.reach.touched)" >
-                              <div *ngIf="f.reach.errors.required" class="errorMsg">Address is required</div>
+                              <div *ngIf="f.reach.errors.required" class="errorMsg">Contact Number is required</div>
                            </div>
                         </div>
                      </div>
                      <div class="col-12">
                         <div class="position-relative">
-                           <label class="f-s-24 f-w-B cmslabel">How Can we help?</label>
+                           <label class="f-s-24 f-w-B cmslabel">Tell us about yourself</label>
                            <textarea class="form-control cmsfield tell" rows="5" name="tell_us" formControlName="tell_us"></textarea>
                            <div *ngIf="f.tell_us.errors && (f.tell_us.dirty || f.tell_us.touched)" >
-                              <div *ngIf="f.tell_us.errors.required" class="errorMsg">This Field is required</div>
+                              <div *ngIf="f.tell_us.errors.required" class="errorMsg">Tell us about yourself is required</div>
                            </div>
                         </div>
                      </div>

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './layout/auth/auth.component';
-import { HeaderResolver } from './common/resolver/header-resolver.service';
-import { FooterResolver } from './common/resolver/footer-resolver.service';
+
 
 const routes: Routes = [
   {
@@ -51,10 +50,7 @@ const routes: Routes = [
       },
       { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
     ],
-    resolve: {
-      headerData: HeaderResolver,
-      footerData: FooterResolver
-    }
+    
   },
   { path: 'wp-admin', redirectTo: '/', pathMatch: 'full' },
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },
@@ -65,6 +61,6 @@ const routes: Routes = [
     initialNavigation: 'enabled', scrollPositionRestoration: 'enabled', onSameUrlNavigation: 'reload'
   })],
   exports: [RouterModule],
-  providers: [HeaderResolver, FooterResolver]
+  
 })
 export class AppRoutingModule { }

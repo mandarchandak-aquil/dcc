@@ -21,21 +21,9 @@ export class CommonService {
 
   apiurl = environment.API_URL;
   constructor(private http: HttpClient) { }
-
-  getHome() : Observable<any> {
-    let req = {
-      "pagename": "home"
-    }
-    
-    return this.http.post<any>(this.apiurl+'homepage/v1', JSON.stringify(req), httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }
   
   homepageData(req:any) : Observable<any> { 
-    return this.http.post<any>(this.apiurl+'homepage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'homepage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -43,7 +31,7 @@ export class CommonService {
   }
 
   career(req:any) : Observable<any> { 
-    return this.http.post<any>(this.apiurl+'careersform/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'careersform/v1', JSON.stringify(req),httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -51,7 +39,7 @@ export class CommonService {
   }
 
   contactForm(req:any) : Observable<any> { 
-    return this.http.post<any>(this.apiurl+'contactform/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'contactform/v1', JSON.stringify(req),httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -59,7 +47,7 @@ export class CommonService {
   }
 
   doctordetailspage(req:any) : Observable<any> { 
-    return this.http.post<any>(this.apiurl+'doctordetailspage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'doctordetailspage/v1', JSON.stringify(req),httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -67,7 +55,7 @@ export class CommonService {
   }
 
   servicetailspage(req:any) : Observable<any> { 
-    return this.http.post<any>(this.apiurl+'servicedetailspage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'servicedetailspage/v1', JSON.stringify(req),httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -85,7 +73,7 @@ export class CommonService {
 
 
   serviceData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'servicespage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'servicespage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -93,7 +81,7 @@ export class CommonService {
   }
 
   aboutData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'aboutpage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'aboutpage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -101,7 +89,7 @@ export class CommonService {
   }
   
   teamsData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'teampage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'teampage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -109,7 +97,7 @@ export class CommonService {
   }
 
   mediaData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'medianewspage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'medianewspage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -117,7 +105,7 @@ export class CommonService {
   }
 
   carerrsData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'careerspage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'careerspage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -125,7 +113,7 @@ export class CommonService {
   }
 
   contactData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'contactuspage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'contactuspage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -134,7 +122,7 @@ export class CommonService {
 
   contactDelhiData(req:any) : Observable<any>{
 
-    return this.http.post<any>(this.apiurl+'contactdetails/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'contactdetails/v1', JSON.stringify(req),httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -146,7 +134,7 @@ export class CommonService {
   }
 
   contactGurgaonData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'contactdetails/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'contactdetails/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -154,7 +142,7 @@ export class CommonService {
   }
 
   teamDetails(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'doctordetailspage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'doctordetailspage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -162,7 +150,7 @@ export class CommonService {
   }
 
   serviceDetails(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'servicedetailspage/v1', JSON.stringify(req), httpOptions)
+    return this.http.post<any>(this.apiurl+'servicedetailspage/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -170,7 +158,8 @@ export class CommonService {
   }
 
   headerData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'header/v1', JSON.stringify(req), httpOptions)
+    console.log("header service");
+    return this.http.post<any>(this.apiurl+'header/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -178,7 +167,8 @@ export class CommonService {
   }
 
   footerData(req:any) : Observable<any>{
-    return this.http.post<any>(this.apiurl+'footer/v1', JSON.stringify(req), httpOptions)
+    console.log("footer service");
+    return this.http.post<any>(this.apiurl+'footer/v1', JSON.stringify(req))
     .pipe(
       retry(1),
       catchError(this.handleError)

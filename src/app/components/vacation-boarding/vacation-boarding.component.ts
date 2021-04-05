@@ -45,7 +45,9 @@ export class VacationBoardingComponent implements OnInit {
       this.right_content_bottom = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['details']['right_content_bottom']);
       this.faqheading = this.sanitizer.bypassSecurityTrustHtml(this.vacationdata['faqsection']['heading']);
       this.faq_question = this.vacationdata.faqsection.faqs.length / 2;
-      let len = this.vacationdata.faqsection.faqs.length / 2;
+      let lenth = this.vacationdata.faqsection.faqs.length / 2;
+      let len = Math.floor(lenth);
+      console.log("lennnn",len)
       let right = [];
       console.log(this.vacationdata.faqsection.faqs.length, len, 'len')
       this.rightfaq = []

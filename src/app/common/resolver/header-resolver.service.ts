@@ -24,6 +24,7 @@ export class HeaderResolver implements Resolve<any> {
         let req = {
             "pagename": "header"
         }
+        console.log("header resolver");
         return this.http.post<any>(this.apiurl+'header/v1', JSON.stringify(req), httpOptions).pipe(
         map( (dataFromApi) => dataFromApi ),
         catchError(this.handleError)

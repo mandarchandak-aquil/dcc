@@ -26,6 +26,7 @@ export class FooterComponent implements OnInit {
   constructor(public comman: CommonService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    console.log("footer ngoninit");
     this.email = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
     });
@@ -82,5 +83,8 @@ export class FooterComponent implements OnInit {
         console.log(data, 'send');
       });
     }
+  }
+  ngOnDestroy(){
+ 
   }
 }

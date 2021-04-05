@@ -59,7 +59,7 @@ export class MetaServiceService {
       );
     }
     getProduct(req:any ) : Observable<any > {
-      return this.http.post<any>(this.apiurl+'seodata/v1', JSON.stringify(req), httpOptions)
+      return this.http.post<any>(this.apiurl+'seodata/v1', JSON.stringify(req))
       .pipe(
         retry(1),
         // catchError(this.handleError)

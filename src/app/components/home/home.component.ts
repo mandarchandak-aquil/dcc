@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HomeService } from '../../common/services/home/home.service';
 import { MetaServiceService } from '../../common/meta-service.service';
 import { CommonService } from '../../common/services/common/common.service';
 @Component({
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
   serviceList: any;
   pethealthheading: any;
   public screenWidth: any;
-  constructor(public comman: CommonService, public api_page: HomeService, private meta: MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
+  constructor(public comman: CommonService, private meta: MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getDataInit();
@@ -68,5 +67,9 @@ export class HomeComponent implements OnInit {
       let url = this.router.url
       this.meta.updateMetaTags(data['seodata'], url);
     });
+  }
+
+  ngOnDestroy(){
+    
   }
 }
