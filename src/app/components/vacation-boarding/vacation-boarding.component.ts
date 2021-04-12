@@ -24,16 +24,31 @@ export class VacationBoardingComponent implements OnInit {
   leftfaq: any = [];
   rightfaq: any = [];
   public slug: any;
+  data1:any;
 
-  constructor(public comman: CommonService, private meta: MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
+  constructor(public comman: CommonService, private meta: MetaServiceService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) {
+
+    let data = this.router.url.replace("/DCC-pet-services/", "");
+    this.slug = data;
+      if(this.slug == 'consultation'){
+        this.router.navigate(['/DCC-pet-services/pet-health-consultation']);
+      }else if(this.slug == 'dentistry'){
+        this.router.navigate(['/DCC-pet-services/pet-dentistry']);
+      }else if(this.slug == 'pathology'){
+        this.router.navigate(['/DCC-pet-services/veterinary-pathology']);
+      }else if(this.slug == 'radiography'){
+        this.router.navigate(['/DCC-pet-services/pet-radiography']);
+      }
+   }
 
   ngOnInit() {
     console.log(this.router.url.replace("/DCC-pet-services/", ""))
     let data = this.router.url.replace("/DCC-pet-services/", "");
-    this.slug = data;
+    this.slug = data;    
     let req = {
       "serviceid": data
     }
+    console.log("req",req);
     this.comman.servicetailspage(req).subscribe(datas => {
       console.log(datas, 'datas');
       this.vacationdata = datas;

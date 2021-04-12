@@ -53,6 +53,14 @@ const routes: Routes = [
     
   },
   { path: 'wp-admin', redirectTo: '/', pathMatch: 'full' },
+  { path:'case-study-tag/transportation', redirectTo: '/', pathMatch: 'full' },
+  { path:'case-study-tag/shipping', redirectTo: '/', pathMatch: 'full' },
+  { path:'case-study-category/security', redirectTo: '/', pathMatch: 'full' },
+  { path:'case-study/financials-need-for-strategic-advisor', redirectTo: '/', pathMatch: 'full' },
+  { path:'tag/organization', redirectTo: '/', pathMatch: 'full' },
+  { path:'tag/business', redirectTo: '/', pathMatch: 'full' },
+  { path:'tag/employee', redirectTo: '/', pathMatch: 'full' },
+  { path:'pet-care-blog/lorem-ipsum-is-simply-dummy-text-of', redirectTo: '/', pathMatch: 'full' },
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },
 ];
 

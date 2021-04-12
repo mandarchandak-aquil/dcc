@@ -173,7 +173,7 @@ a:focus, .slick-slide:focus, button:focus{outline: none !important;    text-deco
 {
     margin-bottom: 2.083vw;
     line-height: 1.3;
-    text-align: justify;
+   
 }
 .bannerTxt p:last-child {
     
@@ -914,6 +914,8 @@ font-size: 2.143vw;color: transparent;
     transform: scale(1);
   }
 }
+
+.text-justify{text-align: left !important;}
 
 /**********************************/
 /**************Responsive**********/

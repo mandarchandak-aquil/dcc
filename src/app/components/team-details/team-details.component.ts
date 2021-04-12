@@ -22,7 +22,13 @@ export class TeamDetailsComponent implements OnInit {
   doctorcontent: any;
   public slug: any;
   deatilspara: any;
-  constructor(private http: HttpClient, private meta: MetaServiceService, public comman: CommonService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private meta: MetaServiceService, public comman: CommonService, private sanitizer: DomSanitizer, public router: Router, private route: ActivatedRoute) {
+    let data = this.router.url.replace("/our-pet-care-doctors/", "");
+    this.slug = data;
+      if(this.slug == 'dr-yasuko-watanabe'){
+        this.router.navigate(['/our-pet-care-doctors/veterinary-doctor']);
+      }
+   }
 
   ngOnInit(): void {
     this.loading = true;
@@ -32,6 +38,7 @@ export class TeamDetailsComponent implements OnInit {
     let req = {
       "doctorid": data
     }
+    console.log("reqq",req);
     this.comman.doctordetailspage(req).subscribe(datas => {
       this.doctorsdata = datas;
       console.log(this.doctorsdata, 'datas');
