@@ -917,6 +917,33 @@ font-size: 2.143vw;color: transparent;
 
 .text-justify{text-align: left !important;}
 
+/*START Privacy Policy CSS*/
+.privacyList ol li{
+    list-style: upper-roman;
+}
+.privacyList1{
+    margin-bottom: 2.083vw;
+}
+.privacyList1 li{
+    list-style: lower-alpha !important;
+}
+.privacyList2{
+    margin-bottom: 2.083vw;
+}
+.privacyList2 li{
+    list-style: lower-roman !important;
+}
+.m-TB{
+    margin: 2.083vw 0;
+}
+.privacyList3 li{
+    list-style: decimal !important;
+}
+.privacyLink a{
+    color: #0E1F3B;
+}
+/*END Privacy Policy CSS*/
+
 /**********************************/
 /**************Responsive**********/
 /**********************************/
@@ -925,6 +952,10 @@ font-size: 2.143vw;color: transparent;
     .teamDetailsTxt_sec .card {  border: none;}
     .teamDetailsTxt_sec .card .card-header {  display:none;} 
     .teamDetailsTxt_sec .card .collapse{display:block;}   
+    /*START Privacy Policy CSS*/
+    .privacyList1, .privacyList2{margin-bottom: 15px;}
+    .m-TB{margin: 15px 0;}
+    /*END Privacy Policy CSS*/
 }
 
 @media(max-width:991px)
@@ -1141,6 +1172,11 @@ span.teamSecTitle {font-size: 16px; padding: 10px 15px; border-radius: 8px; marg
 width: 100%; display: block; margin: auto;text-align: center;}
 .teamDetails_Txt_mobile {padding: 15px 0;}
 .topBanner_sec {padding-top: 20px;}
+/*START Privacy Policy CSS*/
+.privacyList1, .privacyList2{margin-bottom: 15px;padding-left: 15px;}
+.privacyList ol{padding-left: 15px;}
+.m-TB{margin: 15px 0;}
+/*END Privacy Policy CSS*/
 
 }
 

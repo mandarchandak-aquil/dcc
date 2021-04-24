@@ -48,6 +48,10 @@ const routes: Routes = [
         path: 'DCC-pet-services',
         loadChildren: () => import('./components/vacation-boarding/vacation-boarding.module').then(m => m.VacationBoardingModule)
       },
+      { 
+        path: 'privacy-policy', 
+        loadChildren: () => import('./components/privacy-policy/privacy-policy.module').then(m => m.PrivacyPolicyModule) 
+      },
       { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
     ],
     

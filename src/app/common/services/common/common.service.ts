@@ -175,6 +175,14 @@ export class CommonService {
     )
   }
 
+  privacyPolicy(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'privacypolicy/v1', JSON.stringify(req))
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
 
    // Error handling 
    handleError(error:any) {

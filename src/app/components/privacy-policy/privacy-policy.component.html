@@ -1,0 +1,40 @@
+<!-- Loader Start -->
+<div id="preloader" *ngIf="loading">
+    <div id="status">
+        <div id="cms-loadding">
+            <div class="loading-spinner">
+                <div class="cms-bounce1"></div>
+                <div class="cms-bounce2"></div>
+                <div class="cms-bounce3"></div>
+            </div>
+        </div>
+    </div>
+ </div>
+ <!-- Loader End -->
+<div class="dc_pg_spcHead" *ngIf="privacydata">
+    <div class="errorPage">
+       <div class="main-container">
+          <div class="row rowSpace">
+             <div class="col-md-12">
+                <div class="bannerTxtWrap">
+                   <div class="titleWrap mrg-b-30 ">
+                      <h1 class="f-w-B headingSec line_H_1 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">{{privacydata.pagetitle}} </h1>
+                   </div>
+                   <div class="hrLine mrg-b-30 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300"></div>
+                   <div class="bannerTxt aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+                    <p [innerHTML]="contain"></p>
+                   </div>
+                   <div class="privacyList">
+                      <ol >
+                        <li *ngFor="let list of privacylist">
+                              <strong>{{list.list_heading}}</strong>
+                              <p [innerHTML]="list.content"></p>
+                        </li>                                                              
+                      </ol>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+</div>
