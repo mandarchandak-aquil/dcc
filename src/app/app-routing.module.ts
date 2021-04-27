@@ -52,6 +52,14 @@ const routes: Routes = [
         path: 'privacy-policy', 
         loadChildren: () => import('./components/privacy-policy/privacy-policy.module').then(m => m.PrivacyPolicyModule) 
       },
+      { 
+        path: 'refund-policy',
+        loadChildren: () => import('./components/refund-policy/refund-policy.module').then(m => m.RefundPolicyModule)
+      },
+      { 
+        path: 'terms-and-conditions', 
+        loadChildren: () => import('./components/terms-and-conditions/terms-and-conditions.module').then(m => m.TermsAndConditionsModule) 
+      },
       { path: 'page-not-found', loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
     ],
     

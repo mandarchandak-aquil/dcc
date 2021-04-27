@@ -183,6 +183,22 @@ export class CommonService {
     )
   }
 
+  refundPolicy(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'refundpolicy/v1', JSON.stringify(req))
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  termsCondition(req:any) : Observable<any>{
+    return this.http.post<any>(this.apiurl+'termsconditions/v1', JSON.stringify(req))
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
 
    // Error handling 
    handleError(error:any) {
